@@ -1,17 +1,24 @@
-# 폴더마다 담당자. PR이 이 폴더를 건드리면 담당자에게 리뷰 요청이 간다.
-# TODO(PM): 팀원 GitHub 아이디를 받으면 아래 주석을 풀고 @아이디 로 바꾼다.
-* @kokjungmin-pixel
-# /src/collect/   @조재연아이디
-# /src/app.py     @조재연아이디
-# /src/ui/        @조재연아이디
-# /tests/collect/ @조재연아이디
-# /src/analysis/  @김지유아이디
-# /prompts/analysis/ @김지유아이디
-# /tests/analysis/ @김지유아이디
-# /src/debate/    @임동욱아이디
-# /src/llm.py     @임동욱아이디
-# /prompts/debate/ @임동욱아이디
-# /tests/debate/  @임동욱아이디
-/src/state.py     @kokjungmin-pixel
-/src/config.py    @kokjungmin-pixel
-/tests/fixtures/  @kokjungmin-pixel
+# 폴더마다 담당자. PR이 이 폴더를 건드리면 담당자에게 리뷰 요청이 자동으로 간다.
+# 아래쪽 줄이 위쪽보다 우선한다.
+*                    @kokjungmin-pixel
+# Frontend · 조재연
+/src/collect/        @wodus00
+/src/app.py          @wodus00
+/src/ui/             @wodus00
+/tests/collect/      @wodus00
+# Backend · 임동욱
+/src/debate/         @dwbros11-sudo
+/src/llm.py          @dwbros11-sudo
+/prompts/debate/     @dwbros11-sudo
+/tests/debate/       @dwbros11-sudo
+# Data · 김지유
+/src/analysis/       @k00yoou
+/prompts/analysis/   @k00yoou
+/tests/analysis/     @k00yoou
+/docs/notes/data.md  @k00yoou
+/docs/notes/frontend.md @wodus00
+/docs/notes/backend.md  @dwbros11-sudo
+# PM만 수정 (계약)
+/src/state.py        @kokjungmin-pixel
+/src/config.py       @kokjungmin-pixel
+/tests/fixtures/     @kokjungmin-pixel

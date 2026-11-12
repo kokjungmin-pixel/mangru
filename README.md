@@ -16,10 +16,10 @@ KIC(한국투자공사) 위탁운용사 반기 점검을 돕는 AI 에이전트.
 
 | 파트 | 담당 | 폴더 | 개발 기획서 |
 |---|---|---|---|
-| PM | 김정민 | `src/graph.py` `src/report/` `src/rag/` `src/state.py` `src/config.py` | [docs/parts/1_PM_김정민.md](docs/parts/1_PM_김정민.md) |
-| Frontend | 조재연 | `src/collect/` `src/app.py` `src/ui/` | [docs/parts/2_Frontend_조재연.md](docs/parts/2_Frontend_조재연.md) |
-| Backend | 임동욱 | `src/debate/` `src/llm.py` `prompts/debate/` | [docs/parts/3_Backend_임동욱.md](docs/parts/3_Backend_임동욱.md) |
-| Data | 김지유 | `src/analysis/` `prompts/analysis/` | [docs/parts/4_Data_김지유.md](docs/parts/4_Data_김지유.md) |
+| PM | 김정민 (@kokjungmin-pixel) | `src/graph.py` `src/report/` `src/rag/` `src/state.py` `src/config.py` | [docs/parts/1_PM_김정민.md](docs/parts/1_PM_김정민.md) |
+| Frontend | 조재연 (@wodus00) | `src/collect/` `src/app.py` `src/ui/` | [docs/parts/2_Frontend_조재연.md](docs/parts/2_Frontend_조재연.md) |
+| Backend | 임동욱 (@dwbros11-sudo) | `src/debate/` `src/llm.py` `prompts/debate/` | [docs/parts/3_Backend_임동욱.md](docs/parts/3_Backend_임동욱.md) |
+| Data | 김지유 (@k00yoou) | `src/analysis/` `prompts/analysis/` | [docs/parts/4_Data_김지유.md](docs/parts/4_Data_김지유.md) |
 
 공통 계약(데이터 모양, 함수 이름, 절대 규칙)은 [docs/CONTRACT.md](docs/CONTRACT.md), 일정은 노션 '개발 계획' 캘린더.
 
