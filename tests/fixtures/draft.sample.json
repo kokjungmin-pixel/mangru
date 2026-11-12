@@ -1,0 +1,76 @@
+{
+ "manager_id": "demo1",
+ "period": "2026H2",
+ "as_of": "2026-11-20",
+ "sentences": [
+  {
+   "section": "recommendation",
+   "text": "변화 2건 중 미설명 2건 → 조건부 유지",
+   "kind": "opinion",
+   "signal_ids": [
+    "demo1-key_person-1",
+    "demo1-strategy_drift-1"
+   ],
+   "evidence": []
+  },
+  {
+   "section": "changes",
+   "text": "임원 1명 제외: LEE, JOHN(공동 CIO)",
+   "kind": "fact",
+   "signal_ids": [
+    "demo1-key_person-1"
+   ],
+   "evidence": [
+    {
+     "source": "Form ADV Part 1A Schedule A",
+     "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+     "as_of": "2026-03-30",
+     "page": null,
+     "quote": null
+    },
+    {
+     "source": "Form ADV Part 1A Schedule A (직전본)",
+     "url": "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data",
+     "as_of": "2025-03-28",
+     "page": null,
+     "quote": null
+    }
+   ]
+  },
+  {
+   "section": "changes",
+   "text": "운용자산 $12B → $7.8B (-35%), ADV 제출일 2025-03-28 → 2026-03-30",
+   "kind": "fact",
+   "signal_ids": [
+    "demo1-strategy_drift-1"
+   ],
+   "evidence": [
+    {
+     "source": "Form ADV Part 1A Schedule A",
+     "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+     "as_of": "2026-03-30",
+     "page": null,
+     "quote": null
+    }
+   ]
+  },
+  {
+   "section": "debate",
+   "text": "심판: 유지 측 5점, 해지 측 8점 → 미설명. 후임의 운용 이력 근거가 부족함",
+   "kind": "opinion",
+   "signal_ids": [
+    "demo1-key_person-1"
+   ],
+   "evidence": []
+  }
+ ],
+ "sources": [
+  {
+   "source": "Form ADV Part 1A Schedule A",
+   "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+   "as_of": "2026-03-30",
+   "page": null,
+   "quote": null
+  }
+ ]
+}

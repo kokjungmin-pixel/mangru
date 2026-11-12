@@ -1,0 +1,26 @@
+name: 버그
+description: 다른 파트 코드에서 문제를 찾았을 때 (직접 고치지 말고 여기로)
+labels: ["버그"]
+body:
+  - type: dropdown
+    id: part
+    attributes:
+      label: 문제가 있는 파트
+      options: [Frontend, Backend, Data, PM, 모름]
+    validations: {required: true}
+  - type: textarea
+    id: steps
+    attributes:
+      label: 어떻게 하면 생기나
+      placeholder: 예) 데모 모드에서 demo2 선택 → 점검 시작
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 것 / 실제로 나온 것
+    validations: {required: true}
+  - type: textarea
+    id: log
+    attributes:
+      label: 오류 메시지
+      render: text

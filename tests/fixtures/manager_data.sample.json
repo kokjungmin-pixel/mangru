@@ -1,0 +1,203 @@
+{
+ "manager_id": "demo1",
+ "manager_name": "Example Capital Management LLC",
+ "cik": "0000000000",
+ "crd": "000000",
+ "quarters": [
+  {
+   "period": "2026Q2",
+   "report_date": "2026-06-30",
+   "filed_date": "2026-08-12",
+   "accession": "0000000000-26-000001",
+   "url": "https://www.sec.gov/Archives/edgar/data/0000000000/000000000026000001/",
+   "holdings": [
+    {
+     "cusip": "037833100",
+     "issuer": "APPLE INC",
+     "title_of_class": "COM",
+     "value_usd": 1000.0,
+     "shares": 100.0,
+     "ticker": "AAPL",
+     "issuer_cik": "0000320193",
+     "sic": "3571",
+     "shares_outstanding": 15000000000.0,
+     "shares_outstanding_partial": false,
+     "is_etf": false
+    },
+    {
+     "cusip": "000000002",
+     "issuer": "EXAMPLE SMALL CO",
+     "title_of_class": "COM",
+     "value_usd": 1000.0,
+     "shares": 50.0,
+     "ticker": "EXSM",
+     "issuer_cik": "0000000002",
+     "sic": "7372",
+     "shares_outstanding": 50000000.0,
+     "shares_outstanding_partial": false,
+     "is_etf": false
+    }
+   ]
+  },
+  {
+   "period": "2026Q3",
+   "report_date": "2026-09-30",
+   "filed_date": "2026-11-13",
+   "accession": "0000000000-26-000002",
+   "url": "https://www.sec.gov/Archives/edgar/data/0000000000/000000000026000002/",
+   "holdings": [
+    {
+     "cusip": "037833100",
+     "issuer": "APPLE INC",
+     "title_of_class": "COM",
+     "value_usd": 1200.0,
+     "shares": 100.0,
+     "ticker": "AAPL",
+     "issuer_cik": "0000320193",
+     "sic": "3571",
+     "shares_outstanding": 15000000000.0,
+     "shares_outstanding_partial": false,
+     "is_etf": false
+    },
+    {
+     "cusip": "000000002",
+     "issuer": "EXAMPLE SMALL CO",
+     "title_of_class": "COM",
+     "value_usd": 500.0,
+     "shares": 25.0,
+     "ticker": "EXSM",
+     "issuer_cik": "0000000002",
+     "sic": "7372",
+     "shares_outstanding": 50000000.0,
+     "shares_outstanding_partial": false,
+     "is_etf": false
+    },
+    {
+     "cusip": "000000003",
+     "issuer": "EXAMPLE NEW CO",
+     "title_of_class": "COM",
+     "value_usd": 400.0,
+     "shares": 10.0,
+     "ticker": null,
+     "issuer_cik": null,
+     "sic": null,
+     "shares_outstanding": null,
+     "shares_outstanding_partial": false,
+     "is_etf": false
+    }
+   ]
+  }
+ ],
+ "holding_changes": [
+  {
+   "cusip": "000000003",
+   "issuer": "EXAMPLE NEW CO",
+   "ticker": null,
+   "kind": "new",
+   "shares_before": 0.0,
+   "shares_after": 10.0,
+   "value_before": 0.0,
+   "value_after": 400.0,
+   "weight_before": 0.0,
+   "weight_after": 0.1905
+  }
+ ],
+ "adv1_new": {
+  "filed_date": "2026-03-30",
+  "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+  "crd": "000000",
+  "aum_usd": 7800000000.0,
+  "employees": 28,
+  "private_funds": 4,
+  "people": [
+   {
+    "name": "KIM, JANE",
+    "entity_type": "I",
+    "title": "CHIEF INVESTMENT OFFICER",
+    "since": "2019-01",
+    "ownership_code": "C",
+    "is_control_person": true
+   }
+  ]
+ },
+ "adv1_old": {
+  "filed_date": "2025-03-28",
+  "url": "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data",
+  "crd": "000000",
+  "aum_usd": 12000000000.0,
+  "employees": 40,
+  "private_funds": 4,
+  "people": [
+   {
+    "name": "KIM, JANE",
+    "entity_type": "I",
+    "title": "CHIEF INVESTMENT OFFICER",
+    "since": "2019-01",
+    "ownership_code": "C",
+    "is_control_person": true
+   },
+   {
+    "name": "LEE, JOHN",
+    "entity_type": "I",
+    "title": "CO-CHIEF INVESTMENT OFFICER",
+    "since": "2015-06",
+    "ownership_code": "B",
+    "is_control_person": true
+   }
+  ]
+ },
+ "adv2a_new": {
+  "filed_date": "2026-03-30",
+  "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+  "items": {
+   "2": "There have been no material changes since our last annual update.",
+   "8": "We invest primarily in U.S. large-capitalization equities..."
+  },
+  "pages": {
+   "2": 2,
+   "8": 9
+  }
+ },
+ "adv2a_old": null,
+ "person_changes": [
+  {
+   "kind": "removed",
+   "name": "LEE, JOHN",
+   "before": {
+    "name": "LEE, JOHN",
+    "entity_type": "I",
+    "title": "CO-CHIEF INVESTMENT OFFICER",
+    "since": "2015-06",
+    "ownership_code": "B",
+    "is_control_person": true
+   },
+   "after": null,
+   "evidence": [
+    {
+     "source": "Form ADV Part 1A Schedule A",
+     "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+     "as_of": "2026-03-30",
+     "page": null,
+     "quote": null
+    },
+    {
+     "source": "Form ADV Part 1A Schedule A (직전본)",
+     "url": "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data",
+     "as_of": "2025-03-28",
+     "page": null,
+     "quote": null
+    }
+   ]
+  }
+ ],
+ "text_changes": [],
+ "item2_declares_no_change": true,
+ "has_new_filing": true,
+ "notes": [
+  "ADV 최신본: 저장본 사용"
+ ],
+ "unavailable": [
+  "ADV 2A 문구 비교: 이전본 없음"
+ ],
+ "fetched_at": "2026-11-20T10:00:00+09:00"
+}

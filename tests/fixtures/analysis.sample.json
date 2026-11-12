@@ -1,0 +1,84 @@
+{
+ "manager_id": "demo1",
+ "signals": [
+  {
+   "id": "demo1-key_person-1",
+   "manager_id": "demo1",
+   "kind": "key_person",
+   "level": "alert",
+   "source_form": "ADV",
+   "metric": "officer_removed",
+   "unit": "text",
+   "before": null,
+   "after": null,
+   "change": null,
+   "active_change": null,
+   "percentile": null,
+   "exceeds_own_3y_max": null,
+   "peer_median": null,
+   "summary": "임원 1명 제외: LEE, JOHN(공동 CIO)",
+   "explanation": "최신 ADV 임원 명단에 직전 본의 공동 CIO가 없습니다.",
+   "evidence": [
+    {
+     "source": "Form ADV Part 1A Schedule A",
+     "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+     "as_of": "2026-03-30",
+     "page": null,
+     "quote": null
+    },
+    {
+     "source": "Form ADV Part 1A Schedule A (직전본)",
+     "url": "https://www.sec.gov/foia-services/frequently-requested-documents/form-adv-data",
+     "as_of": "2025-03-28",
+     "page": null,
+     "quote": null
+    }
+   ]
+  },
+  {
+   "id": "demo1-strategy_drift-1",
+   "manager_id": "demo1",
+   "kind": "strategy_drift",
+   "level": "watch",
+   "source_form": "ADV",
+   "metric": "aum_change",
+   "unit": "usd",
+   "before": 12000000000.0,
+   "after": 7800000000.0,
+   "change": -4200000000.0,
+   "active_change": null,
+   "percentile": null,
+   "exceeds_own_3y_max": null,
+   "peer_median": null,
+   "summary": "운용자산 $12B → $7.8B (-35%), ADV 제출일 2025-03-28 → 2026-03-30",
+   "explanation": "1년 사이 운용자산이 35% 줄었습니다.",
+   "evidence": [
+    {
+     "source": "Form ADV Part 1A Schedule A",
+     "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+     "as_of": "2026-03-30",
+     "page": null,
+     "quote": null
+    }
+   ]
+  }
+ ],
+ "debate_required": true,
+ "stated_strategy": "미국 대형주 중심의 주식 운용",
+ "stated_strategy_evidence": [
+  {
+   "source": "Form ADV Part 2A Item 8",
+   "url": "https://adviserinfo.sec.gov/firm/summary/000000",
+   "as_of": "2026-03-30",
+   "page": 9,
+   "quote": "We invest primarily in U.S. large-capitalization equities"
+  }
+ ],
+ "data_checks": [
+  "매핑률 81%: 업종·규모 지표 확인 불가",
+  "직전 변화 1개: 자기 3년 최대치 판정 불가"
+ ],
+ "unavailable": [
+  "업종 지표: 매핑률 81%"
+ ]
+}

@@ -1,0 +1,12 @@
+# 배포 서버(Streamlit Community Cloud)용. 버전은 2026-11-12에 Python 3.11로 설치·테스트한 값
+langgraph==1.2.20
+streamlit==1.67.0
+pandas==3.1.1
+requests==2.34.2
+pdfplumber==0.11.10
+fpdf2==2.9.0
+anthropic==2.8.0
+openai==3.49.0
+pydantic==2.14.3
+typing_extensions==4.16.0
+python-dotenv==1.2.4

@@ -1,0 +1,102 @@
+{
+ "signals": [
+  {
+   "id": "demo1-key_person-1",
+   "manager_id": "demo1",
+   "kind": "key_person",
+   "level": "alert",
+   "source_form": "ADV",
+   "metric": "officer_removed",
+   "unit": "text",
+   "before": null,
+   "after": null,
+   "change": null,
+   "active_change": null,
+   "percentile": null,
+   "exceeds_own_3y_max": null,
+   "peer_median": null,
+   "summary": "공동 CIO가 임원 명단에서 제외됨",
+   "explanation": "최신 ADV Part 1 임원 명단에 직전 본의 공동 CIO가 없습니다.",
+   "evidence": [
+    {
+     "source": "Form ADV Part 1A Schedule A",
+     "url": "https://adviserinfo.sec.gov/...",
+     "as_of": "2026-09-30",
+     "page": null,
+     "quote": null
+    }
+   ]
+  },
+  {
+   "id": "demo1-strategy_drift-1",
+   "manager_id": "demo1",
+   "kind": "strategy_drift",
+   "level": "alert",
+   "source_form": "13F",
+   "metric": "small_cap_weight",
+   "unit": "ratio",
+   "before": 0.12,
+   "after": 0.27,
+   "change": 0.15,
+   "active_change": 0.14,
+   "percentile": 0.97,
+   "exceeds_own_3y_max": true,
+   "peer_median": null,
+   "summary": "소형주 비중 12% → 27% (+15%p), 매매 기준 +14%p, 전체 13F 운용사 분기 변화폭 상위 3%",
+   "explanation": "소형주 비중이 한 분기에 15%p 늘었고, 그중 14%p가 매매로 생긴 변화입니다.",
+   "evidence": [
+    {
+     "source": "Form 13F 2026Q3",
+     "url": "https://www.sec.gov/Archives/edgar/data/...",
+     "as_of": "2026-09-30",
+     "page": null,
+     "quote": null
+    }
+   ]
+  },
+  {
+   "id": "demo1-peer_anomaly-1",
+   "manager_id": "demo1",
+   "kind": "peer_anomaly",
+   "level": "watch",
+   "source_form": "13F",
+   "metric": "peer_level:small_cap_weight",
+   "unit": "ratio",
+   "before": null,
+   "after": 0.27,
+   "change": null,
+   "active_change": null,
+   "percentile": 0.96,
+   "exceeds_own_3y_max": null,
+   "peer_median": 0.14,
+   "summary": "소형주 비중 27%, 전체 13F 운용사 중앙값 14%의 1.9배 (상위 4%)",
+   "explanation": "소형주 비중이 다른 운용사들의 중간값보다 1.9배 높습니다.",
+   "evidence": [
+    {
+     "source": "Form 13F 2026Q3",
+     "url": "https://www.sec.gov/Archives/edgar/data/...",
+     "as_of": "2026-09-30",
+     "page": null,
+     "quote": null
+    }
+   ]
+  }
+ ],
+ "verdict_example": {
+  "signal_id": "demo1-key_person-1",
+  "keep": {
+   "numbers": 1,
+   "grounds": 2,
+   "rebuttal": 1,
+   "limits": 1
+  },
+  "terminate": {
+   "numbers": 2,
+   "grounds": 3,
+   "rebuttal": 2,
+   "limits": 1
+  },
+  "status": "unexplained",
+  "reason": "후임의 운용 이력 근거가 부족함"
+ }
+}

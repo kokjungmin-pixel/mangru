@@ -1,0 +1,13 @@
+{
+ "passed": false,
+ "failed_step": "debate",
+ "mismatches": [
+  {
+   "sentence_idx": 3,
+   "token": "9점",
+   "reason": "심판 점수에 없는 숫자"
+  }
+ ],
+ "unsupported_idx": [],
+ "uncited_signals": []
+}

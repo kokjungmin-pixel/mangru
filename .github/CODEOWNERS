@@ -1,0 +1,17 @@
+# 폴더마다 담당자. PR이 이 폴더를 건드리면 담당자에게 리뷰 요청이 간다.
+# TODO(PM): 팀원 GitHub 아이디를 받으면 아래 주석을 풀고 @아이디 로 바꾼다.
+* @kokjungmin-pixel
+# /src/collect/   @조재연아이디
+# /src/app.py     @조재연아이디
+# /src/ui/        @조재연아이디
+# /tests/collect/ @조재연아이디
+# /src/analysis/  @김지유아이디
+# /prompts/analysis/ @김지유아이디
+# /tests/analysis/ @김지유아이디
+# /src/debate/    @임동욱아이디
+# /src/llm.py     @임동욱아이디
+# /prompts/debate/ @임동욱아이디
+# /tests/debate/  @임동욱아이디
+/src/state.py     @kokjungmin-pixel
+/src/config.py    @kokjungmin-pixel
+/tests/fixtures/  @kokjungmin-pixel

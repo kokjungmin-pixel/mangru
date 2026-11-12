@@ -1,0 +1,128 @@
+{
+ "manager_id": "demo1",
+ "held": true,
+ "rounds": 2,
+ "keep_args": [
+  {
+   "signal_id": "demo1-key_person-1",
+   "claim": "CIO가 남아 있어 의사결정 연속성은 유지됩니다.",
+   "evidence_idx": [
+    0
+   ],
+   "falsifier": "남은 CIO가 공동 CIO의 운용 자산을 넘겨받지 않았다면 이 논거는 약해집니다."
+  },
+  {
+   "signal_id": "demo1-strategy_drift-1",
+   "claim": "운용자산 감소는 시장 하락 때문일 수 있습니다.",
+   "evidence_idx": [
+    0
+   ],
+   "falsifier": "같은 기간 시장이 오른 것이 확인되면 이 논거는 틀립니다."
+  }
+ ],
+ "terminate_args": [
+  {
+   "signal_id": "demo1-key_person-1",
+   "claim": "공동 CIO 이탈과 운용자산 -35%가 같은 시기에 나타났습니다.",
+   "evidence_idx": [
+    0
+   ],
+   "falsifier": "이탈 전에 자금 유출이 끝났다면 이 연결은 약해집니다."
+  },
+  {
+   "signal_id": "demo1-strategy_drift-1",
+   "claim": "운용자산이 $12B에서 $7.8B로 줄어 고객 이탈 가능성이 있습니다.",
+   "evidence_idx": [
+    0
+   ],
+   "falsifier": "감소분 대부분이 시장 하락으로 설명되면 이 논거는 약해집니다."
+  }
+ ],
+ "rebuttals": [
+  {
+   "round": 1,
+   "side": "keep",
+   "signal_id": "demo1-key_person-1",
+   "text": "후임 지정 여부가 확인되지 않았을 뿐 이탈 자체가 전략 변경은 아닙니다.",
+   "concede": false
+  },
+  {
+   "round": 1,
+   "side": "terminate",
+   "signal_id": "demo1-key_person-1",
+   "text": "후임이 확인되지 않은 것 자체가 위험입니다.",
+   "concede": false
+  }
+ ],
+ "verdicts": [
+  {
+   "signal_id": "demo1-key_person-1",
+   "keep": {
+    "numbers": 1,
+    "grounds": 2,
+    "rebuttal": 1,
+    "limits": 1
+   },
+   "terminate": {
+    "numbers": 2,
+    "grounds": 3,
+    "rebuttal": 2,
+    "limits": 1
+   },
+   "status": "unexplained",
+   "reason": "후임의 운용 이력 근거가 부족함"
+  },
+  {
+   "signal_id": "demo1-strategy_drift-1",
+   "keep": {
+    "numbers": 1,
+    "grounds": 2,
+    "rebuttal": 1,
+    "limits": 2
+   },
+   "terminate": {
+    "numbers": 2,
+    "grounds": 2,
+    "rebuttal": 1,
+    "limits": 1
+   },
+   "status": "unexplained",
+   "reason": "시장 요인 근거가 제시되지 않음"
+  }
+ ],
+ "unexplained_count": 2,
+ "recommendation": "conditional",
+ "options": [
+  {
+   "name": "maintain",
+   "recommended": false,
+   "grounds": []
+  },
+  {
+   "name": "conditional",
+   "recommended": true,
+   "grounds": [
+    "남은 CIO가 공동 CIO의 운용 자산을 넘겨받지 않았다면 이 논거는 약해집니다. [demo1-key_person-1]",
+    "같은 기간 시장이 오른 것이 확인되면 이 논거는 틀립니다. [demo1-strategy_drift-1]"
+   ]
+  },
+  {
+   "name": "review_termination",
+   "recommended": false,
+   "grounds": [
+    "공동 CIO 이탈과 운용자산 -35%가 같은 시기에 나타났습니다. [demo1-key_person-1]"
+   ]
+  }
+ ],
+ "questions": [
+  "[핵심 인력] 공동 CIO가 맡던 운용 자산은 누가 넘겨받았습니까?",
+  "[핵심 인력] 투자 의사결정은 누가 최종 승인합니까?",
+  "[전략 이탈] 운용자산 감소 중 고객 자금 유출분은 얼마입니까?"
+ ],
+ "warnings": [],
+ "models": {
+  "keep": "<MODEL_KEEP>",
+  "terminate": "<MODEL_TERMINATE>",
+  "judge": "<MODEL_JUDGE>"
+ }
+}

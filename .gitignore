@@ -1,0 +1,18 @@
+# 비밀값
+.env
+.streamlit/secrets.toml
+# 원본 대용량 캐시와 로그 (data_cache/demo/ 와 thresholds.json 은 올린다)
+data_cache/raw/
+logs/
+chroma/
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+# 에디터·OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
