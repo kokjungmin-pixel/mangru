@@ -52,3 +52,50 @@ def test_demo_mode_never_reruns(monkeypatch):
     monkeypatch.setattr(G, "verify_report", lambda *a: sample("verify"))
     order, st = steps(demo_mode=True)
     assert order == NORMAL and st["retries"] == 0
+
+
+def test_verify_fail_once_then_pass_retries_one(monkeypatch):
+    """실제 모드 + 검증 1회 실패(failed_step=debate) → debate 부터 다시 실행, retries=1"""
+    results = iter([sample("verify"), {**sample("verify"), "passed": True, "failed_step": None,
+                                       "mismatches": []}])
+    monkeypatch.setattr(G, "verify_report", lambda *a: next(results))
+    order, st = steps(demo_mode=False)
+    assert order == ["plan", "collect", "analyze", "debate", "draft", "verify",
+                     "debate", "draft", "verify", "done"]
+    assert st["retries"] == 1 and st["status"] == "done"
+    assert st["verify"]["passed"] is True
+
+
+def test_failed_step_none_no_rerun(monkeypatch):
+    """failed_step=None 인 실패 → 재수행 0회, 문장 삭제 + 알림"""
+    monkeypatch.setattr(G, "verify_report", lambda *a: {**sample("verify"), "failed_step": None})
+    order, st = steps(demo_mode=False)
+    assert order == NORMAL and st["retries"] == 0 and st["status"] == "done"
+    assert any("리포트 조립 오류" in n for n in st["notices"])
+
+
+def test_debate_not_required_still_reports(monkeypatch):
+    """debate_required=False → 토론 없이(held=False) 리포트가 나옴"""
+    def calm_analysis(data, plan):
+        a = sample("analysis"); a["debate_required"] = False; return a
+    seen = {}
+    def no_debate(analysis, data, demo_mode):
+        seen["required"] = analysis["debate_required"]
+        d = sample("debate"); d["held"] = False; d["rounds"] = []; return d
+    monkeypatch.setattr(G, "analyze", calm_analysis)
+    monkeypatch.setattr(G, "run_debate", no_debate)
+    order, st = steps()
+    assert seen["required"] is False
+    assert order == NORMAL and st["status"] == "done"
+    assert st["debate"]["held"] is False and st["draft"] is not None
+
+
+def test_manager_without_13f_runs_to_end(monkeypatch):
+    """13F 없는 운용사(quarters=[], holding_changes=[])도 끝까지 실행됨"""
+    def no_13f(plan, demo_mode):
+        d = sample("manager_data"); d["quarters"] = []; d["holding_changes"] = []
+        d["unavailable"] = d["unavailable"] + ["13F"]; return d
+    monkeypatch.setattr(G, "collect", no_13f)
+    order, st = steps()
+    assert order == NORMAL and st["status"] == "done"
+    assert "13F" in st["unavailable"]

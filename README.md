@@ -51,14 +51,14 @@ pytest                     # 테스트
 |---|---|---|---|
 | `make_plan` | `src/plan.py` | ✅ 동작 | PM |
 | `collect` | `src/collect/__init__.py` | 가짜 | 조재연 |
-| `sec_get` | `src/collect/sec_client.py` | 빈칸 (11/16) | 조재연 |
+| `sec_get` | `src/collect/sec_client.py` | 빈칸 (11/17) | 조재연 |
 | `enrich_cusips` | `src/analysis/securities.py` | 가짜 | 김지유 |
 | `analyze` | `src/analysis/__init__.py` | 가짜 | 김지유 |
 | `run_debate` | `src/debate/__init__.py` | 가짜 | 임동욱 |
 | `call_llm` | `src/llm.py` | 빈칸 | 임동욱 |
-| `draft_report` / `apply_verify` | `src/report/draft.py` | 가짜 / ✅ | PM |
+| `draft_report` / `apply_verify` | `src/report/draft.py` | ✅ 동작 | PM |
 | `verify_report` | `src/analysis/verify.py` | 가짜 (항상 통과) | 김지유 |
-| `render_pdf` | `src/report/pdf.py` | 빈칸 | PM |
+| `render_pdf` | `src/report/pdf.py` | ✅ 동작 (A4 1장, 한글) | PM |
 | `stream_run` | `src/graph.py` | ✅ 동작 (LangGraph) | PM |
 | 숫자 표기 `fmt_*` | `src/report/format.py` | ✅ 동작 | PM |
 
