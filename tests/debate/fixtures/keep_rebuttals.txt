@@ -1,0 +1,9 @@
+{
+  "rebuttals": [
+    {
+      "signal_id": "demo1-key_person-1",
+      "text": "후임 지정 여부가 확인되지 않았을 뿐 이탈 자체가 전략 변경은 아닙니다.",
+      "concede": false
+    }
+  ]
+}
