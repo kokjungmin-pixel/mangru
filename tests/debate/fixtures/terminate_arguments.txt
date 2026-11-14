@@ -1,0 +1,24 @@
+다음은 요청한 JSON입니다.
+```json
+{
+  "arguments": [
+    {
+      "signal_id": "demo1-key_person-1",
+      "claim": "공동 CIO 이탈과 운용자산 -35%가 같은 시기에 나타났습니다.",
+      "evidence_idx": [
+        0
+      ],
+      "falsifier": "이탈 전에 자금 유출이 끝났다면 이 연결은 약해집니다."
+    },
+    {
+      "signal_id": "demo1-strategy_drift-1",
+      "claim": "운용자산이 $12B에서 $7.8B로 줄어 고객 이탈 가능성이 있습니다.",
+      "evidence_idx": [
+        0
+      ],
+      "falsifier": "감소분 대부분이 시장 하락으로 설명되면 이 논거는 약해집니다."
+    }
+  ]
+}
+```
+
