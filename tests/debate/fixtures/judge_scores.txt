@@ -1,0 +1,36 @@
+{
+  "scores": [
+    {
+      "signal_id": "demo1-key_person-1",
+      "A": {
+        "numbers": 1,
+        "grounds": 2,
+        "rebuttal": 1,
+        "limits": 1
+      },
+      "B": {
+        "numbers": 2,
+        "grounds": 3,
+        "rebuttal": 2,
+        "limits": 1
+      },
+      "reason": "후임의 운용 이력 근거가 부족함"
+    },
+    {
+      "signal_id": "demo1-strategy_drift-1",
+      "A": {
+        "numbers": 1,
+        "grounds": 2,
+        "rebuttal": 1,
+        "limits": 2
+      },
+      "B": {
+        "numbers": 2,
+        "grounds": 2,
+        "rebuttal": 1,
+        "limits": 1
+      },
+      "reason": "시장 요인 근거가 제시되지 않음"
+    }
+  ]
+}

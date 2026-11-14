@@ -1,0 +1,9 @@
+{
+  "rebuttals": [
+    {
+      "signal_id": "demo1-key_person-1",
+      "text": "후임이 확인되지 않은 것 자체가 위험입니다.",
+      "concede": false
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "arguments": [
+    {
+      "signal_id": "demo1-key_person-1",
+      "claim": "CIO가 남아 있어 의사결정 연속성은 유지됩니다.",
+      "evidence_idx": [
+        0
+      ],
+      "falsifier": "남은 CIO가 공동 CIO의 운용 자산을 넘겨받지 않았다면 이 논거는 약해집니다."
+    },
+    {
+      "signal_id": "demo1-strategy_drift-1",
+      "claim": "운용자산 감소는 시장 하락 때문일 수 있습니다.",
+      "evidence_idx": [
+        0
+      ],
+      "falsifier": "같은 기간 시장이 오른 것이 확인되면 이 논거는 틀립니다."
+    }
+  ]
+}
