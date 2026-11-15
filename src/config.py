@@ -10,6 +10,7 @@ FIXTURES_DIR = ROOT / "tests" / "fixtures"
 FONT_DIR = ROOT / "assets" / "fonts"
 
 # 데모 운용사 3곳 (주식 2 + 대체 1, Frontend 선정 11/16). 근거는 docs/decisions.md.
+# Warburg 는 13F 를 내지만 사모 운용사라 has_13f=False (ADV만 비교).
 # last_check_date: 직전 점검을 1년 전(2025-12-31)으로 가정. 세 곳 모두 같은 날짜.
 DEMO_MANAGERS = {
     "demo1": {"name": "Akre Capital Management, LLC", "aliases": ["Akre Capital", "Akre"],
