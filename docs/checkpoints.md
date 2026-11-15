@@ -20,7 +20,7 @@
 
 | 날짜 | 🔵 Frontend | 🔴 Backend | 🟢 Data | 🟠 PM | 확인 방법 |
 |---|---|---|---|---|---|
-| **11/13~14** | | 두 회사 모델 시험 → 유지·해지·심판 모델 결정 | 손 계산 예시 직접 계산 → `docs/metrics.md` | LLM 키·월 한도, OpenFIGI 키, SEC 팀 이메일 전달 | Backend `docs/decisions.md` / Data 값이 다르면 즉시 PM에게 |
+| **11/13~14** | | 두 회사 모델 시험 → 유지·해지·심판 모델 결정 | 손 계산 예시 직접 계산 → `docs/metrics.md` | LLM 키·월 한도 전달 (✅ Backend). OpenFIGI 키·SEC 이메일은 Data가 본인 명의·개인 이메일로 (11/15 결정) | Backend `docs/decisions.md` / Data 값이 다르면 즉시 PM에게 |
 | **11/15** | 데모 운용사 3곳(주식 2 + 대체 1) 확정, CIK·CRD 전달 *(11/14 → 하루 연기)* | | | 받은 값 `config.DEMO_MANAGERS` 반영 | PM 커밋 |
 | **11/16** | | | OpenFIGI 실제 조회(ETF·보통주·예탁증서) | | `docs/verified.md` 기록 |
 | **11/17** | ⚠️ `sec_client.py` 업로드 (Data가 씀) / ADV 접근 시험: **Schedule A가 코드로 읽히는가** *(11/16 → 하루 연기)* | | | | PR 머지 / `docs/verified.md` 기록. Schedule A 실패 시 "확인 불가"로 두고 발표에서 밝힘 |
