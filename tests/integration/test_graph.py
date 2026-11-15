@@ -7,7 +7,7 @@ from src.mock_data import sample
 NORMAL = ["plan", "collect", "analyze", "debate", "draft", "verify", "done"]
 
 
-def steps(request="Example Capital 점검해줘", demo_mode=True):
+def steps(request="Akre 점검해줘", demo_mode=True):
     evs = list(G.stream_run(request, demo_mode))
     return [e["step"] for e in evs], evs[-1]["state"]
 
