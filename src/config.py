@@ -8,6 +8,7 @@ RAW_DIR = CACHE_DIR / "raw"
 THRESHOLDS_PATH = CACHE_DIR / "thresholds.json"
 FIXTURES_DIR = ROOT / "tests" / "fixtures"
 FONT_DIR = ROOT / "assets" / "fonts"
+CHROMA_DIR = CACHE_DIR / "chroma"      # 근거 검색 색인 (로컬 전용, .gitignore)
 
 # 데모 운용사 3곳 (주식 2 + 대체 1, Frontend 선정 11/16). 근거는 docs/decisions.md.
 # Warburg 는 13F 를 내지만 사모 운용사라 has_13f=False (ADV만 비교).
