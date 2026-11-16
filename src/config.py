@@ -11,14 +11,14 @@ FONT_DIR = ROOT / "assets" / "fonts"
 
 # 데모 운용사 3곳 (주식 2 + 대체 1, Frontend 선정 11/16). 근거는 docs/decisions.md.
 # Warburg 는 13F 를 내지만 사모 운용사라 has_13f=False (ADV만 비교).
-# last_check_date: 직전 점검을 1년 전(2025-12-31)으로 가정. 세 곳 모두 같은 날짜.
+# last_check_date: 반기 점검이라 직전 점검일 2026-06-30. 2025-12-31 은 보조 시나리오로 나중에 추가 (decisions 11/17).
 DEMO_MANAGERS = {
     "demo1": {"name": "Akre Capital Management, LLC", "aliases": ["Akre Capital", "Akre"],
-              "cik": "0001112520", "crd": "109242", "has_13f": True, "last_check_date": "2025-12-31"},
+              "cik": "0001112520", "crd": "109242", "has_13f": True, "last_check_date": "2026-06-30"},
     "demo2": {"name": "Brown Capital Management, LLC", "aliases": ["Brown Capital"],
-              "cik": "0000885062", "crd": "105633", "has_13f": True, "last_check_date": "2025-12-31"},
+              "cik": "0000885062", "crd": "105633", "has_13f": True, "last_check_date": "2026-06-30"},
     "demo3": {"name": "Warburg Pincus LLC", "aliases": ["Warburg Pincus", "Warburg"],
-              "cik": "0001162870", "crd": "156945", "has_13f": False, "last_check_date": "2025-12-31"},
+              "cik": "0001162870", "crd": "156945", "has_13f": False, "last_check_date": "2026-06-30"},
 }
 
 # LLM 온도 (A8 기본값): 심판은 같은 입력에 같은 점수가 나와야 해서 0
