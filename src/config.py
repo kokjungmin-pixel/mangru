@@ -9,10 +9,16 @@ THRESHOLDS_PATH = CACHE_DIR / "thresholds.json"
 FIXTURES_DIR = ROOT / "tests" / "fixtures"
 FONT_DIR = ROOT / "assets" / "fonts"
 
-# 데모 운용사 3곳: 조재연이 11/14까지 정해 주면 PM이 채운다. 그 전에는 가짜 값(demo1).
+# 데모 운용사 3곳 (주식 2 + 대체 1, Frontend 선정 11/16). 근거는 docs/decisions.md.
+# Warburg 는 13F 를 내지만 사모 운용사라 has_13f=False (ADV만 비교).
+# last_check_date: 반기 점검이라 직전 점검일 2026-06-30. 2025-12-31 은 보조 시나리오로 나중에 추가 (decisions 11/17).
 DEMO_MANAGERS = {
-    "demo1": {"name": "Example Capital Management LLC", "aliases": ["Example Capital"],
-              "cik": "0000000000", "crd": "000000", "has_13f": True, "last_check_date": None},
+    "demo1": {"name": "Akre Capital Management, LLC", "aliases": ["Akre Capital", "Akre"],
+              "cik": "0001112520", "crd": "109242", "has_13f": True, "last_check_date": "2026-06-30"},
+    "demo2": {"name": "Brown Capital Management, LLC", "aliases": ["Brown Capital"],
+              "cik": "0000885062", "crd": "105633", "has_13f": True, "last_check_date": "2026-06-30"},
+    "demo3": {"name": "Warburg Pincus LLC", "aliases": ["Warburg Pincus", "Warburg"],
+              "cik": "0001162870", "crd": "156945", "has_13f": False, "last_check_date": "2026-06-30"},
 }
 
 # LLM 온도 (A8 기본값): 심판은 같은 입력에 같은 점수가 나와야 해서 0
