@@ -1,7 +1,8 @@
 """13F 수집 (Frontend · 조재연).
-지금 있는 것: 정보표 XML 읽기(parse_infotable), 정리 규칙(clean_rows). Frontend 문서 B3.
-TODO(조재연): 공시 목록 → 분기별 정보표 → 정정본 처리 → 금액 단위 → QuarterHoldings.
+지금 있는 것: 정보표 XML 읽기(parse_infotable), 정리 규칙(clean_rows), 금액 단위(to_usd). Frontend 문서 B3.
+TODO(조재연): 공시 목록 → 분기별 정보표 → 정정본 처리 → QuarterHoldings.
 """
+import statistics
 import xml.etree.ElementTree as ET
 
 
@@ -39,3 +40,19 @@ def clean_rows(rows: list[dict]) -> list[dict]:
             cur["value"] += r["value"]
             cur["shares"] += r["shares"]
     return list(merged.values())
+
+
+USD_FROM = "2023-01-03"          # 이날부터 제출분은 달러, 그 전은 천 달러 단위 (B3-5)
+PRICE_RANGE = (1.0, 1000.0)      # 변환 뒤 주가(금액÷주식 수) 중앙값이 이 범위 밖이면 단위를 의심
+
+
+def to_usd(rows: list[dict], filed_date: str) -> tuple[list[dict], str | None]:
+    """금액을 달러로 통일한다. 주가 중앙값이 범위 밖이면 notes 에 넣을 문장을 함께 돌려준다(값은 고치지 않음)."""
+    k = 1000.0 if filed_date < USD_FROM else 1.0
+    out = [{**r, "value": r["value"] * k} for r in rows]
+    prices = [r["value"] / r["shares"] for r in out if r["shares"] > 0]
+    if prices:
+        med = statistics.median(prices)
+        if not PRICE_RANGE[0] <= med <= PRICE_RANGE[1]:
+            return out, f"13F 금액 단위 의심: 제출일 {filed_date}, 주가 중앙값 ${med:,.2f} (정상 범위 $1~$1,000)"
+    return out, None

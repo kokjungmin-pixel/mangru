@@ -38,3 +38,37 @@ def test_clean_drops_options_and_prn_and_merges_cusip():
     assert set(by) == {"000000AA1", "000000BB2", "000000CC3", "000000DD4", "000000EE5"}
     assert by["000000AA1"]["value"] == 1500.0 and by["000000AA1"]["shares"] == 15.0
     assert by["000000BB2"]["value"] == 2000.0          # 옵션 줄은 더하지 않음
+
+
+# ---- 금액 단위 (B3-5, B7 둘째 줄): 2023-01-03 이후 제출은 달러, 그 전은 천 달러 ----
+from src.collect.form13f import to_usd
+
+_K_ROWS = [{"cusip": "A", "value": 50.0, "shares": 1000.0},     # 천 달러 단위: 50 → $50,000, 주가 $50
+           {"cusip": "B", "value": 20.0, "shares": 100.0}]       # $20,000, 주가 $200
+
+
+def test_to_usd_multiplies_before_2023_01_03():
+    rows, note = to_usd(_K_ROWS, "2022-11-14")
+    assert [r["value"] for r in rows] == [50000.0, 20000.0]
+    assert note is None
+    assert _K_ROWS[0]["value"] == 50.0                            # 입력은 바꾸지 않음
+
+
+def test_to_usd_keeps_dollars_from_2023_01_03():
+    usd = [{"cusip": "A", "value": 50000.0, "shares": 1000.0}]
+    for filed in ("2023-01-03", "2023-02-14"):
+        rows, note = to_usd(usd, filed)
+        assert rows[0]["value"] == 50000.0 and note is None
+
+
+def test_to_usd_notes_when_median_price_out_of_range():
+    # 2023년 이후 제출인데 천 달러 단위로 적힌 경우 → 주가 중앙값 $0.05·$0.2 → 범위 밖
+    rows, note = to_usd(_K_ROWS, "2023-02-14")
+    assert rows[0]["value"] == 50.0
+    assert note is not None and "2023-02-14" in note
+
+
+def test_to_usd_empty_or_zero_shares_no_note():
+    assert to_usd([], "2022-11-14") == ([], None)
+    rows, note = to_usd([{"cusip": "A", "value": 5.0, "shares": 0.0}], "2022-11-14")
+    assert rows[0]["value"] == 5000.0 and note is None
