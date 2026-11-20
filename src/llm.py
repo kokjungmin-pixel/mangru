@@ -17,6 +17,9 @@ from datetime import datetime, timezone
 
 from src import config
 
+REQUEST_TIMEOUT_SECONDS = 60      # SDK 요청 1건 시간 제한. 넘으면 일반 API 오류처럼 재시도
+NO_RETRY_STATUS = (401, 403, 404)  # 키 오류·권한 없음·모델 없음: 다시 보내도 같으므로 바로 LLMUnavailable
+
 ROLES = ("keep", "terminate", "judge", "analyst")
 LOG_PATH = config.ROOT / "logs" / "llm_calls.jsonl"
 MOCK_DIR = config.ROOT / "tests" / "debate" / "fixtures"
@@ -90,11 +93,89 @@ def _mock_text(role: str, json_keys: list[str] | None) -> str:
     return path.read_text(encoding="utf-8")
 
 
+# ---------- 회사별 실제 호출 (근거: docs/verified.md) ----------
+# 모델 이름 앞부분 → (회사, 키 환경변수). 회사는 docs/decisions.md 11/19 결정.
+_PROVIDERS = {
+    "claude-": ("anthropic", "ANTHROPIC_API_KEY"),
+    "gemini-": ("gemini", "GEMINI_API_KEY"),
+    "gpt-": ("openai", "OPENAI_API_KEY"),
+}
+GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"   # Gemini 공식 문서 OpenAI 호환
+MAX_OUTPUT_TOKENS = 16000          # 스트리밍 없이 SDK 시간 제한 안에 끝나는 크기
+# temperature 를 보내면 오류 나는 모델 앞부분. Claude: anthropic 2.8.0 이 쓰는 API 버전 2026-10-21 은
+# 모든 모델에서 temperature 를 거부. gpt-5 계열: 기본값(1) 외에는 거부.
+_NO_TEMPERATURE = ("claude-", "gpt-5")
+
+
+def _provider(model: str) -> str:
+    for prefix, (provider, _) in _PROVIDERS.items():
+        if model.startswith(prefix):
+            return provider
+    raise LLMUnavailable(f"모르는 모델 회사: {model}")
+
+
+def _api_key(model: str) -> str:
+    from dotenv import load_dotenv
+    load_dotenv(config.ROOT / ".env", override=False)
+    name = next(env for prefix, (_, env) in _PROVIDERS.items() if model.startswith(prefix))
+    key = os.getenv(name, "").strip()
+    if not key:
+        raise LLMUnavailable(f"{name} 가 .env 에 없음")
+    return key
+
+
+def _anthropic_client(api_key: str):
+    import anthropic
+    # 재시도는 _request 가 한다
+    return anthropic.Anthropic(api_key=api_key, max_retries=0, timeout=REQUEST_TIMEOUT_SECONDS)
+
+
+def _openai_client(api_key: str, base_url: str | None):
+    import openai
+    return openai.OpenAI(api_key=api_key, base_url=base_url, max_retries=0, timeout=REQUEST_TIMEOUT_SECONDS)
+
+
 def _send_real(role: str, model: str, system: str, user: str, temperature: float) -> tuple[str, int, int]:
-    """실제 API 호출 → (응답 텍스트, 입력 토큰, 출력 토큰). 회사별 SDK 차이는 여기서만 처리한다.
-    TODO(임동욱): API 키를 받은 뒤 구현. 모델이 temperature 를 받지 않으면 보내지 않는다.
+    """실제 API 호출 → (응답 텍스트, 입력 토큰, 출력 토큰).
+    키 없음·401·403·404·거절·잘림은 다시 보내도 같으므로 LLMUnavailable(재시도 안 함).
+    그 밖의 SDK 오류(429·5xx·시간 초과·연결 오류)는 그대로 올려 _request 가 재시도한다.
     """
-    raise LLMUnavailable("실제 LLM 호출은 아직 구현되지 않음 (LLM_MOCK=1 로 실행)")
+    try:
+        return _send_by_provider(model, system, user, temperature)
+    except LLMUnavailable:
+        raise
+    except Exception as e:
+        status = getattr(e, "status_code", None)
+        if status in NO_RETRY_STATUS:
+            # 오류 본문은 옮기지 않는다 (OpenAI 401 본문에 키 일부가 들어 있음)
+            raise LLMUnavailable(f"{model} API 오류 {status} {type(e).__name__} (재시도 안 함)") from None
+        raise
+
+
+def _send_by_provider(model: str, system: str, user: str, temperature: float) -> tuple[str, int, int]:
+    """회사별 SDK 차이는 여기서만 처리한다."""
+    provider = _provider(model)
+    key = _api_key(model)
+    extra = {} if model.startswith(_NO_TEMPERATURE) else {"temperature": temperature}
+
+    if provider == "anthropic":
+        r = _anthropic_client(key).messages.create(
+            model=model, max_tokens=MAX_OUTPUT_TOKENS, system=system,
+            messages=[{"role": "user", "content": user}], **extra)
+        if r.stop_reason == "refusal":
+            raise LLMUnavailable(f"{model} 가 응답을 거절함")
+        if r.stop_reason == "max_tokens":
+            raise LLMUnavailable(f"{model} 응답이 max_tokens({MAX_OUTPUT_TOKENS})에서 잘림")
+        text = "".join(b.text for b in r.content if b.type == "text")
+        return text, r.usage.input_tokens, r.usage.output_tokens
+
+    base_url = GEMINI_BASE_URL if provider == "gemini" else None
+    r = _openai_client(key, base_url).chat.completions.create(
+        model=model, messages=[{"role": "system", "content": system}, {"role": "user", "content": user}], **extra)
+    text = r.choices[0].message.content
+    if not text:
+        raise LLMUnavailable(f"{model} 빈 응답")
+    return text, r.usage.prompt_tokens, r.usage.completion_tokens
 
 
 def _log(role: str, model: str, started: float, ok: bool, in_tok: int | None, out_tok: int | None) -> None:
