@@ -162,18 +162,21 @@ def collect_13f(cik: str, n: int = HISTORY_QUARTERS) -> tuple[list[dict], list[s
     notes = [f"13F 분기 {len(picked)}개만 찾음 (목표 {n}개)"] if len(picked) < n else []
     quarters, unavailable = [], []
     for report_date, metas in picked.items():
-        filings = []
+        filings, failed = [], []
         for m in metas:
             f, ns = fetch_filing(cik, m)
             notes += ns
-            filings += [f] if f else []
-        if not filings:
-            unavailable.append(f"13F {_period(report_date)}: 확인 불가 (공시를 받지 못함)")
+            if f:
+                filings.append(f)
+            else:
+                failed.append(("원본 " if m["form"] == "13F-HR" else "정정본 ") + m["accession"])
+        if failed:   # 하나라도 빠지면 고치기 전 숫자나 빠진 종목으로 분기가 만들어지므로 쓰지 않는다
+            unavailable.append(f"13F {_period(report_date)}: 확인 불가 (공시를 받지 못함: {', '.join(failed)})")
             continue
         rows, base, ns = apply_amendments(filings)
         notes += ns
-        if base is None:
-            unavailable.append(f"13F {_period(report_date)}: 확인 불가 (원본 공시를 받지 못함, 정정본만 있음)")
+        if base is None:   # 원본이 submissions 최근 목록 밖이라 정정본만 잡힌 경우
+            unavailable.append(f"13F {_period(report_date)}: 확인 불가 (원본 공시가 목록에 없음, 정정본만 있음)")
             continue
         info = enrich_cusips([r["cusip"] for r in rows], report_date)
         quarters.append({"period": _period(report_date), "report_date": report_date,

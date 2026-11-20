@@ -99,3 +99,11 @@ def test_unreachable_info_table_drops_filing(monkeypatch):
     assert [q["period"] for q in quarters] == ["2024Q1"]
     assert any("2024Q2" in s for s in unavailable)
     assert any("a-24-3" in s and "정보표" in s for s in notes)
+
+
+def test_missing_amendment_makes_quarter_unavailable(monkeypatch):
+    web = _web()
+    del web[_folder("a-24-2") + "/index.json"]                 # 2024Q1 원본은 받았는데 정정본을 못 받음
+    (quarters, _, unavailable), _ = _run(monkeypatch, web)
+    assert [q["period"] for q in quarters] == ["2024Q2"]       # 원본만으로 만들지 않는다
+    assert any("2024Q1" in s and "a-24-2" in s for s in unavailable)
