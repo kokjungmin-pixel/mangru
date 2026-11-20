@@ -1,9 +1,12 @@
 """13F 수집 (Frontend · 조재연).
-지금 있는 것: 정보표 XML 읽기(parse_infotable), 정리 규칙(clean_rows), 금액 단위(to_usd), 정정본(amendment_type, apply_amendments). Frontend 문서 B3.
-TODO(조재연): 공시 목록 → 분기별 정보표 → QuarterHoldings.
+지금 있는 것: 정보표 XML 읽기(parse_infotable), 정리 규칙(clean_rows), 금액 단위(to_usd), 정정본(amendment_type, apply_amendments), 분기 조립(collect_13f). Frontend 문서 B3.
 """
 import statistics
 import xml.etree.ElementTree as ET
+
+from src.analysis.securities import enrich_cusips
+from src.collect.sec_client import sec_get
+from src.config import HISTORY_QUARTERS
 
 
 def parse_infotable(xml_bytes: bytes) -> list[dict]:
@@ -91,3 +94,83 @@ def apply_amendments(filings: list[dict]) -> tuple[list[dict], dict, list[str]]:
             # 빈 전체 대체를 따르면 보유 종목이 통째로 사라지므로 건너뛴다
             notes.append(f"13F 정정본 건너뜀(유형 {kind or '읽지 못함'}, 정보표 {len(f['rows'])}행): {acc}")
     return rows, base or filings[-1], notes
+
+
+SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
+FOLDER_URL = "https://www.sec.gov/Archives/edgar/data/{cik}/{acc}"
+
+
+def pick_quarters(recent: dict, n: int) -> dict[str, list[dict]]:
+    """submissions 의 filings.recent → {보고 기준일: [공시]} 최신 n개 분기, 오래된 → 최신 순 (B3-1)."""
+    by: dict[str, list[dict]] = {}
+    for i, form in enumerate(recent["form"]):
+        if form in ("13F-HR", "13F-HR/A") and recent["reportDate"][i]:
+            by.setdefault(recent["reportDate"][i], []).append(
+                {"accession": recent["accessionNumber"][i], "form": form, "filed_date": recent["filingDate"][i]})
+    return {d: by[d] for d in sorted(by)[-n:]}
+
+
+def _period(report_date: str) -> str:
+    return f"{report_date[:4]}Q{(int(report_date[5:7]) - 1) // 3 + 1}"
+
+
+def fetch_filing(cik: str, meta: dict) -> tuple[dict | None, list[str]]:
+    """공시 하나 → apply_amendments 입력 모양(정리·달러 변환까지) + notes. 받지 못하면 None (B3-2)."""
+    acc = meta["accession"]
+    folder = FOLDER_URL.format(cik=int(cik), acc=acc.replace("-", ""))
+    idx = sec_get(folder + "/index.json")
+    cover = sec_get(folder + "/primary_doc.xml", kind="bytes")
+    if not idx or not cover:
+        return None, [f"13F 공시를 받지 못함: {acc}"]
+    notes = []
+    raw = []
+    try:
+        for it in idx["directory"]["item"]:
+            name = it["name"]
+            if name.lower().endswith(".xml") and name != "primary_doc.xml":   # 정보표 이름은 제각각 (verified.md)
+                body = sec_get(f"{folder}/{name}", kind="bytes")
+                raw += parse_infotable(body) if body else []
+        kind = amendment_type(cover)
+        total = ET.fromstring(cover).find(".//{*}tableEntryTotal")
+    except ET.ParseError as e:
+        return None, [f"13F 공시 XML을 읽지 못함: {acc} ({e})"]
+    if total is not None and total.text and total.text.strip().isdigit() and int(total.text) != len(raw):
+        notes.append(f"13F 정보표 행 수가 표지와 다름: {acc}, 표지 {int(total.text)}행 / 읽은 {len(raw)}행")
+    rows, unit_note = to_usd(clean_rows(raw), meta["filed_date"])
+    notes += [unit_note] if unit_note else []
+    return {**meta, "url": folder + "/", "amendment_type": kind, "rows": rows}, notes
+
+
+def _holding(r: dict, e: dict) -> dict:
+    return {"cusip": r["cusip"], "issuer": r["issuer"] or "", "title_of_class": r["title_of_class"] or "",
+            "value_usd": r["value"], "shares": r["shares"],
+            "ticker": e.get("ticker"), "issuer_cik": e.get("issuer_cik"), "sic": e.get("sic"),
+            "shares_outstanding": e.get("shares_outstanding"),
+            "shares_outstanding_partial": bool(e.get("shares_outstanding_partial")), "is_etf": bool(e.get("is_etf"))}
+
+
+def collect_13f(cik: str, n: int = HISTORY_QUARTERS) -> tuple[list[dict], list[str], list[str]]:
+    """운용사 CIK → (QuarterHoldings 목록 오래된 → 최신, notes, unavailable). 예외 없이 끝까지 간다."""
+    sub = sec_get(SUBMISSIONS_URL.format(cik=cik))
+    if not sub:
+        return [], [], ["13F 공시 목록: 확인 불가 (SEC submissions 응답 없음)"]
+    # shortcut: filings.recent 만 본다(최근 1,000건). 14개 분기가 안 잡히는 대형 제출자면 filings.files 도 읽을 것
+    picked = pick_quarters(sub["filings"]["recent"], n)
+    notes = [f"13F 분기 {len(picked)}개만 찾음 (목표 {n}개)"] if len(picked) < n else []
+    quarters, unavailable = [], []
+    for report_date, metas in picked.items():
+        filings = []
+        for m in metas:
+            f, ns = fetch_filing(cik, m)
+            notes += ns
+            filings += [f] if f else []
+        if not filings:
+            unavailable.append(f"13F {_period(report_date)}: 확인 불가 (공시를 받지 못함)")
+            continue
+        rows, base, ns = apply_amendments(filings)
+        notes += ns
+        info = enrich_cusips([r["cusip"] for r in rows], report_date)
+        quarters.append({"period": _period(report_date), "report_date": report_date,
+                         "filed_date": base["filed_date"], "accession": base["accession"], "url": base["url"],
+                         "holdings": [_holding(r, info.get(r["cusip"]) or {}) for r in rows]})
+    return quarters, notes, unavailable
