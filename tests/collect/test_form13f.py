@@ -72,3 +72,62 @@ def test_to_usd_empty_or_zero_shares_no_note():
     assert to_usd([], "2022-11-14") == ([], None)
     rows, note = to_usd([{"cusip": "A", "value": 5.0, "shares": 0.0}], "2022-11-14")
     assert rows[0]["value"] == 5000.0 and note is None
+
+
+# ---- 정정본 (B3-4, B7 셋째 줄). 태그 모양은 docs/verified.md 2026-11-21 (실제 19건) ----
+from src.collect.form13f import amendment_type, apply_amendments
+
+_COVER_NS = "http://www.sec.gov/edgar/thirteenffiler"
+
+
+def _cover(amend: str | None) -> bytes:
+    info = (f"<amendmentInfo><amendmentType>{amend}</amendmentType>"
+            "<confDeniedExpired>false</confDeniedExpired></amendmentInfo>") if amend else ""
+    return (f'<edgarSubmission xmlns="{_COVER_NS}"><formData><coverPage>'
+            f"<reportCalendarOrQuarter>12-31-2023</reportCalendarOrQuarter>"
+            f"<isAmendment>{'true' if amend else 'false'}</isAmendment>{info}"
+            "</coverPage></formData></edgarSubmission>").encode("utf-8")
+
+
+def test_amendment_type_reads_cover():
+    assert amendment_type(_cover("RESTATEMENT")) == "RESTATEMENT"
+    assert amendment_type(_cover("NEW HOLDINGS")) == "NEW HOLDINGS"
+    assert amendment_type(_cover(None)) is None
+
+
+def _f(acc, filed, kind, cusips, form=None):
+    form = form or ("13F-HR" if kind is None else "13F-HR/A")
+    return {"accession": acc, "form": form, "filed_date": filed, "amendment_type": kind,
+            "rows": [{"cusip": c, "value": 1.0, "shares": 1.0} for c in cusips]}
+
+
+def test_restatement_replaces_original_and_is_noted():
+    rows, base, notes = apply_amendments([_f("orig", "2024-02-10", None, ["A", "B"]),
+                                          _f("amd1", "2024-02-20", "RESTATEMENT", ["A", "C"])])
+    assert [r["cusip"] for r in rows] == ["A", "C"]
+    assert base["accession"] == "amd1"
+    assert len(notes) == 1 and "amd1" in notes[0] and "전체 대체" in notes[0]
+
+
+def test_new_holdings_adds_to_original():
+    rows, base, notes = apply_amendments([_f("orig", "2022-05-13", None, ["A"]),
+                                          _f("amd1", "2022-05-16", "NEW HOLDINGS", ["B", "C"])])
+    assert [r["cusip"] for r in rows] == ["A", "B", "C"]
+    assert base["accession"] == "orig"
+    assert len(notes) == 1 and "amd1" in notes[0] and "추가" in notes[0]
+
+
+def test_several_amendments_apply_in_filing_order():
+    # 순서를 섞어 넣어도 제출일 순으로: 원본 → #1 → #2 (Polen 2023-12-31 사례 모양)
+    rows, base, _ = apply_amendments([_f("amd2", "2024-05-10", "RESTATEMENT", ["Z"]),
+                                      _f("orig", "2024-02-14", None, ["A"]),
+                                      _f("amd1", "2024-02-20", "RESTATEMENT", ["Y"])])
+    assert [r["cusip"] for r in rows] == ["Z"] and base["accession"] == "amd2"
+
+
+def test_empty_restatement_and_unknown_type_are_skipped_with_note():
+    rows, base, notes = apply_amendments([_f("orig", "2024-02-14", None, ["A"]),
+                                          _f("amd1", "2024-02-20", "RESTATEMENT", []),
+                                          _f("amd2", "2024-03-01", None, ["X"], form="13F-HR/A")])   # 유형을 못 읽은 정정본
+    assert [r["cusip"] for r in rows] == ["A"] and base["accession"] == "orig"
+    assert len(notes) == 2

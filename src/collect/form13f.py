@@ -1,6 +1,6 @@
 """13F 수집 (Frontend · 조재연).
-지금 있는 것: 정보표 XML 읽기(parse_infotable), 정리 규칙(clean_rows), 금액 단위(to_usd). Frontend 문서 B3.
-TODO(조재연): 공시 목록 → 분기별 정보표 → 정정본 처리 → QuarterHoldings.
+지금 있는 것: 정보표 XML 읽기(parse_infotable), 정리 규칙(clean_rows), 금액 단위(to_usd), 정정본(amendment_type, apply_amendments). Frontend 문서 B3.
+TODO(조재연): 공시 목록 → 분기별 정보표 → QuarterHoldings.
 """
 import statistics
 import xml.etree.ElementTree as ET
@@ -56,3 +56,33 @@ def to_usd(rows: list[dict], filed_date: str) -> tuple[list[dict], str | None]:
         if not PRICE_RANGE[0] <= med <= PRICE_RANGE[1]:
             return out, f"13F 금액 단위 의심: 제출일 {filed_date}, 주가 중앙값 ${med:,.2f} (정상 범위 $1~$1,000)"
     return out, None
+
+
+def amendment_type(primary_doc: bytes) -> str | None:
+    """13F 표지(primary_doc.xml)의 정정 유형. "RESTATEMENT" / "NEW HOLDINGS" / 원본이면 None."""
+    el = ET.fromstring(primary_doc).find(".//{*}amendmentType")
+    return el.text.strip().upper() if el is not None and el.text else None
+
+
+def apply_amendments(filings: list[dict]) -> tuple[list[dict], dict, list[str]]:
+    """한 분기의 원본·정정본들을 제출일 순으로 적용한다(B3-4).
+    filings: {"accession", "form", "filed_date", "amendment_type", "rows"} — rows 는 공시마다 to_usd 를 거친 것
+    (정정본 단위는 정정본 제출일 기준, verified.md 2026-11-21).
+    돌려주는 값: (합친 행, 대표 공시 = 마지막 원본 또는 전체 대체 정정본, notes 문장들). 같은 CUSIP 합치기는 clean_rows 가 한다."""
+    rows: list[dict] = []
+    base = None
+    notes = []
+    for f in sorted(filings, key=lambda f: (f["filed_date"], f["accession"])):
+        kind, acc = f["amendment_type"], f["accession"]
+        if f["form"] == "13F-HR":
+            rows, base = list(f["rows"]), f
+        elif kind == "RESTATEMENT" and f["rows"]:
+            rows, base = list(f["rows"]), f
+            notes.append(f"13F 정정본 반영(전체 대체): {acc}, 제출일 {f['filed_date']}")
+        elif kind == "NEW HOLDINGS":
+            rows = rows + f["rows"]
+            notes.append(f"13F 정정본 반영(종목 추가 {len(f['rows'])}건): {acc}, 제출일 {f['filed_date']}")
+        else:
+            # 빈 전체 대체를 따르면 보유 종목이 통째로 사라지므로 건너뛴다
+            notes.append(f"13F 정정본 건너뜀(유형 {kind or '읽지 못함'}, 정보표 {len(f['rows'])}행): {acc}")
+    return rows, base or filings[-1], notes
