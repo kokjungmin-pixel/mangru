@@ -131,3 +131,15 @@ def test_empty_restatement_and_unknown_type_are_skipped_with_note():
                                           _f("amd2", "2024-03-01", None, ["X"], form="13F-HR/A")])   # 유형을 못 읽은 정정본
     assert [r["cusip"] for r in rows] == ["A"] and base["accession"] == "orig"
     assert len(notes) == 2
+
+
+def test_new_holdings_that_relists_everything_adds_only_new_cusips():
+    # Akre 2024-03-31 실제 모양: 원본 20종목, '종목 추가' 정정본이 20종목을 다시 적고 1종목만 새로 넣음
+    old = [f"C{i:02d}" for i in range(20)]
+    rows, base, notes = apply_amendments([_f("orig", "2024-05-13", None, old),
+                                          _f("amd1", "2024-05-23", "NEW HOLDINGS", old + ["NEW"])])
+    assert [r["cusip"] for r in rows] == old + ["NEW"]
+    assert sum(r["value"] for r in rows) == 21.0   # 금액이 두 번 더해지지 않음
+    assert base["accession"] == "orig"
+    assert "종목 추가 1건" in notes[0] and "겹친 20건 제외" in notes[0]
+

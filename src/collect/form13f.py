@@ -80,8 +80,13 @@ def apply_amendments(filings: list[dict]) -> tuple[list[dict], dict, list[str]]:
             rows, base = list(f["rows"]), f
             notes.append(f"13F 정정본 반영(전체 대체): {acc}, 제출일 {f['filed_date']}")
         elif kind == "NEW HOLDINGS":
-            rows = rows + f["rows"]
-            notes.append(f"13F 정정본 반영(종목 추가 {len(f['rows'])}건): {acc}, 제출일 {f['filed_date']}")
+            # 원본 종목을 다시 적는 '종목 추가' 정정본이 있다(Akre 2024-03-31, verified.md) → 새 CUSIP만 더한다
+            have = {r["cusip"] for r in rows}
+            new = [r for r in f["rows"] if r["cusip"] not in have]
+            rows = rows + new
+            dup = len(f["rows"]) - len(new)
+            notes.append(f"13F 정정본 반영(종목 추가 {len(new)}건" + (f", 겹친 {dup}건 제외" if dup else "")
+                         + f"): {acc}, 제출일 {f['filed_date']}")
         else:
             # 빈 전체 대체를 따르면 보유 종목이 통째로 사라지므로 건너뛴다
             notes.append(f"13F 정정본 건너뜀(유형 {kind or '읽지 못함'}, 정보표 {len(f['rows'])}행): {acc}")
