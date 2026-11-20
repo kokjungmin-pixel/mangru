@@ -143,3 +143,9 @@ def test_new_holdings_that_relists_everything_adds_only_new_cusips():
     assert base["accession"] == "orig"
     assert "종목 추가 1건" in notes[0] and "겹친 20건 제외" in notes[0]
 
+
+
+def test_only_new_holdings_without_base_returns_no_base():
+    # 원본을 못 받고 종목 추가 정정본만 있으면 그 분기는 일부 종목뿐이라 쓰면 안 된다
+    rows, base, notes = apply_amendments([_f("amd1", "2022-05-16", "NEW HOLDINGS", ["B"])])
+    assert base is None

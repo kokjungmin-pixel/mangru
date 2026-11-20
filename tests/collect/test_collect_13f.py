@@ -82,3 +82,20 @@ def test_no_submissions_is_unavailable_and_fewer_quarters_noted(monkeypatch):
     assert quarters == [] and len(unavailable) == 1
     (quarters, notes, _), _ = _run(monkeypatch, _web(), n=14)
     assert len(quarters) == 2 and any("3개" in s for s in notes)          # 목록엔 3개, 2023Q4 는 응답 없음
+
+
+def test_missing_original_with_only_new_holdings_is_unavailable(monkeypatch):
+    web = _web()
+    del web[_folder("a-24-1") + "/index.json"]                 # 2024Q1 원본을 못 받음, 정정본만 받음
+    (quarters, _, unavailable), _ = _run(monkeypatch, web)
+    assert [q["period"] for q in quarters] == ["2024Q2"]
+    assert any("2024Q1" in s and "원본" in s for s in unavailable)
+
+
+def test_unreachable_info_table_drops_filing(monkeypatch):
+    web = _web()
+    del web[_folder("a-24-3") + "/infotable.xml"]               # 표지는 받았는데 정보표를 못 받음
+    (quarters, notes, unavailable), _ = _run(monkeypatch, web)
+    assert [q["period"] for q in quarters] == ["2024Q1"]
+    assert any("2024Q2" in s for s in unavailable)
+    assert any("a-24-3" in s and "정보표" in s for s in notes)

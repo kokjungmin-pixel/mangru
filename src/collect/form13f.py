@@ -67,11 +67,12 @@ def amendment_type(primary_doc: bytes) -> str | None:
     return el.text.strip().upper() if el is not None and el.text else None
 
 
-def apply_amendments(filings: list[dict]) -> tuple[list[dict], dict, list[str]]:
+def apply_amendments(filings: list[dict]) -> tuple[list[dict], dict | None, list[str]]:
     """한 분기의 원본·정정본들을 제출일 순으로 적용한다(B3-4).
     filings: {"accession", "form", "filed_date", "amendment_type", "rows"} — rows 는 공시마다 to_usd 를 거친 것
     (정정본 단위는 정정본 제출일 기준, verified.md 2026-11-21).
-    돌려주는 값: (합친 행, 대표 공시 = 마지막 원본 또는 전체 대체 정정본, notes 문장들). 같은 CUSIP 합치기는 clean_rows 가 한다."""
+    돌려주는 값: (합친 행, 대표 공시 = 마지막 원본 또는 전체 대체 정정본, notes 문장들).
+    대표 공시가 없으면(원본을 못 받고 종목 추가 정정본만 있음) base=None → 그 분기는 쓰지 않는다."""
     rows: list[dict] = []
     base = None
     notes = []
@@ -93,7 +94,7 @@ def apply_amendments(filings: list[dict]) -> tuple[list[dict], dict, list[str]]:
         else:
             # 빈 전체 대체를 따르면 보유 종목이 통째로 사라지므로 건너뛴다
             notes.append(f"13F 정정본 건너뜀(유형 {kind or '읽지 못함'}, 정보표 {len(f['rows'])}행): {acc}")
-    return rows, base or filings[-1], notes
+    return rows, base, notes
 
 
 SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
@@ -129,7 +130,9 @@ def fetch_filing(cik: str, meta: dict) -> tuple[dict | None, list[str]]:
             name = it["name"]
             if name.lower().endswith(".xml") and name != "primary_doc.xml":   # 정보표 이름은 제각각 (verified.md)
                 body = sec_get(f"{folder}/{name}", kind="bytes")
-                raw += parse_infotable(body) if body else []
+                if not body:   # 종목이 빠진 채 넘어가지 않게 공시 전체를 받지 못한 것으로 본다
+                    return None, [f"13F 정보표를 받지 못함: {acc} ({name})"]
+                raw += parse_infotable(body)
         kind = amendment_type(cover)
         total = ET.fromstring(cover).find(".//{*}tableEntryTotal")
     except ET.ParseError as e:
@@ -169,6 +172,9 @@ def collect_13f(cik: str, n: int = HISTORY_QUARTERS) -> tuple[list[dict], list[s
             continue
         rows, base, ns = apply_amendments(filings)
         notes += ns
+        if base is None:
+            unavailable.append(f"13F {_period(report_date)}: 확인 불가 (원본 공시를 받지 못함, 정정본만 있음)")
+            continue
         info = enrich_cusips([r["cusip"] for r in rows], report_date)
         quarters.append({"period": _period(report_date), "report_date": report_date,
                          "filed_date": base["filed_date"], "accession": base["accession"], "url": base["url"],
