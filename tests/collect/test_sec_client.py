@@ -110,3 +110,83 @@ def test_no_contact_email_returns_none(env, monkeypatch):
     monkeypatch.setattr(sec_client, "_user_agent", lambda: None)
     assert sec_client.sec_get("https://data.sec.gov/b.json") is None
     assert s.calls == []
+
+
+# ---- 범위 요청 (큰 zip 에서 파일 하나만 읽기) ----
+import io
+import zipfile
+
+
+class RangeResp:
+    def __init__(self, status, body=b"", headers=None):
+        self.status_code, self.content, self.headers = status, body, headers or {}
+        self.closed = False
+
+    def close(self):
+        self.closed = True
+
+
+class RangeServer:
+    """Range 머리글대로 잘라 206 으로 주는 가짜 서버. honor=False 면 범위를 무시하고 200 으로 전체를 준다."""
+    def __init__(self, files, honor=True):
+        self.files, self.honor, self.calls, self.last = files, honor, [], None
+
+    def get(self, url, headers=None, timeout=None, stream=False):
+        self.calls.append({"url": url, "headers": headers, "stream": stream})
+        body = self.files.get(url)
+        if body is None:
+            return RangeResp(404)
+        if not self.honor or "Range" not in (headers or {}):
+            self.last = RangeResp(200, body)
+            return self.last
+        a, b = map(int, headers["Range"].removeprefix("bytes=").split("-"))
+        b = min(b, len(body) - 1)
+        return RangeResp(206, body[a:b + 1], {"Content-Range": f"bytes {a}-{b}/{len(body)}"})
+
+
+def _zip_bytes(members):
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for name, data in members.items():
+            z.writestr(name, data)
+    return buf.getvalue()
+
+
+def test_range_request_sends_header_and_is_cached(env, monkeypatch):
+    url = "https://reports.adviserinfo.sec.gov/a.zip"
+    s = RangeServer({url: b"0123456789"})
+    monkeypatch.setattr(sec_client, "_session", s)
+    assert sec_client.sec_get_range(url, 2, 5) == b"2345"
+    assert sec_client.sec_get_range(url, 2, 5) == b"2345"
+    assert len(s.calls) == 1
+    h = s.calls[0]["headers"]
+    assert h["Range"] == "bytes=2-5" and h["User-Agent"].startswith("Mangru-Team")
+    assert "Accept-Encoding" not in h and s.calls[0]["stream"] is True
+
+
+def test_range_ignored_by_server_returns_none_without_reading(env, monkeypatch):
+    url = "https://reports.adviserinfo.sec.gov/big.zip"
+    s = RangeServer({url: b"x" * 100}, honor=False)
+    monkeypatch.setattr(sec_client, "_session", s)
+    assert sec_client.sec_get_range(url, 0, 9) is None       # 수 GB 를 통째로 받지 않게 끊는다
+    assert s.last.closed and len(s.calls) == 1
+
+
+def test_sec_zip_reads_one_member_with_ranges(env, monkeypatch):
+    url = "https://reports.adviserinfo.sec.gov/briefs.zip"
+    blob = _zip_bytes({"109242_1_1_20250328.pdf": b"%PDF akre", "other.pdf": b"y" * 5000,
+                       "map.csv": b"CRDNumber\n109242\n"})
+    s = RangeServer({url: blob})
+    monkeypatch.setattr(sec_client, "_session", s)
+    z = sec_client.sec_zip(url)
+    assert sorted(z.namelist()) == ["109242_1_1_20250328.pdf", "map.csv", "other.pdf"]
+    assert z.read("109242_1_1_20250328.pdf") == b"%PDF akre"
+    assert all("Range" in c["headers"] for c in s.calls)
+    n = len(s.calls)
+    z2 = sec_client.sec_zip(url)                                # 두 번째는 저장본만 쓴다
+    assert z2.read("109242_1_1_20250328.pdf") == b"%PDF akre" and len(s.calls) == n
+
+
+def test_sec_zip_missing_returns_none(env, monkeypatch):
+    monkeypatch.setattr(sec_client, "_session", RangeServer({}))
+    assert sec_client.sec_zip("https://reports.adviserinfo.sec.gov/none.zip") is None
