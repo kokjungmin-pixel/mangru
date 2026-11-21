@@ -6,6 +6,7 @@ import calendar
 import csv
 import io
 import json
+import math
 import re
 import zipfile
 from datetime import date, datetime, timedelta
@@ -190,9 +191,9 @@ def parse_brochure(pdf: bytes, filed_date: str, url: str) -> tuple[dict | None, 
             "items": {n: items[n] for n in kept}, "pages": {n: starts[n] for n in kept}}, unavailable
 
 
-def _iacontent(crd: str) -> dict | None:
+def _iacontent(crd: str, refresh: bool = False) -> dict | None:
     """IAPD 회사 상세 API 의 iacontent(JSON 문자열)를 푼 것. 못 받으면 None."""
-    d = sec_get(IAPD_FIRM_URL.format(crd=crd))
+    d = sec_get(IAPD_FIRM_URL.format(crd=crd), refresh=refresh)
     try:
         return json.loads(d["hits"]["hits"][0]["_source"]["iacontent"])
     except (TypeError, KeyError, IndexError, ValueError):
@@ -201,7 +202,7 @@ def _iacontent(crd: str) -> dict | None:
 
 def latest_brochure(crd: str) -> tuple[dict | None, list[str]]:
     """IAPD 회사 상세 API 에서 가장 늦게 낸 브로셔 → ({"filed_date", "url"}, notes). 없으면 None."""
-    ia = _iacontent(crd)
+    ia = _iacontent(crd, refresh=True)   # 브로셔 목록도 바뀌므로 새로 받는다(못 받으면 저장본)
     try:
         details = [(_mdy(b["dateSubmitted"]), b["brochureVersionID"]) for b in ia["brochures"]["brochuredetails"]]
     except (TypeError, KeyError, IndexError, ValueError, AttributeError):
@@ -244,26 +245,36 @@ def collect_adv2a(crd: str, last_check_date: str | None) -> tuple[dict | None, d
 # 우산 등록(Warburg) PDF 의 Schedule A 는 relying adviser 까지 163행인데 CSV 는 본사 것만이고, PDF 표는 15~16열로 깨지기도 한다(verified.md)
 ADV_DATA_URL = ("https://reports.adviserinfo.sec.gov/reports/foia/advFilingData/{y}/"
                 "ADV_Filing_Data_{y}{m:02d}01_{y}{m:02d}{d:02d}.zip")
-ADV_PDF_URL = "https://reports.adviserinfo.sec.gov/reports/ADV/{crd}/PDF/{crd}.pdf"   # IAPD 의 현재(마지막 제출) ADV
 _SUBMITTED = ("%m/%d/%Y %I:%M:%S %p", "%m/%d/%Y %H:%M", "%m/%d/%Y %H:%M:%S", "%m/%d/%Y")   # DateSubmitted 형식이 섞여 있다
 _ENTITY_TYPES = ("I", "DE", "FE")
+# 표마다 꼭 있어야 하는 열. 튜플은 '이 중 하나' (2011~2024 묶음은 'Schedule(A/B)')
+_BASE_COLS = ("FilingID", "DateSubmitted", "1E1", "5A", "5F2c")
+_SCHED_COLS = ("FilingID", ("Schedule", "Schedule(A/B)"), "Full Legal Name", "DE/FE/I", "Title or Status",
+               "Status Acquired", "Ownership Code", "Control Person")
+_FUND_COLS = ("FilingID",)
 
 
-def _table(z: zipfile.ZipFile, prefix: str) -> list[dict] | None:
-    """묶음 안 '{prefix}_YYYYMMDD_YYYYMMDD.csv' 표의 행들. 없거나 못 읽으면 None."""
+def _table(z: zipfile.ZipFile, prefix: str, required: tuple) -> tuple[list[dict] | None, str]:
+    """묶음 안 '{prefix}_YYYYMMDD_YYYYMMDD.csv' 표 → (행들, ""). 없거나 못 읽거나 필수 열이 빠지면 (None, 이유)."""
     pat = re.compile(rf"{re.escape(prefix)}_\d{{8}}_\d{{8}}\.csv", re.IGNORECASE)
     name = next((n for n in z.namelist() if pat.fullmatch(n.rsplit("/", 1)[-1])), None)
     if name is None:
-        return None
+        return None, f"{prefix} 표가 없음"
     try:
         raw = z.read(name)
-    except Exception:  # noqa: BLE001 — 범위 요청·압축 오류 (brochure_before 와 같은 이유)
-        return None
+    except Exception as e:  # noqa: BLE001 — 범위 요청·압축 오류 (brochure_before 와 같은 이유)
+        return None, f"{name} 을 받지 못함: {type(e).__name__}"
     try:
         text = raw.decode("utf-8-sig")
     except UnicodeDecodeError:
         text = raw.decode("latin-1")   # 2011~2024 묶음은 latin-1 (verified.md)
-    return list(csv.DictReader(io.StringIO(text)))
+    reader = csv.DictReader(io.StringIO(text))
+    cols = reader.fieldnames or []
+    missing = [c if isinstance(c, str) else "/".join(c) for c in required
+               if not (c in cols if isinstance(c, str) else any(x in cols for x in c))]
+    if missing:   # 열이 빠진 채 읽으면 사모펀드 0개·이름 없는 임원처럼 '진짜 값'으로 보인다
+        return None, f"{name} 에 열이 없음: {', '.join(missing)}"
+    return list(reader), ""
 
 
 def _submitted(s: str) -> datetime | None:
@@ -275,92 +286,183 @@ def _submitted(s: str) -> datetime | None:
     return None
 
 
-def _number(s: str | None, kind=float):
+def _amount(raw: str | None, kind, label: str, filed: str, unavailable: list[str]):
+    """0 은 실제 0. 빈 값·음수·NaN·무한대·소수 직원 수는 값으로 쓰지 않고 확인 불가로 적는다."""
+    s = (raw or "").strip().replace(",", "")
     try:
-        return kind(s.replace(",", "")) if s and s.strip() else None
+        v = kind(s)
     except ValueError:
+        v = None
+    if v is None or not math.isfinite(v) or v < 0:
+        why = "빈 값" if not s else f"값을 읽지 못함 {raw!r}"
+        unavailable.append(f"{label}: 확인 불가 ({why}, {filed} 제출분)")
         return None
+    return v
 
 
 def _person(r: dict) -> dict:
-    since = re.fullmatch(r"(\d{1,2})/(\d{4})", (r.get("Status Acquired") or "").strip())
-    kind = (r.get("DE/FE/I") or "").strip().upper()
-    return {"name": (r.get("Full Legal Name") or "").strip(),
+    since = re.fullmatch(r"(\d{1,2})/(\d{4})", (r["Status Acquired"] or "").strip())
+    kind = (r["DE/FE/I"] or "").strip().upper()
+    return {"name": (r["Full Legal Name"] or "").strip(),
             "entity_type": kind if kind in _ENTITY_TYPES else None,
-            "title": (r.get("Title or Status") or "").strip(),
+            "title": (r["Title or Status"] or "").strip(),
             "since": f"{since[2]}-{int(since[1]):02d}" if since else None,
-            "ownership_code": (r.get("Ownership Code") or "").strip() or None,
-            "is_control_person": {"Y": True, "N": False}.get((r.get("Control Person") or "").strip().upper())}
+            "ownership_code": (r["Ownership Code"] or "").strip() or None,
+            "is_control_person": {"Y": True, "N": False}.get((r["Control Person"] or "").strip().upper())}
 
 
 def _part1(z: zipfile.ZipFile, r: dict, url: str, crd: str, filed: str) -> tuple[dict, list[str]]:
-    fid, unavailable = r["FilingID"], []
-    sched = _table(z, "IA_Schedule_A_B")
-    # Schedule B(간접 소유주)는 MVP 에서 뺀다 (CONTRACT AdvPart1). 열 이름은 2011~2024 묶음에서 'Schedule(A/B)'
-    people = [_person(s) for s in sched or [] if s.get("FilingID") == fid
-              and (s.get("Schedule") or s.get("Schedule(A/B)") or "").strip().upper() == "A"]
-    if not people:   # 등록 운용사는 Schedule A 가 반드시 있으므로 0행은 '임원 없음'이 아니라 못 읽은 것
-        unavailable.append(f"임원 명단: 확인 불가 (ADV Schedule A 표를 읽지 못함, {filed} 제출분)")
-    funds = _table(z, "IA_Schedule_D_7B1")
+    fid, unavailable = r["FilingID"].strip(), []
+    sched, why = _table(z, "IA_Schedule_A_B", _SCHED_COLS)
+    people = []
+    if sched is None:
+        unavailable.append(f"임원 명단: 확인 불가 (ADV Schedule A 표를 읽지 못함: {why}, {filed} 제출분)")
+    else:
+        # Schedule B(간접 소유주)는 MVP 에서 뺀다 (CONTRACT AdvPart1)
+        people = [_person(s) for s in sched if (s["FilingID"] or "").strip() == fid
+                  and (s.get("Schedule") or s.get("Schedule(A/B)") or "").strip().upper() == "A"]
+        blank = sum(1 for p in people if not p["name"])
+        if not people:   # 등록 운용사는 Schedule A 가 반드시 있으므로 0행은 '임원 없음'이 아니라 못 읽은 것
+            unavailable.append(f"임원 명단: 확인 불가 (ADV Schedule A 에 이 제출분 행이 없음, {filed} 제출분)")
+        elif blank:      # 이름 없는 사람이 섞이면 신구 비교에서 가짜 추가·삭제가 생긴다 → 명단 전체를 쓰지 않는다
+            unavailable.append(f"임원 명단: 확인 불가 (ADV Schedule A 에 이름이 빈 행 {blank}개, {filed} 제출분)")
+            people = []
+    funds, why = _table(z, "IA_Schedule_D_7B1", _FUND_COLS)
     if funds is None:
-        unavailable.append(f"사모펀드 수: 확인 불가 (ADV Schedule D 7.B.(1) 표를 읽지 못함, {filed} 제출분)")
+        unavailable.append(f"사모펀드 수: 확인 불가 (ADV Schedule D 7.B.(1) 표를 읽지 못함: {why}, {filed} 제출분)")
     return {"filed_date": filed, "url": url, "crd": crd,
-            "aum_usd": _number(r.get("5F2c")), "employees": _number(r.get("5A"), int),
-            "private_funds": None if funds is None else sum(1 for f in funds if f.get("FilingID") == fid),
+            "aum_usd": _amount(r["5F2c"], float, "운용자산", filed, unavailable),
+            "employees": _amount(r["5A"], int, "직원 수", filed, unavailable),
+            "private_funds": None if funds is None else sum(1 for f in funds if (f["FilingID"] or "").strip() == fid),
             "people": people}, unavailable
 
 
-def part1_before(crd: str, as_of: str) -> tuple[dict | None, list[str], list[str]]:
-    """as_of 당일 또는 그 전에 낸 마지막 ADV → (AdvPart1, notes, unavailable).
-    as_of 달부터 한 달씩 거슬러 월별 묶음의 IA_ADV_Base_A 에서 CRD(1E1)로 찾고, 같은 달에 여러 번 냈으면 가장 늦게 낸 것."""
+def _month_base(y: int, mo: int) -> tuple[str, zipfile.ZipFile | None, list[dict] | None, str]:
+    """그달 묶음 → (주소, ZipFile, IA_ADV_Base_A 행들, 못 읽은 이유)."""
+    url = ADV_DATA_URL.format(y=y, m=mo, d=calendar.monthrange(y, mo)[1])
+    z = sec_zip(url)
+    if z is None:
+        return url, None, None, "월별 자료를 받지 못함"
+    base, why = _table(z, "IA_ADV_Base_A", _BASE_COLS)
+    return url, z, base, why
+
+
+def _rows_for(crd: str, base: list[dict]) -> tuple[list[tuple[datetime, dict]], list[tuple[datetime | None, dict]]]:
+    """그달 제출분 중 이 CRD 것 → (제출 시각·FilingID 를 읽은 것, 못 읽은 것)."""
+    ok, unclear = [], []
+    for r in base:
+        if (r["1E1"] or "").strip() == crd:
+            ts = _submitted(r["DateSubmitted"] or "")
+            (ok if ts and (r["FilingID"] or "").strip() else unclear).append((ts, r))
+    return ok, unclear
+
+
+def _unclear(y: int, mo: int, rows: list[tuple[datetime | None, dict]]) -> str:
+    ids = ", ".join(f"FilingID {r['FilingID'] or '(빈 값)'} 제출일 {r['DateSubmitted']!r}" for _, r in rows)
+    return f"ADV Part 1: 확인 불가 ({y}-{mo:02d} 자료에 제출일이나 FilingID 를 읽지 못한 제출분이 있어 어느 것이 마지막인지 알 수 없음: {ids})"
+
+
+def _last(ok: list[tuple], where: str) -> tuple[tuple | None, list[str], list[str]]:
+    """시각순 마지막 제출분. 같은 시각이 여럿이면 어느 것인지 알 수 없으므로 확인 불가."""
+    ok = sorted(ok, key=lambda f: f[0])
+    if len(ok) > 1 and ok[-1][0] == ok[-2][0]:
+        ids = ", ".join(f[1]["FilingID"] for f in ok if f[0] == ok[-1][0])
+        return None, [], [f"ADV Part 1: 확인 불가 ({where} 에 같은 시각 제출분이 여럿: FilingID {ids})"]
+    notes = [f"ADV Part 1: {where} 제출 {len(ok)}건 중 가장 늦게 낸 것 사용 (FilingID {ok[-1][1]['FilingID']})"] if len(ok) > 1 else []
+    return ok[-1], notes, []
+
+
+def _find_back(crd: str, as_of: str, before: datetime | None = None) -> tuple[tuple | None, list[str], list[str]]:
+    """as_of 당일까지(before 가 있으면 그 시각 전) 낸 마지막 제출분 → ((시각, 행, 묶음 주소, ZipFile) | None, notes, unavailable).
+    as_of 달부터 한 달씩 거슬러 찾는다."""
+    def eligible(ts):
+        return ts.date().isoformat() <= as_of and (before is None or ts < before)
     d = date.fromisoformat(as_of)
     y, mo = d.year, d.month
-    notes: list[str] = []
     for _ in range(LOOKBACK_MONTHS):
         if date(y, mo, 1) < ZIP_FROM:
             # shortcut: 2025년 전은 sec.gov 의 2011~2024 통합 묶음(705MB)이다. 직전 점검일이 2025년 전인 운용사가 생기면 붙일 것
-            return None, notes, [f"ADV Part 1 직전본: 확인 불가 (2025년 1월 전 월별 자료는 아직 읽지 않음, 기준일 {as_of})"]
-        url = ADV_DATA_URL.format(y=y, m=mo, d=calendar.monthrange(y, mo)[1])
-        z = sec_zip(url)
-        base = _table(z, "IA_ADV_Base_A") if z else None
+            return None, [], [f"ADV Part 1 직전본: 확인 불가 (2025년 1월 전 월별 자료는 아직 읽지 않음, 기준일 {as_of})"]
+        url, z, base, why = _month_base(y, mo)
         if base is None:   # 이 달을 건너뛰면 이 달에 낸 제출분을 놓치고 더 오래된 것을 쓰게 된다
-            return None, notes, [f"ADV Part 1: 확인 불가 ({y}-{mo:02d} 월별 자료를 받지 못함)"]
-        found = []
-        for r in base:
-            if (r.get("1E1") or "").strip() != crd:
-                continue
-            ts = _submitted(r.get("DateSubmitted") or "")
-            if ts is None:
-                notes.append(f"ADV Part 1: 제출일을 읽지 못해 뺌 (FilingID {r.get('FilingID')}, {r.get('DateSubmitted')!r})")
-            elif ts.date().isoformat() <= as_of:
-                found.append((ts, r))
-        if found:
-            ts, r = max(found, key=lambda f: f[0])
-            if len(found) > 1:
-                notes.append(f"ADV Part 1: {y}-{mo:02d} 제출 {len(found)}건 중 가장 늦게 낸 것 사용 (FilingID {r['FilingID']})")
-            part, unavailable = _part1(z, r, f"{url}#FilingID={r['FilingID']}", crd, ts.date().isoformat())
-            return part, notes, unavailable
+            return None, [], [f"ADV Part 1: 확인 불가 ({y}-{mo:02d} {why})"]
+        ok, unclear = _rows_for(crd, base)
+        unclear = [(ts, r) for ts, r in unclear if ts is None or eligible(ts)]
+        if unclear:        # 못 읽은 제출분이 더 늦은 것일 수 있다 → 더 오래된 것으로 확정하지 않는다
+            return None, [], [_unclear(y, mo, unclear)]
+        ok = [(ts, r, url, z) for ts, r in ok if eligible(ts)]
+        if ok:
+            return _last(ok, f"{y}-{mo:02d}")
         y, mo = (y, mo - 1) if mo > 1 else (y - 1, 12)
-    return None, notes, [f"ADV Part 1 직전본: 확인 불가 (기준일 {as_of} 전 {LOOKBACK_MONTHS}개월 자료에 없음)"]
+    return None, [], [f"ADV Part 1 직전본: 확인 불가 (기준일 {as_of} 전 {LOOKBACK_MONTHS}개월 자료에 없음)"]
+
+
+def _find_latest(crd: str, since: str) -> tuple[tuple | None, list[str], list[str]]:
+    """IAPD 의 마지막 제출일(since) 달부터 공개된 마지막 달까지 앞으로 훑어 가장 늦은 제출분.
+    IAPD 저장본이 오래돼 월별 자료에 더 늦은 제출분이 있으면 그것을 쓰고 기록한다."""
+    d = date.fromisoformat(since)
+    y, mo = d.year, d.month
+    ok_all: list[tuple] = []
+    for i in range(LOOKBACK_MONTHS):
+        url, z, base, why = _month_base(y, mo)
+        if base is None:
+            if i == 0:
+                return None, [], [f"ADV Part 1 최신본: 확인 불가 ({y}-{mo:02d} {why})"]
+            break   # 다음 달 자료가 아직 없음 → 공개된 마지막 달까지 봤다
+        ok, unclear = _rows_for(crd, base)
+        unclear = [(ts, r) for ts, r in unclear if ts is None or ts.date().isoformat() >= since]
+        if unclear:
+            return None, [], [_unclear(y, mo, unclear)]
+        ok_all += [(ts, r, url, z) for ts, r in ok if ts.date().isoformat() >= since]
+        y, mo = (y, mo + 1) if mo < 12 else (y + 1, 1)
+    if not ok_all:   # 더 오래된 제출분을 최신본이라고 하지 않는다
+        return None, [], [f"ADV Part 1 최신본: 확인 불가 (IAPD 의 마지막 제출일 {since} 제출분이 월별 자료에 없음)"]
+    last, notes, unavailable = _last(ok_all, f"{since} 이후 월별 자료")
+    if last and last[0].date().isoformat() > since:
+        notes.append(f"ADV Part 1 최신본: IAPD 저장본의 마지막 제출일({since})보다 늦은 제출분이 월별 자료에 있어 그것을 씀"
+                     f" ({last[0].date().isoformat()}, FilingID {last[1]['FilingID']})")
+    return last, notes, unavailable
+
+
+def _build(found: tuple, crd: str) -> tuple[dict, list[str]]:
+    ts, r, url, z = found
+    return _part1(z, r, f"{url}#FilingID={r['FilingID'].strip()}", crd, ts.date().isoformat())   # 출처 = 실제로 읽은 묶음과 FilingID
+
+
+def part1_before(crd: str, as_of: str, before: datetime | None = None) -> tuple[dict | None, list[str], list[str]]:
+    """as_of 당일 또는 그 전(before 가 있으면 그 시각 전)에 낸 마지막 ADV → (AdvPart1, notes, unavailable)."""
+    found, notes, unavailable = _find_back(crd, as_of, before)
+    if found is None:
+        return None, notes, unavailable
+    part, us = _build(found, crd)
+    return part, notes, unavailable + us
 
 
 def collect_adv1(crd: str, last_check_date: str | None) -> tuple[dict | None, dict | None, list[str], list[str]]:
     """CRD → (최신본 AdvPart1, 직전본 AdvPart1, notes, unavailable). 예외 없이 끝까지 간다.
-    최신본 = IAPD 가 알려 주는 마지막 ADV 제출일(advFilingDate)의 제출분. 직전본은 collect_adv2a 와 같은 규칙."""
-    try:
-        filed = _mdy((_iacontent(crd) or {})["basicInformation"]["advFilingDate"])
+    최신본 = IAPD 의 마지막 ADV 제출일 이후 월별 자료에서 가장 늦은 제출분.
+    직전본 = last_check_date 당일 또는 그 전의 마지막 제출분. 직전 점검일이 없으면 최신본 바로 전 제출분(같은 날 먼저 낸 것 포함).
+    최신본을 못 읽어도 직전본은 따로 찾는다."""
+    notes, unavailable = [], []
+    try:   # 제출 목록은 바뀌므로 저장본이 있어도 새로 받는다(못 받으면 저장본)
+        since = _mdy((_iacontent(crd, refresh=True) or {})["basicInformation"]["advFilingDate"])
     except (TypeError, KeyError, ValueError, AttributeError):
-        return None, None, [], ["ADV Part 1 최신본: 확인 불가 (IAPD 에서 마지막 ADV 제출일을 받지 못함)"]
-    new, notes, unavailable = part1_before(crd, filed)
-    if new is None:
-        return None, None, notes, unavailable
-    if new["filed_date"] != filed:   # 더 오래된 제출분을 최신본이라고 하지 않는다
-        return None, None, notes, unavailable + [
-            f"ADV Part 1 최신본: 확인 불가 (IAPD 의 마지막 제출일 {filed} 제출분이 월별 자료에 없음, 가장 가까운 것 {new['filed_date']})"]
-    notes.append(f"ADV Part 1 최신본: 월별 자료 {new['url']} 에서 읽음")
-    new["url"] = ADV_PDF_URL.format(crd=crd)   # 사람이 열어 볼 원문. IAPD 의 현재 ADV 가 곧 이 제출분
-    as_of = last_check_date or (date.fromisoformat(filed) - timedelta(days=1)).isoformat()
-    if filed <= as_of:   # 최신본을 기준일 전에 냈으면 기준일 시점의 마지막 제출분이 곧 최신본
-        return new, {**new, "people": [dict(p) for p in new["people"]]}, notes, unavailable
-    old, ns, us = part1_before(crd, as_of)
+        since = None
+        unavailable.append("ADV Part 1 최신본: 확인 불가 (IAPD 에서 마지막 ADV 제출일을 받지 못함)")
+    latest = new = None
+    if since:
+        latest, ns, us = _find_latest(crd, since)
+        notes += ns
+        unavailable += us
+        if latest:
+            new, us = _build(latest, crd)
+            unavailable += us
+    if last_check_date:
+        if new and new["filed_date"] <= last_check_date:   # 최신본을 기준일 전에 냈으면 기준일 시점의 마지막 제출분이 곧 최신본
+            return new, {**new, "people": [dict(p) for p in new["people"]]}, notes, unavailable
+        old, ns, us = part1_before(crd, last_check_date)
+    elif latest:
+        old, ns, us = part1_before(crd, latest[0].date().isoformat(), before=latest[0])
+    else:
+        old, ns, us = None, [], ["ADV Part 1 직전본: 확인 불가 (직전 점검일도 최신본도 없어 비교할 제출분을 정할 수 없음)"]
     return new, old, notes + ns, unavailable + us

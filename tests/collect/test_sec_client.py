@@ -233,3 +233,24 @@ def test_range_body_cut_midway_is_retried(env, monkeypatch):
         "get": lambda self, u, headers=None, timeout=None, stream=False: calls.append(u) or (CutResp(206) if len(calls) == 1 else ok)})())
     assert sec_client.sec_get_range(url, 2, 5) == b"2345"       # 예외가 새지 않고 두 번째에 받는다
     assert len(calls) == 2
+
+
+def test_refresh_fetches_again_and_overwrites_cache(env):
+    _, use = env
+    s = use([FakeResp(200, b'{"v": 1}'), FakeResp(200, b'{"v": 2}')])
+    url = "https://api.adviserinfo.sec.gov/search/firm/1"
+    assert sec_client.sec_get(url) == {"v": 1}
+    assert sec_client.sec_get(url) == {"v": 1} and len(s.calls) == 1      # 평소엔 저장본
+    assert sec_client.sec_get(url, refresh=True) == {"v": 2} and len(s.calls) == 2
+    assert sec_client.sec_get(url) == {"v": 2}                               # 새 응답으로 바뀜
+
+
+def test_refresh_failure_falls_back_to_cache(env, monkeypatch):
+    _, use = env
+    use([FakeResp(200, b'{"v": 1}'), FakeResp(404)])
+    url = "https://api.adviserinfo.sec.gov/search/firm/2"
+    sec_client.sec_get(url)
+    assert sec_client.sec_get(url, refresh=True) == {"v": 1}
+    monkeypatch.setattr(sec_client, "_user_agent", lambda: None)           # 이메일이 없어도 저장본은 쓴다
+    assert sec_client.sec_get(url, refresh=True) == {"v": 1}
+    assert sec_client.sec_get("https://api.adviserinfo.sec.gov/none", refresh=True) is None

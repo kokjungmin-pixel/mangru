@@ -121,19 +121,21 @@ def _save(path: Path, body: bytes, url: str) -> None:
         log.warning("원본 저장 실패(%s): %s", type(e).__name__, url)
 
 
-def sec_get(url: str, kind: Literal["json", "bytes"] = "json") -> dict | bytes | None:
-    """SEC 주소 하나를 받아 JSON(dict) 또는 원본 bytes로 돌려준다. 404·끝내 실패하면 None."""
+def sec_get(url: str, kind: Literal["json", "bytes"] = "json", refresh: bool = False) -> dict | bytes | None:
+    """SEC 주소 하나를 받아 JSON(dict) 또는 원본 bytes로 돌려준다. 404·끝내 실패하면 None.
+    refresh=True: 바뀌는 목록(IAPD 제출 목록 등)용. 저장본이 있어도 먼저 새로 받고, 못 받으면 저장본을 쓴다(A4-5)."""
     path = _cache_path(url)
-    if path.exists():
+    if path.exists() and not refresh:
         return _decode(path.read_bytes(), kind, url)
 
     user_agent = _user_agent()
     if user_agent is None:
         log.warning("SEC_CONTACT_EMAIL 이 .env 에 없어 SEC 요청을 보내지 않음: %s", url)
-        return None
-
-    resp = _fetch(url, user_agent)
+    resp = _fetch(url, user_agent) if user_agent else None
     if resp is None:
+        if refresh and path.exists():
+            log.warning("새로 받지 못해 저장본 사용: %s", url)
+            return _decode(path.read_bytes(), kind, url)
         return None
     _save(path, resp.content, url)
     return _decode(resp.content, kind, url)

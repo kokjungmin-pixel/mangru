@@ -29,7 +29,7 @@ def _fake(monkeypatch, zips, web=None):
         asked.append(url)
         return zipfile.ZipFile(io.BytesIO(zips[url])) if url in zips else None
     monkeypatch.setattr(form_adv, "sec_zip", sec_zip)
-    monkeypatch.setattr(form_adv, "sec_get", lambda url, kind="json": (web or {}).get(url))
+    monkeypatch.setattr(form_adv, "sec_get", lambda url, kind="json", refresh=False: (web or {}).get(url))
     monkeypatch.setattr(form_adv, "_pdf_pages", lambda pdf: PAGES)
     return asked
 
