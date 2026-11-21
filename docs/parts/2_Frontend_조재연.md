@@ -1357,14 +1357,27 @@ def parse_infotable(xml_bytes: bytes) -> list[dict]:
 | Part 2A 브로셔 이전본 | 같은 페이지의 월별 브로셔 압축 파일(2020~2024)과 매핑 CSV | 매핑 CSV로 CRD → 브로셔 파일을 찾을 수 있는가 |
 | Part 1·2A 최신본 (2025년~) | IAPD `https://adviserinfo.sec.gov/firm/summary/{CRD}` 가 제공하는 PDF | 자동으로 받을 수 있는 주소가 있는가. 알려진 형태는 `https://reports.adviserinfo.sec.gov/reports/ADV/{CRD}/PDF/{CRD}.pdf` 인데 실제로 되는지 시험할 것 |
 
-확인 결과에 따른 처리(미리 정해 둔다):
+**확인 결과와 실제 출처 (11/22 구현 기준, 근거는 `docs/verified.md` 11/15·11/22):**
+
+| 대상 | 실제로 읽는 곳 | 고르는 규칙 |
+|---|---|---|
+| Part 1 최신본·직전본 (2025-01~) | SEC 월별 Part 1 묶음(CSV) `https://reports.adviserinfo.sec.gov/reports/foia/advFilingData/{YYYY}/ADV_Filing_Data_{YYYYMM01}_{YYYYMM말일}.zip` 안의 `IA_ADV_Base_A`(제출일·CRD·5A·5F2c), `IA_Schedule_A_B`(Schedule A), `IA_Schedule_D_7B1`(사모펀드 1개 = 1행). 묶음은 범위 요청으로 표만 읽는다(`sec_zip`) | 최신본 = IAPD 상세 API `advFilingDate`(매번 새로 받음, 못 받으면 저장본) 달부터 공개된 마지막 달까지 훑은 가장 늦은 제출분. IAPD 저장본보다 늦은 제출분이 있으면 그것을 쓰고 `notes` 에 적는다. 직전본 = `last_check_date` 당일 또는 그 전 마지막 제출분(없으면 최신본 바로 전 제출분, 같은 날 먼저 낸 것 포함). 최신본을 못 읽어도 직전본은 따로 찾는다 |
+| Part 1 (~2024-12-31) | sec.gov 2011~2024 통합 묶음(705MB) | 아직 읽지 않음 → `확인 불가` (`shortcut:` 주석) |
+| Part 2A 최신본 | IAPD `brochuredetails` → `crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=` PDF | 가장 늦게 낸 브로셔 |
+| Part 2A 직전본 (2025-01~) | IAPD 월별 브로셔 묶음 `ADV_Brochures_{YYYY}_{Month}[_i_of_n].zip` 안 `{CRD}_{브로셔ID}_{버전}_{제출일}.pdf` | `last_check_date` 당일 또는 그 전 마지막 브로셔 |
+
+- **PDF Schedule A 표는 쓰지 않는다.** 우산 등록(Warburg) PDF 는 relying adviser 까지 163행인데 CSV 는 본사 것만이라 PDF·CSV 를 섞으면 가짜 변경이 생기고, PDF 표는 15~16열로 깨지기도 한다(Brown). 최신본·직전본 모두 CSV 로 같은 형식이다.
+- **출처(`AdvPart1.url`)는 실제로 읽은 묶음 주소 + `#FilingID=…`** 이다(검증 에이전트가 원본을 다시 찾을 수 있게).
+- **확인 불가로 두는 경우:** 필수 열이 빠진 표, 제출일·FilingID 를 못 읽은 대상 운용사 행이 있는 달(어느 것이 마지막인지 모름), 같은 시각 제출분이 여럿, IAPD 제출일 제출분이 월별 자료에 없음, 그달 묶음을 받지 못함(건너뛰고 더 오래된 것을 쓰지 않는다). 빈 값·음수·NaN 인 운용자산·직원 수는 `None`, 사모펀드 표에 행이 없으면 실제 0. Schedule A 에 이 제출분 행이 없거나 이름 빈 행이 있으면 명단 전체를 `[]` + `확인 불가`.
+
+확인 결과에 따른 처리(11/15 에 미리 정해 둔 것. 위 출처로 바뀌어 PDF·수기 경로는 쓰지 않음):
 - 최신본을 자동으로 못 받으면: 데모 3곳의 PDF를 브라우저로 받아 `data_cache/demo/<id>/raw/` 에 넣고 도구가 그 파일을 읽는다. `notes` 에 "ADV 최신본: 저장본 사용"을 적는다. 발표에서 그대로 밝힌다.
 - 이전본에 Schedule A가 없으면: `adv1_old.people` 을 채울 수 없으므로 임원 변경은 "취임 연월" 방식(B4)으로만 잡고 `unavailable` 에 "임원 제외 여부: 이전본 없음"을 적는다.
 - 최신본 Schedule A까지 코드로 못 읽으면: 손으로 옮기지 않는다. `unavailable` 에 "임원 명단: 확인 불가(Schedule A 표를 읽지 못함)"을 적고 핵심 인력 신호 없이 진행하며, 발표에서 그대로 밝힌다(11/12 PM 결정). 그래서 데모 운용사는 Schedule A가 코드로 읽히는 곳을 고른다(B2).
 
 뽑을 내용:
 - Part 1 → `AdvPart1`: 제출일, 운용자산(Item 5.F 규제상 운용자산 합계), 직원 수(Item 5.A), 사모펀드 수(Schedule D 7.B.(1)에 기재된 펀드 건수), **Schedule A 표**(이름, 개인/법인 구분, 직함, 취임 연월, 지분 코드, 지배 여부). 운용자산·직원 수·사모펀드 수는 Data가 신호로 쓴다(A8). 못 읽은 값은 `None`.
-- Schedule A 읽기(PDF): Schedule A 제목이 있는 페이지에서 `pdfplumber` 의 표 추출을 쓰고, 열은 순서가 아니라 **머리글 글자**(이름, 직함, 취임 연월, 지분 코드 등)로 맞춘다. 머리글 문구는 실제 PDF 1개로 확인해 `docs/verified.md` 에 적는다. 표가 깨져 읽히지 않으면 그 운용사는 데모 후보에서 뺀다(B2).
+- Schedule A 읽기: ~~PDF 표 추출~~ → 월별 CSV `IA_Schedule_A_B` 의 `Schedule`(또는 `Schedule(A/B)`)=A 행. 열은 이름으로 맞춘다(`Full Legal Name, DE/FE/I, Title or Status, Status Acquired(MM/YYYY), Ownership Code, Control Person`). 열 이름은 `docs/verified.md` 11/22.
 - Part 2A → `AdvPart2A`: `pdfplumber` 로 페이지별 텍스트를 뽑아 아래 `split_items` 로 Item별로 나눈다. **함정:** 브로셔 앞쪽 목차에도 "Item 8 ..." 줄이 있어서 처음 나온 제목을 쓰면 목차를 본문으로 잘못 잡는다. 그래서 같은 번호가 여러 번 나오면 본문이 가장 긴 것을 고른다. Item 2(중요 변경 요약)와 Item 8(투자 전략·위험)은 반드시, Item 9(징계)는 찾으면 넣는다(비교는 하지 않음). 제목을 못 찾은 Item은 넣지 않고 `unavailable` 에 적는다.
 - `item2_declares_no_change`: 아래 규칙. 실제 3곳의 Item 2 문장을 `docs/verified.md` 에 붙여 규칙이 맞는지 눈으로 확인한다.
 
@@ -1416,7 +1429,8 @@ def item2_declares_no_change(item2: str | None):
 - `has_new_filing`: 최신 13F 또는 ADV의 제출일이 `last_check_date` 보다 뒤인가. `last_check_date` 가 `None` 이면 `True`.
 - `demo_mode=True`: `data_cache/demo/<id>/manager_data.json` 을 읽어 돌려준다. 없으면 어떤 파일이 없는지 알려 주는 오류.
 - `has_13f=False` 인 운용사는 `quarters=[]`, `holding_changes=[]` 로 두고 멈추지 않는다.
-- 명령줄 실행: `python -m src.collect demo1 --live` 로 저장본을 새로 만든다.
+- 명령줄 실행: `python -m src.collect demo1 --live` 로 저장본을 새로 만든다. (11/22) 저장은 이 명령에서만 한다. `collect(plan, demo_mode=False)` 는 저장하지 않는다(통합 테스트가 실제 모드로 돌 때 데모 저장본을 덮어쓰지 않게).
+- (11/22) `has_new_filing` 은 13F(주식형만)·ADV Part 1·ADV 2A 최신 제출일 중 하나라도 `last_check_date` 보다 뒤면 True. 받지 못한 공시가 있으면 새 공시가 있을 수 있으므로 조기 종료하지 않고 `unavailable` 에 적는다.
 
 ## B4. 변화 비교 (11/24~12/1) — `src/collect/compare.py`
 
