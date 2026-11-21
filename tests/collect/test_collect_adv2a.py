@@ -127,3 +127,37 @@ def test_collect_adv2a_no_iapd(monkeypatch):
     _fake(monkeypatch, {})
     new, old, _, unavailable = form_adv.collect_adv2a(CRD, "2026-06-30")
     assert new is None and old is None and any("최신" in u for u in unavailable)
+
+
+def test_latest_filed_before_last_check_is_its_own_previous(monkeypatch):
+    # Akre·Warburg 06-30 기준: 최신본(03-31)이 직전 점검일 전 → 직전본은 최신본 그 자체. 묶음을 찾지 않는다
+    new_url = form_adv.BROCHURE_URL.format(vid=7)
+    web = {IAPD: _iapd({"brochureVersionID": 7, "brochureName": "B", "dateSubmitted": "3/31/2026"}), new_url: b"%PDF"}
+    asked = _fake(monkeypatch, {}, web)                        # 묶음은 하나도 없음 (예: 아직 안 올라온 달)
+    new, old, _, unavailable = form_adv.collect_adv2a(CRD, "2026-10-31")
+    assert asked == [] and unavailable == []
+    assert old == new and old is not new and old["items"] is not new["items"]   # B4 가 고쳐도 서로 안 번지게
+
+
+def test_broken_member_in_zip_is_unavailable_not_exception(monkeypatch):
+    class BadZip:
+        def namelist(self):
+            return [f"{CRD}_77_1_20260605.pdf"]
+
+        def read(self, name):
+            raise EOFError("Compressed file ended before the end-of-stream marker was reached")
+    monkeypatch.setattr(form_adv, "_month_zips", lambda y, mo: [("https://z/June.zip", BadZip())])
+    got, _, unavailable = form_adv.brochure_before(CRD, "2026-06-30")
+    assert got is None and any("EOFError" in u for u in unavailable)
+
+
+def test_same_day_brochures_compare_ids_as_numbers(monkeypatch):
+    _fake(monkeypatch, {Z.format(y=2026, m="June"): _zip(f"{CRD}_99999_1_20260605.pdf", f"{CRD}_100000_1_20260605.pdf")})
+    got, _, _ = form_adv.brochure_before(CRD, "2026-06-30")
+    assert got["url"].endswith(f"{CRD}_100000_1_20260605.pdf")
+
+
+def test_uppercase_pdf_extension_is_found(monkeypatch):
+    _fake(monkeypatch, {Z.format(y=2026, m="June"): _zip(f"{CRD}_77_1_20260605.PDF", f"{CRD}_77_x_20260606.pdf")})
+    got, _, unavailable = form_adv.brochure_before(CRD, "2026-06-30")
+    assert got["filed_date"] == "2026-06-05" and unavailable == []        # 버전이 숫자가 아닌 이름은 건너뜀

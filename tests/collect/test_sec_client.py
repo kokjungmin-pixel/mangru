@@ -190,3 +190,46 @@ def test_sec_zip_reads_one_member_with_ranges(env, monkeypatch):
 def test_sec_zip_missing_returns_none(env, monkeypatch):
     monkeypatch.setattr(sec_client, "_session", RangeServer({}))
     assert sec_client.sec_zip("https://reports.adviserinfo.sec.gov/none.zip") is None
+
+
+def test_range_failure_closes_streamed_response(env, monkeypatch):
+    s = RangeServer({})
+    monkeypatch.setattr(sec_client, "_session", s)
+    resp = RangeResp(404)
+    s.get = lambda url, headers=None, timeout=None, stream=False: resp
+    assert sec_client.sec_get_range("https://reports.adviserinfo.sec.gov/x.zip", 0, 9) is None
+    assert resp.closed                                          # 연결을 붙잡아 두지 않는다
+
+
+def test_sec_zip_member_read_error_does_not_escape_as_unknown(env, monkeypatch):
+    # 목차는 읽었는데 파일 본문 범위 요청이 실패 → OSError 로 올라온다 (form_adv 가 잡는다)
+    url = "https://reports.adviserinfo.sec.gov/briefs2.zip"
+    blob = _zip_bytes({"a.pdf": bytes(range(256)) * 20000})       # 5MB 쯤: 목차 읽기와 다른 범위
+    s = RangeServer({url: blob})
+    monkeypatch.setattr(sec_client, "_session", s)
+    z = sec_client.sec_zip(url)
+    s.files = {}                                                # 이후 요청은 404
+    try:
+        z.read("a.pdf")
+        raise AssertionError("읽히면 안 됨")
+    except OSError:
+        pass
+
+
+def test_range_body_cut_midway_is_retried(env, monkeypatch):
+    class CutResp(RangeResp):
+        @property
+        def content(self):
+            raise requests.ConnectionError("끊김")
+
+        @content.setter
+        def content(self, v):
+            pass
+
+    url = "https://reports.adviserinfo.sec.gov/cut.zip"
+    ok = RangeResp(206, b"2345", {"Content-Range": "bytes 2-5/10"})
+    calls = []
+    monkeypatch.setattr(sec_client, "_session", type("S", (), {
+        "get": lambda self, u, headers=None, timeout=None, stream=False: calls.append(u) or (CutResp(206) if len(calls) == 1 else ok)})())
+    assert sec_client.sec_get_range(url, 2, 5) == b"2345"       # 예외가 새지 않고 두 번째에 받는다
+    assert len(calls) == 2

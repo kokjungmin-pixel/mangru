@@ -64,3 +64,41 @@ def test_toc_lines_are_dropped_from_bodies():
     assert "...." not in items["2"] and "………" not in items["2"]
     assert len(items["2"]) < 80
     assert item2_declares_no_change(items["2"]) is True
+
+
+def test_wrapped_reference_inside_body_does_not_cut_it():
+    # Warburg 2025본 p78: "(see\nItem 11. Code of Ethics, ..." 처럼 본문 속 참조가 줄 머리에 오면 제목처럼 보인다.
+    # 그 줄이 Item 8 안에 있으면 Item 8 이 잘리고, 진짜 Item 9 본문이 짧으면 가짜가 '가장 긴 본문'으로 뽑힌다
+    item8 = (BODY_8 + "\nFor conflicts, see\nItem 9. Disciplinary Information below and our policies. "
+             + "Concentration risk is significant. " * 20)
+    items, starts = split_items([COVER, "Item 2. Material Changes\nNone.", BODY_4 + "\n" + item8,
+                                 "Item 9. Disciplinary Information\nNot applicable."])
+    assert items["8"].endswith("Concentration risk is significant.") and "see\nItem 9." in items["8"]
+    assert items["9"] == "Not applicable." and starts["9"] == 4
+
+
+def test_dotless_toc_entries_are_not_chosen():
+    # 목차 줄에 점선이 없으면(Bain Capital RE) 목차도 제목 모양 → 본문 쪽 제목을 골라야 한다
+    toc = "Table of Contents\nItem 2. Material Changes 2\nItem 4. Advisory Business 3\nItem 8. Methods of Analysis 3\nItem 9. Disciplinary Information 3"
+    items, starts = split_items([COVER + "\n" + toc, "Item 2. Material Changes\nNo material changes.",
+                                 BODY_4 + "\n" + BODY_8 + "\n" + BODY_9])
+    assert starts == {"2": 2, "4": 3, "8": 3, "9": 3}
+    assert items["8"].startswith("We buy and hold")
+
+
+def test_item2_at_end_of_brochure_is_kept():
+    # Akre 2025본: Item 2 가 Item 19 뒤(문서 끝)에 있다
+    pages = [COVER + "\n" + TOC, BODY_4 + "\n" + BODY_8 + "\n" + BODY_9,
+             "Item 19. Requirements for State-Registered Advisers\nNot applicable.\n"
+             "Item 2. Material Changes\nRoutine updates and clarifying changes.\n16"]
+    items, starts = split_items(pages)
+    assert items["2"] == "Routine updates and clarifying changes." and starts["2"] == 3
+
+
+def test_page_numbers_and_toc_title_are_dropped():
+    # Akre 2026본: Item 2 뒤에 쪽 번호 "2", 목차 머리글 "TABLE OF / CONTENTS / Page" 가 붙었다. Brown 은 "ii"
+    pages = [COVER, "Item 2. Material Changes\nRoutine updates only.\n2\nTABLE OF\nCONTENTS\nPage\n3",
+             "ii\n" + BODY_4 + "\n" + BODY_8 + "\n7\n" + BODY_9]
+    items, _ = split_items(pages)
+    assert items["2"] == "Routine updates only."
+    assert items["8"] == "We buy and hold a small number of high-quality businesses for the long term."

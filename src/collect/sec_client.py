@@ -89,15 +89,17 @@ def _fetch(url: str, user_agent: str, byte_range: tuple[int, int] | None = None)
         _throttle()
         try:
             resp = _get_session().get(url, headers=headers, timeout=TIMEOUT_SEC, **extra)
+            if resp.status_code == want:
+                _ = resp.content   # stream 이면 본문을 여기서 받는다 → 도중에 끊겨도 아래 except 로 다시 시도
+                return resp
         except requests.RequestException as e:
             reason = f"연결 오류({type(e).__name__})"
         else:
-            if resp.status_code == want:
-                return resp
-            if byte_range is not None and resp.status_code == 200:
-                resp.close()   # 범위를 무시하고 전체(수 GB)를 보내는 중이므로 본문을 읽지 않고 끊는다
-                log.warning("SEC 범위 요청을 지원하지 않음: %s", url)
-                return None
+            if byte_range is not None:
+                resp.close()   # stream 응답은 닫아야 연결을 놓는다
+                if resp.status_code == 200:   # 범위를 무시하고 전체(수 GB)를 보내는 중 → 본문을 읽지 않고 끊는다
+                    log.warning("SEC 범위 요청을 지원하지 않음: %s", url)
+                    return None
             if resp.status_code == 404:
                 log.info("SEC 404: %s", url)
                 return None
@@ -182,6 +184,7 @@ class _RemoteFile(io.RawIOBase):
         data = sec_get_range(self.url, self.pos, min(self.pos + len(b), self.size) - 1)
         if data is None:
             raise OSError(f"SEC 범위 요청 실패: {self.url}")
+        data = data[:len(b)]   # 서버가 요청보다 길게 주어도 버퍼만큼만
         b[:len(data)] = data
         self.pos += len(data)
         return len(data)
@@ -189,7 +192,7 @@ class _RemoteFile(io.RawIOBase):
 
 def sec_zip(url: str) -> zipfile.ZipFile | None:
     """큰 zip 을 통째로 받지 않고 목차와 필요한 파일만 범위 요청으로 읽는 ZipFile. 없거나 못 읽으면 None.
-    돌려받은 ZipFile 의 read() 도 네트워크를 쓰므로 OSError·BadZipFile 이 날 수 있다."""
+    돌려받은 ZipFile 의 read() 도 네트워크를 쓰므로 예외가 날 수 있다(부르는 쪽이 잡는다)."""
     if sec_get_range(url, 0, 0) is None:
         return None
     size_path = _cache_path(f"{url}#size")
@@ -199,6 +202,6 @@ def sec_zip(url: str) -> zipfile.ZipFile | None:
     try:
         raw = _RemoteFile(url, int(size_path.read_text()))
         return zipfile.ZipFile(io.BufferedReader(raw, buffer_size=1 << 20))
-    except (OSError, zipfile.BadZipFile, ValueError) as e:
+    except Exception as e:  # noqa: BLE001 — 외부 파일이라 zipfile 이 여러 종류의 예외를 던진다. 이 함수는 None 으로 끝낸다
         log.warning("zip 을 읽지 못함(%s): %s", type(e).__name__, url)
         return None
