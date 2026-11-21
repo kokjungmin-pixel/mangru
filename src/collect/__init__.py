@@ -2,18 +2,19 @@
 - demo_mode=True : data_cache/demo/<id>/manager_data.json 을 읽는다. 없으면 어떤 파일이 없는지 알려 주는 오류.
 - demo_mode=False: 13F(주식형만)·ADV Part 1·ADV 2A 를 SEC 에서 받아 조립한다. 저장은 명령줄
   `python -m src.collect demo1 --live` 만 한다(테스트가 실제 모드로 돌 때 데모 저장본을 덮어쓰지 않게).
-TODO(조재연): 신·구본 비교(holding_changes·person_changes·text_changes)는 B4 compare.py (11/24~).
+신·구본 비교는 compare.py (13F 비교표·임원 변경). TODO(조재연): ADV 2A 문구 비교(text_changes) — PM 결정 뒤.
 """
 import json
 from datetime import datetime, timezone
 
+from src.collect.compare import compare_holdings, compare_people
 from src.collect.form_adv import collect_adv1, collect_adv2a, item2_declares_no_change
 from src.config import DEMO_DIR, DEMO_MANAGERS
 from src.state import ManagerData, Plan
 from src.validate import validate
 
 DEMO_FILE = "manager_data.json"
-NOT_COMPARED = "신·구본 비교(13F 비교표·임원 변경·ADV 2A 문구): 확인 불가 (비교 단계 B4 를 아직 만들지 않음)"
+NOT_COMPARED = "ADV 2A 문구 비교: 확인 불가 (날짜 조건·Item 2 판정·문단 나누기 PM 결정 대기, verified.md 11/21·22)"
 
 
 def _has_new_filing(last_check: str | None, latest: dict[str, str | None]) -> tuple[bool, list[str]]:
@@ -56,11 +57,14 @@ def collect_live(manager_id: str) -> ManagerData:
     if m["has_13f"]:
         latest["13F"] = max((q["filed_date"] for q in quarters), default=None)
     has_new, us = _has_new_filing(m["last_check_date"], latest)
+    holding_changes, u1 = compare_holdings(quarters)
+    person_changes, u2 = compare_people(adv1_new, adv1_old, m["last_check_date"])
+    us += u1 + u2
     data: ManagerData = {
         "manager_id": manager_id, "manager_name": m["name"], "cik": m["cik"], "crd": m["crd"],
-        "quarters": quarters, "holding_changes": [],
+        "quarters": quarters, "holding_changes": holding_changes,
         "adv1_new": adv1_new, "adv1_old": adv1_old, "adv2a_new": adv2a_new, "adv2a_old": adv2a_old,
-        "person_changes": [], "text_changes": [], "item2_declares_no_change": item2,
+        "person_changes": person_changes, "text_changes": [], "item2_declares_no_change": item2,
         "has_new_filing": has_new, "notes": notes, "unavailable": unavailable + us + [NOT_COMPARED],
         "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
     validate(data, ManagerData)

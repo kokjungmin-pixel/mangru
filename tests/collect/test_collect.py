@@ -130,3 +130,10 @@ def test_graph_warburg_early_exit_without_13f(fake):
     assert [e["step"] for e in evs] == ["plan", "collect", "done"]
     last = evs[-1]["state"]
     assert last["status"] == "early_exit" and last["data"]["manager_id"] == "demo3" and calls["13f"] == []
+
+
+def test_live_collect_fills_comparisons(fake):
+    data = C.collect_live("demo2")
+    assert [(c["kind"], c["name"]) for c in data["person_changes"]] == [("added", "new-105633"), ("removed", "old-105633")]
+    assert data["holding_changes"] == [] and "13F 비교표: 확인 불가 (분기가 2개 미만)" in data["unavailable"]
+    assert data["text_changes"] == [] and C.NOT_COMPARED in data["unavailable"]
