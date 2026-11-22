@@ -39,13 +39,17 @@ class Net:
         self.figi_status = figi_status
         self.sec_pages = sec_pages if sec_pages is not None else {}
         self.figi_calls = []
+        self.figi_types = []
         self.sec_calls = []
 
     def post(self, url, json=None, headers=None, timeout=None):
         self.figi_calls.append([j["idValue"] for j in json])
+        self.figi_types.append({j["idType"] for j in json})
         if self.figi_status != 200:
             return FakeResp(self.figi_status)
-        return FakeResp(200, [self.figi.get(j["idValue"], {"warning": "No identifier found."}) for j in json])
+        return FakeResp(200, [self.figi.get((j["idType"], j["idValue"]),
+                                            self.figi.get(j["idValue"], {"warning": "No identifier found."}))
+                              for j in json])
 
     def sec_get(self, url, kind="json"):
         self.sec_calls.append(url)
@@ -203,3 +207,43 @@ def test_return_shape_matches_contract(net):
     out = sec.enrich_cusips([AAPL, SPY], AS_OF)
     for v in out.values():
         assert set(v) == set(sec.EMPTY)
+
+
+# ---------- 2026-11-23: 해외 발행사 번호, 주식 종류가 여러 개인 회사 ----------
+CAMT = "M20791105"
+
+
+def test_foreign_cins_retried_with_id_cins(net):
+    net.figi = dict(FIGI)
+    net.figi[("ID_CINS", CAMT)] = {"data": [{"ticker": "CAMT", "exchCode": "US", "securityType": "Common Stock"}]}
+    net.sec_pages[sec.SEC_TICKERS_URL] = {**SEC_TICKERS, "9": {"cik_str": 1109138, "ticker": "CAMT", "title": "CAMTEK"}}
+    out = sec.enrich_cusips([CAMT, AAPL], AS_OF)
+    assert out[CAMT]["ticker"] == "CAMT"
+    assert out[CAMT]["issuer_cik"] == "0001109138"
+    assert net.figi_types[-1] == {"ID_CINS"}
+    assert net.figi_calls[-1] == [CAMT]                     # 숫자로 시작하는 AAPL 은 다시 묻지 않음
+
+
+def test_numeric_cusip_not_retried_as_cins(net):
+    sec.enrich_cusips(["000000000"], AS_OF)
+    assert all(t == {"ID_CUSIP"} for t in net.figi_types)
+
+
+def test_multi_class_uses_weighted_average_quarter(net):
+    cik = "0000320193"
+    net.sec_pages[concept_url(cik, "dei", "EntityCommonStockSharesOutstanding")] = {
+        "units": {"shares": [{"end": "2010-10-27", "val": 1}]}}          # 오래된 값만 있음
+    net.sec_pages[concept_url(cik, "us-gaap", "WeightedAverageNumberOfSharesOutstandingBasic")] = {
+        "units": {"shares": [
+            {"start": "2026-01-01", "end": "2026-06-30", "val": 890},     # 6개월 누적
+            {"start": "2026-04-01", "end": "2026-06-30", "val": 883},     # 분기 → 이것
+            {"start": "2025-04-01", "end": "2025-06-30", "val": 900},
+        ]}}
+    out = sec.enrich_cusips([AAPL], AS_OF)[AAPL]
+    assert out["shares_outstanding"] == 883
+    assert out["shares_outstanding_partial"] is False
+
+
+def test_pick_weighted_average_outside_window():
+    facts = [{"start": "2025-10-01", "end": "2025-12-31", "val": 5}]
+    assert sec.pick_weighted_average(facts, AS_OF) is None
