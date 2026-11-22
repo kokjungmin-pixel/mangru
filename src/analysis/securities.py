@@ -38,8 +38,12 @@ OPENFIGI_URL = "https://api.openfigi.com/v3/mapping"
 SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 SEC_SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
 SEC_CONCEPT_URL = "https://data.sec.gov/api/xbrl/companyconcept/CIK{cik}/{taxonomy}/{tag}.json"
-SHARES_CONCEPTS = (("dei", "EntityCommonStockSharesOutstanding"),     # 먼저
-                   ("us-gaap", "CommonStockSharesOutstanding"))       # 앞이 없으면(404)
+# 발행주식 수: 위에서부터 차례로 보고, as_of 근처 값이 있는 첫 항목을 쓴다.
+# 주식 종류가 여러 개인 회사(Mastercard·Datadog 등)는 앞의 두 항목이 종류별로만 보고돼 비어 있다
+# (2026-11-23 확인, docs/verified.md). 그때는 전체 주식의 분기 가중평균 주식 수로 대신한다.
+SHARES_CONCEPTS = (("dei", "EntityCommonStockSharesOutstanding", "point"),
+                   ("us-gaap", "CommonStockSharesOutstanding", "point"),
+                   ("us-gaap", "WeightedAverageNumberOfSharesOutstandingBasic", "average"))
 
 MASTER_PATH: Path = DEMO_DIR / "security_master.json"
 LOG_PATH: Path = RAW_DIR / "enrich_log.jsonl"
@@ -116,9 +120,32 @@ def pick_shares_outstanding(facts: list[dict], as_of: str):
     return (max(vals), len(vals) > 1)
 
 
-def openfigi_map(cusips: list[str]) -> dict[str, dict | None]:
+def pick_weighted_average(facts: list[dict], as_of: str) -> float | None:
+    """가중평균 주식 수(기간 값) 목록 → 값 하나.
+    as_of 와 기간 끝(end) 차이가 SHARES_OUT_MAX_GAP_DAYS 이내인 것 중 end 가 가장 가까운 것,
+    같은 end 가 여러 개면(3개월·9개월 누적 등) 기간이 가장 짧은 것(분기 값)을 쓴다."""
+    target = date.fromisoformat(as_of)
+    best = None
+    for f in facts:
+        try:
+            end = date.fromisoformat(f["end"])
+            start = date.fromisoformat(f["start"]) if f.get("start") else end
+            val = float(f["val"])
+        except (KeyError, ValueError, TypeError):
+            continue
+        gap = abs((end - target).days)
+        if gap > SHARES_OUT_MAX_GAP_DAYS or val <= 0:
+            continue
+        rank = (gap, (end - start).days)
+        if best is None or rank < best[0]:
+            best = (rank, val)
+    return best[1] if best else None
+
+
+def openfigi_map(cusips: list[str], id_type: str = "ID_CUSIP") -> dict[str, dict | None]:
     """CUSIP → OpenFIGI 응답 한 줄({"data": [...]} 또는 {"warning": ...}/{"error": ...}).
-    묶음이 끝내 실패하면 그 묶음의 CUSIP 은 None. 예외를 던지지 않는다."""
+    묶음이 끝내 실패하면 그 묶음의 CUSIP 은 None. 예외를 던지지 않는다.
+    id_type: 보통 "ID_CUSIP". 영문자로 시작하는 해외 발행사 번호(CINS)는 "ID_CINS" 로 물어야 찾아진다."""
     key = _openfigi_key()
     size = BATCH_WITH_KEY if key else BATCH_NO_KEY
     interval = INTERVAL_WITH_KEY if key else INTERVAL_NO_KEY
@@ -131,7 +158,7 @@ def openfigi_map(cusips: list[str]) -> dict[str, dict | None]:
         if i > 0:
             _sleep(interval)
         batch = cusips[i:i + size]
-        rows = _post_batch(batch, headers)
+        rows = _post_batch(batch, headers, id_type)
         for j, c in enumerate(batch):
             row = rows[j] if rows is not None and j < len(rows) else None
             out[c] = row if isinstance(row, dict) else None
@@ -183,6 +210,10 @@ def _enrich(cusips: list[str], as_of: str) -> dict[str, dict]:
     todo = [c for c in cusips if c not in saved_secs]
     if todo:
         figi = openfigi_map(todo)
+        # 영문자로 시작하는 해외 발행사 번호(CINS)는 ID_CUSIP 으로는 "없음" → ID_CINS 로 다시 묻는다
+        cins = [c for c in todo if c[:1].isalpha() and figi.get(c) is not None and "data" not in figi[c]]
+        if cins:
+            figi.update({c: r for c, r in openfigi_map(cins, "ID_CINS").items() if r is not None})
         tickers = None                       # SEC 티커 목록은 필요할 때 한 번만 받는다
         for c in todo:
             rec, complete = _identify(c, figi.get(c))
@@ -281,16 +312,18 @@ def _shares_for(cusip: str, rec: dict, as_of: str) -> dict:
         _log_failure(cusip, "shares", f"as_of 형식 오류({as_of!r})")
         return none
 
-    for taxonomy, tag in SHARES_CONCEPTS:
+    for taxonomy, tag, kind in SHARES_CONCEPTS:
         resp = _safe_sec_get(SEC_CONCEPT_URL.format(cik=rec["issuer_cik"], taxonomy=taxonomy, tag=tag))
         if resp is None:
             continue                          # 404(그 항목 없음) → 다음 항목
         facts = ((resp or {}).get("units") or {}).get("shares") or []
-        value, partial = pick_shares_outstanding(facts, as_of)
-        if value is None:
-            _log_failure(cusip, "shares", f"{tag}: {as_of} ±{SHARES_OUT_MAX_GAP_DAYS}일 안의 값 없음")
-        return {"value": value, "partial": partial}
-    _log_failure(cusip, "shares", "XBRL 발행주식 수 항목 없음")
+        if kind == "point":
+            value, partial = pick_shares_outstanding(facts, as_of)
+        else:
+            value, partial = pick_weighted_average(facts, as_of), False
+        if value is not None:
+            return {"value": value, "partial": partial}
+    _log_failure(cusip, "shares", f"XBRL 발행주식 수: {as_of} ±{SHARES_OUT_MAX_GAP_DAYS}일 안의 값 없음")
     return none
 
 
@@ -302,9 +335,9 @@ def _openfigi_key() -> str | None:
     return os.getenv("OPENFIGI_API_KEY", "").strip() or None
 
 
-def _post_batch(batch: list[str], headers: dict) -> list | None:
+def _post_batch(batch: list[str], headers: dict, id_type: str = "ID_CUSIP") -> list | None:
     """OpenFIGI 요청 한 번(최대 3회 시도). 응답 목록 또는 None."""
-    body = [{"idType": "ID_CUSIP", "idValue": c} for c in batch]
+    body = [{"idType": id_type, "idValue": c} for c in batch]
     for attempt in range(1, MAX_ATTEMPTS + 1):
         try:
             resp = _post(OPENFIGI_URL, json=body, headers=headers, timeout=TIMEOUT_SEC)

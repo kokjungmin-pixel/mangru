@@ -1,0 +1,8360 @@
+{
+ "securities": {
+  "000380204": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": null,
+   "security_type": null,
+   "security_type2": null,
+   "sic": null,
+   "ticker": null
+  },
+  "002824100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000001800",
+   "name": "ABBOTT LABORATORIES",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "ABT"
+  },
+  "00287Y109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001551152",
+   "name": "ABBVIE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "ABBV"
+  },
+  "00724F101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000796343",
+   "name": "ADOBE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "ADBE"
+  },
+  "00847J105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000078749",
+   "name": "AGILYSYS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7373",
+   "ticker": "AGYS"
+  },
+  "009066101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001559720",
+   "name": "AIRBNB INC-CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7340",
+   "ticker": "ABNB"
+  },
+  "009158106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000002969",
+   "name": "AIR PRODUCTS & CHEMICALS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2810",
+   "ticker": "APD"
+  },
+  "011642105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001459200",
+   "name": "ALARM.COM HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "ALRM"
+  },
+  "016255101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001097149",
+   "name": "ALIGN TECHNOLOGY INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3842",
+   "ticker": "ALGN"
+  },
+  "02079K305": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001652044",
+   "name": "ALPHABET INC-CL A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7370",
+   "ticker": "GOOGL"
+  },
+  "02156B103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "ALTERYX INC - CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "AYXEUR"
+  },
+  "023135106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001018724",
+   "name": "AMAZON.COM INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5961",
+   "ticker": "AMZN"
+  },
+  "030111207": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000880807",
+   "name": "AMERICAN SUPERCONDUCTOR CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3621",
+   "ticker": "AMSC"
+  },
+  "03027X100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001053507",
+   "name": "AMERICAN TOWER CORP",
+   "security_type": "REIT",
+   "security_type2": "REIT",
+   "sic": "6798",
+   "ticker": "AMT"
+  },
+  "03214Q108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001899287",
+   "name": "AMPRIUS TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3690",
+   "ticker": "AMPX"
+  },
+  "03662Q105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "ANSYS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "AKX"
+  },
+  "037833100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000320193",
+   "name": "APPLE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3571",
+   "ticker": "AAPL"
+  },
+  "03783C100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001433195",
+   "name": "APPFOLIO INC - A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "APPF"
+  },
+  "049468101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001650372",
+   "name": "ATLASSIAN CORP-CL A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "TEAM"
+  },
+  "052769106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000769397",
+   "name": "AUTODESK INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "ADSK"
+  },
+  "053015103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000008670",
+   "name": "AUTOMATIC DATA PROCESSING",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7374",
+   "ticker": "ADP"
+  },
+  "053604104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001777921",
+   "name": "AVEPOINT INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "AVPT"
+  },
+  "05463X106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000805928",
+   "name": "AXOGEN INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3845",
+   "ticker": "AXGN"
+  },
+  "056525108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000009092",
+   "name": "BADGER METER INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3824",
+   "ticker": "BMI"
+  },
+  "057665200": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000009326",
+   "name": "BALCHEM CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2800",
+   "ticker": "BCPC"
+  },
+  "062540109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000046195",
+   "name": "BANK OF HAWAII CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6022",
+   "ticker": "BOH"
+  },
+  "08265T208": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001031308",
+   "name": "BENTLEY SYSTEMS INC-CLASS B",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "BSY"
+  },
+  "084670702": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001067983",
+   "name": "BERKSHIRE HATHAWAY INC-CL B",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6331",
+   "ticker": "BRK/B"
+  },
+  "09073M104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000842023",
+   "name": "BIO-TECHNE CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2836",
+   "ticker": "TECH"
+  },
+  "09260D107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001393818",
+   "name": "BLACKSTONE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6282",
+   "ticker": "BX"
+  },
+  "093671105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000012659",
+   "name": "H&R BLOCK INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7200",
+   "ticker": "HRB"
+  },
+  "09857L108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001075531",
+   "name": "BOOKING HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "4700",
+   "ticker": "BKNG"
+  },
+  "109194100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001437578",
+   "name": "BRIGHT HORIZONS FAMILY SOLUT",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "8351",
+   "ticker": "BFAM"
+  },
+  "110122108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000014272",
+   "name": "BRISTOL-MYERS SQUIBB CO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "BMY"
+  },
+  "11133T103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001383312",
+   "name": "BROADRIDGE FINANCIAL SOLUTIO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "BR"
+  },
+  "11135F101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001730168",
+   "name": "BROADCOM INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3674",
+   "ticker": "AVGO"
+  },
+  "11271J107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001001085",
+   "name": "BROOKFIELD CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6512",
+   "ticker": "BN"
+  },
+  "113004105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001937926",
+   "name": "BROOKFIELD ASSET MGMT-A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6282",
+   "ticker": "BAM"
+  },
+  "12510Q100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001818201",
+   "name": "CCC INTELLIGENT SOLUTIONS HO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "CCC"
+  },
+  "143130102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001170010",
+   "name": "CARMAX INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5500",
+   "ticker": "KMX"
+  },
+  "159864107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001100682",
+   "name": "CHARLES RIVER LABORATORIES",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "8731",
+   "ticker": "CRL"
+  },
+  "169656105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001058090",
+   "name": "CHIPOTLE MEXICAN GRILL INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5812",
+   "ticker": "CMG"
+  },
+  "17275R102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000858877",
+   "name": "CISCO SYSTEMS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3576",
+   "ticker": "CSCO"
+  },
+  "185123106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "CLEARWATER ANALYTICS HDS-A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "CWAN"
+  },
+  "192422103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000851205",
+   "name": "COGNEX CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3823",
+   "ticker": "CGNX"
+  },
+  "217204106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000900075",
+   "name": "COPART INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5500",
+   "ticker": "CPRT"
+  },
+  "218352102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001088856",
+   "name": "CORCEPT THERAPEUTICS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "CORT"
+  },
+  "219798105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001906324",
+   "name": "QUIDELORTHO CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2835",
+   "ticker": "QDEL"
+  },
+  "219948106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001175454",
+   "name": "CORPAY INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "CPAY"
+  },
+  "22160N109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001057352",
+   "name": "COSTAR GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "CSGP"
+  },
+  "228903100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000784199",
+   "name": "ARTIVION INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "AORT"
+  },
+  "229050307": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001124524",
+   "name": "CRYOPORT INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "CYRX"
+  },
+  "23285D109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001831915",
+   "name": "CYTEK BIOSCIENCES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3826",
+   "ticker": "CTKB"
+  },
+  "235851102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000313616",
+   "name": "DANAHER CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3823",
+   "ticker": "DHR"
+  },
+  "237194105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000940944",
+   "name": "DARDEN RESTAURANTS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5812",
+   "ticker": "DRI"
+  },
+  "23804L103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001561550",
+   "name": "DATADOG INC - CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "DDOG"
+  },
+  "252131107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001093557",
+   "name": "DEXCOM INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "DXCM"
+  },
+  "253393102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001089063",
+   "name": "DICK'S SPORTING GOODS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5940",
+   "ticker": "DKS"
+  },
+  "25401T603": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": null,
+   "security_type": null,
+   "security_type2": null,
+   "sic": null,
+   "ticker": null
+  },
+  "256746108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000935703",
+   "name": "DOLLAR TREE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5331",
+   "ticker": "DLTR"
+  },
+  "25862V105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001819928",
+   "name": "DOUBLEVERIFY HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7370",
+   "ticker": "DV"
+  },
+  "26603R106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001562088",
+   "name": "DUOLINGO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "DUOL"
+  },
+  "278865100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000031462",
+   "name": "ECOLAB INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2840",
+   "ticker": "ECL"
+  },
+  "28176E108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001099800",
+   "name": "EDWARDS LIFESCIENCES CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3842",
+   "ticker": "EW"
+  },
+  "29270J100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001421517",
+   "name": "ENERGY RECOVERY INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3559",
+   "ticker": "ERII"
+  },
+  "292812104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": null,
+   "security_type": null,
+   "security_type2": null,
+   "sic": null,
+   "ticker": null
+  },
+  "29283F103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "ENGAGESMART INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "ESMTUSD"
+  },
+  "29362U104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001101302",
+   "name": "ENTEGRIS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3089",
+   "ticker": "ENTG"
+  },
+  "29404K106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "ENVESTNET INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "ENVUSD"
+  },
+  "294429105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000033185",
+   "name": "EQUIFAX INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7320",
+   "ticker": "EFX"
+  },
+  "30212P303": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001324424",
+   "name": "EXPEDIA GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "4700",
+   "ticker": "EXPE"
+  },
+  "30303M102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001326801",
+   "name": "META PLATFORMS INC-CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7370",
+   "ticker": "META"
+  },
+  "303250104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000814547",
+   "name": "FAIR ISAAC CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "FICO"
+  },
+  "311900104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000815556",
+   "name": "FASTENAL CO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5200",
+   "ticker": "FAST"
+  },
+  "337738108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000798354",
+   "name": "FISERV INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "FISV"
+  },
+  "338307101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001288847",
+   "name": "FIVE9 INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7374",
+   "ticker": "FIVN"
+  },
+  "339041105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "FLEETCOR TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "FLT1EUR"
+  },
+  "349381103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0002064124",
+   "name": "FIGURE TECHNOLOGY SOLUT-CL A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6163",
+   "ticker": "FIGR"
+  },
+  "370334104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000040704",
+   "name": "GENERAL MILLS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2040",
+   "ticker": "GIS"
+  },
+  "377322102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001192448",
+   "name": "GLAUKOS CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "GKOS"
+  },
+  "38267D109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001726978",
+   "name": "GOOSEHEAD INSURANCE INC -A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6411",
+   "ticker": "GSHD"
+  },
+  "384802104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000277135",
+   "name": "WW GRAINGER INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5000",
+   "ticker": "GWW"
+  },
+  "40171V100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001528396",
+   "name": "GUIDEWIRE SOFTWARE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "GWRE"
+  },
+  "42238D107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001464521",
+   "name": "HEARTFLOW INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "HTFL"
+  },
+  "42328H109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001024795",
+   "name": "HELIOS TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3490",
+   "ticker": "HLIO"
+  },
+  "426281101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000779152",
+   "name": "JACK HENRY & ASSOCIATES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7373",
+   "ticker": "JKHY"
+  },
+  "437076102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000354950",
+   "name": "HOME DEPOT INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5211",
+   "ticker": "HD"
+  },
+  "443573100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001404655",
+   "name": "HUBSPOT INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "HUBS"
+  },
+  "452308109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000049826",
+   "name": "ILLINOIS TOOL WORKS",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3560",
+   "ticker": "ITW"
+  },
+  "45332Y109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "INARI MEDICAL INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "NARIUSD"
+  },
+  "457730109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001609550",
+   "name": "INSPIRE MEDICAL SYSTEMS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "INSP"
+  },
+  "45780L104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001294133",
+   "name": "INOGEN INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3842",
+   "ticker": "INGN"
+  },
+  "45784P101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001145197",
+   "name": "INSULET CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "PODD"
+  },
+  "45827U109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001565687",
+   "name": "INTAPP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "INTA"
+  },
+  "459200101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000051143",
+   "name": "INTL BUSINESS MACHINES CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3570",
+   "ticker": "IBM"
+  },
+  "46333X108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001446847",
+   "name": "IRONWOOD PHARMACEUTICALS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "IRWD"
+  },
+  "464288240": {
+   "is_adr": false,
+   "is_etf": true,
+   "issuer_cik": null,
+   "name": "ISHARES MSCI ACWI EX US ETF",
+   "security_type": "ETP",
+   "security_type2": "Mutual Fund",
+   "sic": null,
+   "ticker": "ACWX"
+  },
+  "46625H100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000019617",
+   "name": "JPMORGAN CHASE & CO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6021",
+   "ticker": "JPM"
+  },
+  "478160104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000200406",
+   "name": "JOHNSON & JOHNSON",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "JNJ"
+  },
+  "48251W104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001404912",
+   "name": "KKR & CO INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6282",
+   "ticker": "KKR"
+  },
+  "485924104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0002040127",
+   "name": "KARMAN HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3728",
+   "ticker": "KRMN"
+  },
+  "501147102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001711279",
+   "name": "KRYSTAL BIOTECH INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2836",
+   "ticker": "KRYS"
+  },
+  "532457108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000059478",
+   "name": "ELI LILLY & CO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "LLY"
+  },
+  "53947R105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0002000178",
+   "name": "LOAR HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3728",
+   "ticker": "LOAR"
+  },
+  "55261F104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000036270",
+   "name": "M & T BANK CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6022",
+   "ticker": "MTB"
+  },
+  "56146T103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001520358",
+   "name": "MAMA'S CREATIONS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2013",
+   "ticker": "MAMA"
+  },
+  "562750109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001056696",
+   "name": "MANHATTAN ASSOCIATES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "MANH"
+  },
+  "57060D108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001278021",
+   "name": "MARKETAXESS HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6211",
+   "ticker": "MKTX"
+  },
+  "574795100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "MASIMO CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "MASI*"
+  },
+  "57636Q104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001141391",
+   "name": "MASTERCARD INC - A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "MA"
+  },
+  "580135101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000063908",
+   "name": "MCDONALD'S CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5812",
+   "ticker": "MCD"
+  },
+  "58733R102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001099590",
+   "name": "MERCADOLIBRE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "MELI"
+  },
+  "58933Y105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000310158",
+   "name": "MERCK & CO. INC.",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "MRK"
+  },
+  "594918104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000789019",
+   "name": "MICROSOFT CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "MSFT"
+  },
+  "60741F104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001910139",
+   "name": "MOBILEYE GLOBAL INC-A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "MBLY"
+  },
+  "615369105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001059556",
+   "name": "MOODY'S CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7320",
+   "ticker": "MCO"
+  },
+  "617446448": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000895421",
+   "name": "MORGAN STANLEY",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6211",
+   "ticker": "MS"
+  },
+  "632307104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001604821",
+   "name": "NATERA INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "8071",
+   "ticker": "NTRA"
+  },
+  "63947X101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001902733",
+   "name": "NCINO INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "NCNO"
+  },
+  "640491106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000711377",
+   "name": "NEOGEN CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2835",
+   "ticker": "NEOG"
+  },
+  "65487K100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001124796",
+   "name": "NLIGHT INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3674",
+   "ticker": "LASR"
+  },
+  "67066G104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001045810",
+   "name": "NVIDIA CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3674",
+   "ticker": "NVDA"
+  },
+  "67103H107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000898173",
+   "name": "O'REILLY AUTOMOTIVE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5531",
+   "ticker": "ORLY"
+  },
+  "68134L109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "OLO INC - CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "OLOGBX"
+  },
+  "68213N109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000926326",
+   "name": "OMNICELL INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3571",
+   "ticker": "OMCL"
+  },
+  "68389X105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001341439",
+   "name": "ORACLE CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "ORCL"
+  },
+  "68752L100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001425450",
+   "name": "ORTHOPEDIATRICS CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "KIDS"
+  },
+  "693282105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001120914",
+   "name": "PDF SOLUTIONS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "PDFS"
+  },
+  "70014A104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000076267",
+   "name": "PARK AEROSPACE CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3728",
+   "ticker": "PKE"
+  },
+  "704326107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000723531",
+   "name": "PAYCHEX INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "8700",
+   "ticker": "PAYX"
+  },
+  "70432V102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001590955",
+   "name": "PAYCOM SOFTWARE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "PAYC"
+  },
+  "713448108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000077476",
+   "name": "PEPSICO INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2080",
+   "ticker": "PEP"
+  },
+  "71385M107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001880319",
+   "name": "PERIMETER GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2800",
+   "ticker": "PRM"
+  },
+  "718172109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001413329",
+   "name": "PHILIP MORRIS INTERNATIONAL",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2111",
+   "ticker": "PM"
+  },
+  "74144T108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001113169",
+   "name": "T ROWE PRICE GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6282",
+   "ticker": "TROW"
+  },
+  "742718109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000080424",
+   "name": "PROCTER & GAMBLE CO/THE",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2840",
+   "ticker": "PG"
+  },
+  "74346Y103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "PROS HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "PRO"
+  },
+  "743713109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001443669",
+   "name": "PROTO LABS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3440",
+   "ticker": "PRLB"
+  },
+  "745867101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000822416",
+   "name": "PULTEGROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "1531",
+   "ticker": "PHM"
+  },
+  "74736L109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001410384",
+   "name": "Q2 HOLDINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "QTWO"
+  },
+  "74762E102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001050915",
+   "name": "QUANTA SERVICES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "1731",
+   "ticker": "PWR"
+  },
+  "75524B104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001324948",
+   "name": "RBC BEARINGS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3562",
+   "ticker": "RBC"
+  },
+  "75704L104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001720116",
+   "name": "RED VIOLET INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "RDVT"
+  },
+  "759916109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000730272",
+   "name": "REPLIGEN CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2836",
+   "ticker": "RGEN"
+  },
+  "775711104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000084839",
+   "name": "ROLLINS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7340",
+   "ticker": "ROL"
+  },
+  "776696106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000882835",
+   "name": "ROPER TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3823",
+   "ticker": "ROP"
+  },
+  "78349D107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001111485",
+   "name": "RXSIGHT INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3851",
+   "ticker": "RXST"
+  },
+  "78410G104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001034054",
+   "name": "SBA COMMUNICATIONS CORP",
+   "security_type": "REIT",
+   "security_type2": "REIT",
+   "sic": "6798",
+   "ticker": "SBAC"
+  },
+  "78463M107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001092699",
+   "name": "SPS COMMERCE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "SPSC"
+  },
+  "79466L302": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001108524",
+   "name": "SALESFORCE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "CRM"
+  },
+  "808513105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000316709",
+   "name": "SCHWAB (CHARLES) CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6211",
+   "ticker": "SCHW"
+  },
+  "81762P102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001373715",
+   "name": "SERVICENOW INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "NOW"
+  },
+  "82489T104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "SHOCKWAVE MEDICAL INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "SWAVUSD"
+  },
+  "82509L107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001594805",
+   "name": "SHOPIFY INC - CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "SHOP"
+  },
+  "829073105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000920371",
+   "name": "SIMPSON MANUFACTURING CO INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3420",
+   "ticker": "SSD"
+  },
+  "82982L103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001650729",
+   "name": "SITEONE LANDSCAPE SUPPLY INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5040",
+   "ticker": "SITE"
+  },
+  "82982T106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001451809",
+   "name": "SITIME CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3674",
+   "ticker": "SITM"
+  },
+  "83200N103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "SMARTSHEET INC-CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "SMARGBP"
+  },
+  "833034101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000091440",
+   "name": "SNAP-ON INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3420",
+   "ticker": "SNA"
+  },
+  "855244109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000829224",
+   "name": "STARBUCKS CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5810",
+   "ticker": "SBUX"
+  },
+  "871829107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000096021",
+   "name": "SYSCO CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5140",
+   "ticker": "SYY"
+  },
+  "872540109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000109198",
+   "name": "TJX COMPANIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5651",
+   "ticker": "TJX"
+  },
+  "875372203": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001438133",
+   "name": "TANDEM DIABETES CARE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "TNDM"
+  },
+  "87612E106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000027419",
+   "name": "TARGET CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5331",
+   "ticker": "TGT"
+  },
+  "88025U109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001770787",
+   "name": "10X GENOMICS INC-CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3826",
+   "ticker": "TXG"
+  },
+  "882508104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000097476",
+   "name": "TEXAS INSTRUMENTS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3674",
+   "ticker": "TXN"
+  },
+  "892356106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000916365",
+   "name": "TRACTOR SUPPLY COMPANY",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5200",
+   "ticker": "TSCO"
+  },
+  "893641100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001260221",
+   "name": "TRANSDIGM GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3728",
+   "ticker": "TDG"
+  },
+  "89377M109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001756262",
+   "name": "TRANSMEDICS GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3845",
+   "ticker": "TMDX"
+  },
+  "902252105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000860731",
+   "name": "TYLER TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "TYL"
+  },
+  "902673102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000914156",
+   "name": "UFP TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3841",
+   "ticker": "UFPT"
+  },
+  "90353T100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001543151",
+   "name": "UBER TECHNOLOGIES INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "UBER"
+  },
+  "90384S303": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001403568",
+   "name": "ULTA BEAUTY INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5990",
+   "ticker": "ULTA"
+  },
+  "911312106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001090727",
+   "name": "UNITED PARCEL SERVICE-CL B",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "4210",
+   "ticker": "UPS"
+  },
+  "91324P102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000731766",
+   "name": "UNITEDHEALTH GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "6324",
+   "ticker": "UNH"
+  },
+  "922475108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001393052",
+   "name": "VEEVA SYSTEMS INC-CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "VEEV"
+  },
+  "92337F107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001384101",
+   "name": "VERACYTE INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "8071",
+   "ticker": "VCYT"
+  },
+  "92345Y106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001442145",
+   "name": "VERISK ANALYTICS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7374",
+   "ticker": "VRSK"
+  },
+  "92346J108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000887359",
+   "name": "VERICEL CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2836",
+   "ticker": "VCEL"
+  },
+  "92538J106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001806837",
+   "name": "VERTEX INC - CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "VERX"
+  },
+  "925815102": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000751978",
+   "name": "VICOR CORP",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3679",
+   "ticker": "VICR"
+  },
+  "92826C839": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001403161",
+   "name": "VISA INC-CLASS A SHARES",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "V"
+  },
+  "92939U106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000783325",
+   "name": "WEC ENERGY GROUP INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "4931",
+   "ticker": "WEC"
+  },
+  "93403J106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001504776",
+   "name": "WARBY PARKER INC-CLASS A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3851",
+   "ticker": "WRBY"
+  },
+  "969904101": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000719955",
+   "name": "WILLIAMS-SONOMA INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "5700",
+   "ticker": "WSM"
+  },
+  "98139A105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001445305",
+   "name": "WORKIVA INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "WK"
+  },
+  "98379L100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001767258",
+   "name": "XPEL INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3470",
+   "ticker": "XPEL"
+  },
+  "98423F109": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001657573",
+   "name": "XOMETRY INC-A",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7389",
+   "ticker": "XMTR"
+  },
+  "987184108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0000108985",
+   "name": "YORK WATER CO",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "4941",
+   "ticker": "YORW"
+  },
+  "98978V103": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001555280",
+   "name": "ZOETIS INC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "ZTS"
+  },
+  "G25457105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001807794",
+   "name": "CREDO TECHNOLOGY GROUP HOLDI",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3674",
+   "ticker": "CRDO"
+  },
+  "G3643J108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001635327",
+   "name": "FLUTTER ENTERTAINMENT PLC-DI",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7370",
+   "ticker": "FLUT"
+  },
+  "G4705A100": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001060955",
+   "name": "ICON PLC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "8731",
+   "ticker": "ICLR"
+  },
+  "G50871105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001232524",
+   "name": "JAZZ PHARMACEUTICALS PLC",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "2834",
+   "ticker": "JAZZ"
+  },
+  "H82027105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001840706",
+   "name": "SOPHIA GENETICS SA",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7374",
+   "ticker": "SOPH"
+  },
+  "M20791105": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001109138",
+   "name": "CAMTEK LTD",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "3827",
+   "ticker": "CAMT"
+  },
+  "M2197Q107": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001854587",
+   "name": "CELLEBRITE DI LTD",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "CLBT"
+  },
+  "M22465104": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001015922",
+   "name": "CHECK POINT SOFTWARE TECH",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "CHKP"
+  },
+  "M2682V108": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": null,
+   "name": "CYBERARK SOFTWARE LTD/ISRAEL",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": null,
+   "ticker": "CYBR"
+  },
+  "M5216V106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001835963",
+   "name": "GLOBAL-E ONLINE LTD",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "GLBE"
+  },
+  "M7S64H106": {
+   "is_adr": false,
+   "is_etf": false,
+   "issuer_cik": "0001845338",
+   "name": "MONDAY.COM LTD",
+   "security_type": "Common Stock",
+   "security_type2": "Common Stock",
+   "sic": "7372",
+   "ticker": "MNDY"
+  }
+ },
+ "shares_outstanding": {
+  "000380204|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "000380204|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "002824100|2023-06-30": {
+   "partial": false,
+   "value": 1735357980.0
+  },
+  "002824100|2023-09-30": {
+   "partial": false,
+   "value": 1736058536.0
+  },
+  "002824100|2023-12-31": {
+   "partial": false,
+   "value": 1735184289.0
+  },
+  "002824100|2024-03-31": {
+   "partial": false,
+   "value": 1739633759.0
+  },
+  "002824100|2024-06-30": {
+   "partial": false,
+   "value": 1739897004.0
+  },
+  "002824100|2024-09-30": {
+   "partial": false,
+   "value": 1734455213.0
+  },
+  "002824100|2024-12-31": {
+   "partial": false,
+   "value": 1734323411.0
+  },
+  "002824100|2025-03-31": {
+   "partial": false,
+   "value": 1739836465.0
+  },
+  "00287Y109|2023-06-30": {
+   "partial": false,
+   "value": 1765046680.0
+  },
+  "00287Y109|2023-09-30": {
+   "partial": false,
+   "value": 1765537421.0
+  },
+  "00287Y109|2023-12-31": {
+   "partial": false,
+   "value": 1766473359.0
+  },
+  "00287Y109|2024-03-31": {
+   "partial": false,
+   "value": 1765867781.0
+  },
+  "00287Y109|2024-06-30": {
+   "partial": false,
+   "value": 1766343745.0
+  },
+  "00287Y109|2024-09-30": {
+   "partial": false,
+   "value": 1767140323.0
+  },
+  "00287Y109|2024-12-31": {
+   "partial": false,
+   "value": 1765354859.0
+  },
+  "00287Y109|2025-03-31": {
+   "partial": false,
+   "value": 1766403027.0
+  },
+  "00724F101|2023-06-30": {
+   "partial": false,
+   "value": 455800000.0
+  },
+  "00724F101|2023-09-30": {
+   "partial": false,
+   "value": 455300000.0
+  },
+  "00724F101|2023-12-31": {
+   "partial": false,
+   "value": 452000000.0
+  },
+  "00724F101|2024-03-31": {
+   "partial": false,
+   "value": 448000000.0
+  },
+  "00724F101|2024-06-30": {
+   "partial": false,
+   "value": 443400000.0
+  },
+  "00724F101|2024-09-30": {
+   "partial": false,
+   "value": 440200000.0
+  },
+  "00724F101|2024-12-31": {
+   "partial": false,
+   "value": 435300000.0
+  },
+  "00724F101|2025-03-31": {
+   "partial": false,
+   "value": 426200000.0
+  },
+  "00724F101|2025-06-30": {
+   "partial": false,
+   "value": 424200000.0
+  },
+  "00847J105|2024-03-31": {
+   "partial": false,
+   "value": 27454213.0
+  },
+  "00847J105|2024-06-30": {
+   "partial": false,
+   "value": 27881838.0
+  },
+  "00847J105|2024-09-30": {
+   "partial": false,
+   "value": 27950510.0
+  },
+  "00847J105|2024-12-31": {
+   "partial": false,
+   "value": 27963988.0
+  },
+  "00847J105|2025-03-31": {
+   "partial": false,
+   "value": 28017312.0
+  },
+  "00847J105|2025-06-30": {
+   "partial": false,
+   "value": 28042795.0
+  },
+  "00847J105|2025-09-30": {
+   "partial": false,
+   "value": 28042508.0
+  },
+  "00847J105|2025-12-31": {
+   "partial": false,
+   "value": 28108247.0
+  },
+  "00847J105|2026-03-31": {
+   "partial": false,
+   "value": 28166629.0
+  },
+  "00847J105|2026-06-30": {
+   "partial": false,
+   "value": 28205788.0
+  },
+  "00847J105|2026-09-30": {
+   "partial": false,
+   "value": 28215805.0
+  },
+  "009066101|2024-06-30": {
+   "partial": false,
+   "value": 635000000.0
+  },
+  "009066101|2024-09-30": {
+   "partial": false,
+   "value": 631000000.0
+  },
+  "009066101|2024-12-31": {
+   "partial": false,
+   "value": 632000000.0
+  },
+  "009066101|2025-03-31": {
+   "partial": false,
+   "value": 621000000.0
+  },
+  "009066101|2025-06-30": {
+   "partial": false,
+   "value": 615000000.0
+  },
+  "009066101|2025-09-30": {
+   "partial": false,
+   "value": 611000000.0
+  },
+  "009066101|2025-12-31": {
+   "partial": false,
+   "value": 613000000.0
+  },
+  "009066101|2026-03-31": {
+   "partial": false,
+   "value": 598000000.0
+  },
+  "009066101|2026-06-30": {
+   "partial": false,
+   "value": 592000000.0
+  },
+  "009158106|2023-06-30": {
+   "partial": false,
+   "value": 222148761.0
+  },
+  "009158106|2023-09-30": {
+   "partial": false,
+   "value": 222207726.0
+  },
+  "009158106|2023-12-31": {
+   "partial": false,
+   "value": 222301051.0
+  },
+  "009158106|2024-03-31": {
+   "partial": false,
+   "value": 222305907.0
+  },
+  "009158106|2024-06-30": {
+   "partial": false,
+   "value": 222314502.0
+  },
+  "009158106|2024-09-30": {
+   "partial": false,
+   "value": 222378909.0
+  },
+  "009158106|2024-12-31": {
+   "partial": false,
+   "value": 222475666.0
+  },
+  "009158106|2025-03-31": {
+   "partial": false,
+   "value": 222544214.0
+  },
+  "009158106|2025-06-30": {
+   "partial": false,
+   "value": 222553640.0
+  },
+  "011642105|2023-06-30": {
+   "partial": false,
+   "value": 49906142.0
+  },
+  "011642105|2023-09-30": {
+   "partial": false,
+   "value": 49987784.0
+  },
+  "011642105|2023-12-31": {
+   "partial": false,
+   "value": 49945156.0
+  },
+  "011642105|2024-03-31": {
+   "partial": false,
+   "value": 50188716.0
+  },
+  "011642105|2024-06-30": {
+   "partial": false,
+   "value": 49248750.0
+  },
+  "011642105|2024-09-30": {
+   "partial": false,
+   "value": 49429093.0
+  },
+  "011642105|2024-12-31": {
+   "partial": false,
+   "value": 49646941.0
+  },
+  "011642105|2025-03-31": {
+   "partial": false,
+   "value": 49742009.0
+  },
+  "011642105|2025-06-30": {
+   "partial": false,
+   "value": 49905032.0
+  },
+  "011642105|2025-09-30": {
+   "partial": false,
+   "value": 49879680.0
+  },
+  "011642105|2025-12-31": {
+   "partial": false,
+   "value": 49666158.0
+  },
+  "011642105|2026-03-31": {
+   "partial": false,
+   "value": 49460583.0
+  },
+  "011642105|2026-06-30": {
+   "partial": false,
+   "value": 49090228.0
+  },
+  "016255101|2023-06-30": {
+   "partial": false,
+   "value": 76533704.0
+  },
+  "016255101|2023-09-30": {
+   "partial": false,
+   "value": 76589114.0
+  },
+  "016255101|2023-12-31": {
+   "partial": false,
+   "value": 75104132.0
+  },
+  "016255101|2024-03-31": {
+   "partial": false,
+   "value": 75281687.0
+  },
+  "016255101|2024-06-30": {
+   "partial": false,
+   "value": 74697065.0
+  },
+  "016255101|2024-09-30": {
+   "partial": false,
+   "value": 74653060.0
+  },
+  "016255101|2024-12-31": {
+   "partial": false,
+   "value": 73597648.0
+  },
+  "02079K305|2023-06-30": {
+   "partial": false,
+   "value": 12629000000.0
+  },
+  "02079K305|2023-09-30": {
+   "partial": false,
+   "value": 12541000000.0
+  },
+  "02079K305|2023-12-31": {
+   "partial": false,
+   "value": 12460000000.0
+  },
+  "02079K305|2024-03-31": {
+   "partial": false,
+   "value": 12381000000.0
+  },
+  "02079K305|2024-06-30": {
+   "partial": false,
+   "value": 12322000000.0
+  },
+  "02079K305|2024-09-30": {
+   "partial": false,
+   "value": 12264000000.0
+  },
+  "02079K305|2024-12-31": {
+   "partial": false,
+   "value": 12211000000.0
+  },
+  "02079K305|2025-03-31": {
+   "partial": false,
+   "value": 12155000000.0
+  },
+  "02079K305|2025-06-30": {
+   "partial": false,
+   "value": 12104000000.0
+  },
+  "02079K305|2025-09-30": {
+   "partial": false,
+   "value": 12077000000.0
+  },
+  "02079K305|2025-12-31": {
+   "partial": false,
+   "value": 12088000000.0
+  },
+  "02079K305|2026-03-31": {
+   "partial": false,
+   "value": 12116000000.0
+  },
+  "02079K305|2026-06-30": {
+   "partial": false,
+   "value": 12230000000.0
+  },
+  "02079K305|2026-09-30": {
+   "partial": false,
+   "value": 12294000000.0
+  },
+  "02156B103|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "02156B103|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "02156B103|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "023135106|2023-06-30": {
+   "partial": false,
+   "value": 10317750796.0
+  },
+  "023135106|2023-09-30": {
+   "partial": false,
+   "value": 10334030586.0
+  },
+  "023135106|2023-12-31": {
+   "partial": false,
+   "value": 10387381291.0
+  },
+  "023135106|2024-03-31": {
+   "partial": false,
+   "value": 10406627415.0
+  },
+  "023135106|2024-06-30": {
+   "partial": false,
+   "value": 10495566881.0
+  },
+  "023135106|2024-09-30": {
+   "partial": false,
+   "value": 10515011008.0
+  },
+  "023135106|2024-12-31": {
+   "partial": false,
+   "value": 10597729352.0
+  },
+  "023135106|2025-03-31": {
+   "partial": false,
+   "value": 10616352407.0
+  },
+  "023135106|2025-06-30": {
+   "partial": false,
+   "value": 10664912097.0
+  },
+  "023135106|2025-09-30": {
+   "partial": false,
+   "value": 10690216011.0
+  },
+  "023135106|2025-12-31": {
+   "partial": false,
+   "value": 10734920870.0
+  },
+  "023135106|2026-06-30": {
+   "partial": false,
+   "value": 10786313572.0
+  },
+  "023135106|2026-09-30": {
+   "partial": false,
+   "value": 10813138306.0
+  },
+  "030111207|2026-06-30": {
+   "partial": false,
+   "value": 48442143.0
+  },
+  "030111207|2026-09-30": {
+   "partial": false,
+   "value": 48455057.0
+  },
+  "03027X100|2023-06-30": {
+   "partial": false,
+   "value": 466155521.0
+  },
+  "03027X100|2023-09-30": {
+   "partial": false,
+   "value": 466165118.0
+  },
+  "03027X100|2023-12-31": {
+   "partial": false,
+   "value": 466352208.0
+  },
+  "03027X100|2024-03-31": {
+   "partial": false,
+   "value": 466975019.0
+  },
+  "03027X100|2024-06-30": {
+   "partial": false,
+   "value": 467081657.0
+  },
+  "03027X100|2024-09-30": {
+   "partial": false,
+   "value": 467289399.0
+  },
+  "03027X100|2024-12-31": {
+   "partial": false,
+   "value": 467457256.0
+  },
+  "03027X100|2025-03-31": {
+   "partial": false,
+   "value": 468138245.0
+  },
+  "03027X100|2025-06-30": {
+   "partial": false,
+   "value": 468251225.0
+  },
+  "03027X100|2025-09-30": {
+   "partial": false,
+   "value": 468146623.0
+  },
+  "03027X100|2025-12-31": {
+   "partial": false,
+   "value": 466084820.0
+  },
+  "03027X100|2026-03-31": {
+   "partial": false,
+   "value": 465893069.0
+  },
+  "03027X100|2026-06-30": {
+   "partial": false,
+   "value": 465960048.0
+  },
+  "03027X100|2026-09-30": {
+   "partial": false,
+   "value": 463763555.0
+  },
+  "03214Q108|2026-09-30": {
+   "partial": false,
+   "value": 146643613.0
+  },
+  "03662Q105|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "03662Q105|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "037833100|2023-06-30": {
+   "partial": false,
+   "value": 15634232000.0
+  },
+  "037833100|2023-09-30": {
+   "partial": false,
+   "value": 15552752000.0
+  },
+  "037833100|2023-12-31": {
+   "partial": false,
+   "value": 15441881000.0
+  },
+  "037833100|2024-03-31": {
+   "partial": false,
+   "value": 15334082000.0
+  },
+  "037833100|2024-06-30": {
+   "partial": false,
+   "value": 15204137000.0
+  },
+  "037833100|2024-09-30": {
+   "partial": false,
+   "value": 15115823000.0
+  },
+  "037833100|2024-12-31": {
+   "partial": false,
+   "value": 15022073000.0
+  },
+  "037833100|2025-03-31": {
+   "partial": false,
+   "value": 14935826000.0
+  },
+  "037833100|2025-06-30": {
+   "partial": false,
+   "value": 14840390000.0
+  },
+  "037833100|2025-09-30": {
+   "partial": false,
+   "value": 14776353000.0
+  },
+  "037833100|2025-12-31": {
+   "partial": false,
+   "value": 14681140000.0
+  },
+  "037833100|2026-03-31": {
+   "partial": false,
+   "value": 14687356000.0
+  },
+  "037833100|2026-06-30": {
+   "partial": false,
+   "value": 14594180000.0
+  },
+  "037833100|2026-09-30": {
+   "partial": false,
+   "value": 14532182000.0
+  },
+  "03783C100|2023-06-30": {
+   "partial": false,
+   "value": 35565000.0
+  },
+  "03783C100|2023-09-30": {
+   "partial": false,
+   "value": 35691000.0
+  },
+  "03783C100|2023-12-31": {
+   "partial": false,
+   "value": 35629000.0
+  },
+  "03783C100|2024-03-31": {
+   "partial": false,
+   "value": 36087000.0
+  },
+  "03783C100|2024-06-30": {
+   "partial": false,
+   "value": 36241000.0
+  },
+  "03783C100|2024-09-30": {
+   "partial": false,
+   "value": 36306000.0
+  },
+  "03783C100|2024-12-31": {
+   "partial": false,
+   "value": 36252000.0
+  },
+  "03783C100|2025-03-31": {
+   "partial": false,
+   "value": 36302000.0
+  },
+  "03783C100|2025-06-30": {
+   "partial": false,
+   "value": 35922000.0
+  },
+  "03783C100|2025-09-30": {
+   "partial": false,
+   "value": 35889000.0
+  },
+  "03783C100|2025-12-31": {
+   "partial": false,
+   "value": 36013000.0
+  },
+  "03783C100|2026-03-31": {
+   "partial": false,
+   "value": 35699000.0
+  },
+  "03783C100|2026-06-30": {
+   "partial": false,
+   "value": 35391000.0
+  },
+  "03783C100|2026-09-30": {
+   "partial": false,
+   "value": 35436000.0
+  },
+  "049468101|2023-06-30": {
+   "partial": false,
+   "value": 256307000.0
+  },
+  "049468101|2023-09-30": {
+   "partial": false,
+   "value": 257907000.0
+  },
+  "049468101|2023-12-31": {
+   "partial": false,
+   "value": 258601000.0
+  },
+  "049468101|2024-03-31": {
+   "partial": false,
+   "value": 259717000.0
+  },
+  "049468101|2024-06-30": {
+   "partial": false,
+   "value": 259133000.0
+  },
+  "049468101|2024-09-30": {
+   "partial": false,
+   "value": 260477000.0
+  },
+  "049468101|2024-12-31": {
+   "partial": false,
+   "value": 261147000.0
+  },
+  "049468101|2025-03-31": {
+   "partial": false,
+   "value": 262671000.0
+  },
+  "049468101|2025-06-30": {
+   "partial": false,
+   "value": 261787000.0
+  },
+  "049468101|2025-09-30": {
+   "partial": false,
+   "value": 262991000.0
+  },
+  "049468101|2025-12-31": {
+   "partial": false,
+   "value": 263828000.0
+  },
+  "049468101|2026-03-31": {
+   "partial": false,
+   "value": 260965000.0
+  },
+  "052769106|2023-06-30": {
+   "partial": false,
+   "value": 213726419.0
+  },
+  "052769106|2023-09-30": {
+   "partial": false,
+   "value": 213763632.0
+  },
+  "052769106|2023-12-31": {
+   "partial": false,
+   "value": 213915325.0
+  },
+  "052769106|2024-03-31": {
+   "partial": false,
+   "value": 215446979.0
+  },
+  "052769106|2024-06-30": {
+   "partial": false,
+   "value": 216000000.0
+  },
+  "052769106|2024-09-30": {
+   "partial": false,
+   "value": 215000000.0
+  },
+  "052769106|2024-12-31": {
+   "partial": false,
+   "value": 215000000.0
+  },
+  "052769106|2025-03-31": {
+   "partial": false,
+   "value": 213000000.0
+  },
+  "052769106|2025-06-30": {
+   "partial": false,
+   "value": 214000000.0
+  },
+  "053015103|2023-06-30": {
+   "partial": false,
+   "value": 411986870.0
+  },
+  "053015103|2023-09-30": {
+   "partial": false,
+   "value": 411304782.0
+  },
+  "053015103|2023-12-31": {
+   "partial": false,
+   "value": 410790567.0
+  },
+  "053015103|2024-03-31": {
+   "partial": false,
+   "value": 409291332.0
+  },
+  "053015103|2024-06-30": {
+   "partial": false,
+   "value": 407795203.0
+  },
+  "053015103|2024-09-30": {
+   "partial": false,
+   "value": 407456901.0
+  },
+  "053015103|2024-12-31": {
+   "partial": false,
+   "value": 406870893.0
+  },
+  "053015103|2025-03-31": {
+   "partial": false,
+   "value": 405922749.0
+  },
+  "053015103|2025-06-30": {
+   "partial": false,
+   "value": 405043142.0
+  },
+  "053604104|2025-12-31": {
+   "partial": false,
+   "value": 215789313.0
+  },
+  "053604104|2026-03-31": {
+   "partial": false,
+   "value": 215466019.0
+  },
+  "053604104|2026-06-30": {
+   "partial": false,
+   "value": 211565426.0
+  },
+  "053604104|2026-09-30": {
+   "partial": false,
+   "value": 210076688.0
+  },
+  "05463X106|2025-09-30": {
+   "partial": false,
+   "value": 46122289.0
+  },
+  "05463X106|2025-12-31": {
+   "partial": false,
+   "value": 51897682.0
+  },
+  "05463X106|2026-03-31": {
+   "partial": false,
+   "value": 53177824.0
+  },
+  "05463X106|2026-06-30": {
+   "partial": false,
+   "value": 53761513.0
+  },
+  "05463X106|2026-09-30": {
+   "partial": false,
+   "value": 59730715.0
+  },
+  "056525108|2025-03-31": {
+   "partial": false,
+   "value": 29453307.0
+  },
+  "056525108|2025-06-30": {
+   "partial": false,
+   "value": 29468808.0
+  },
+  "056525108|2025-09-30": {
+   "partial": false,
+   "value": 29469785.0
+  },
+  "056525108|2025-12-31": {
+   "partial": false,
+   "value": 29181598.0
+  },
+  "056525108|2026-03-31": {
+   "partial": false,
+   "value": 29185570.0
+  },
+  "056525108|2026-06-30": {
+   "partial": false,
+   "value": 28986847.0
+  },
+  "056525108|2026-09-30": {
+   "partial": false,
+   "value": 28563652.0
+  },
+  "057665200|2023-06-30": {
+   "partial": false,
+   "value": 32239769.0
+  },
+  "062540109|2023-09-30": {
+   "partial": false,
+   "value": 39750569.0
+  },
+  "062540109|2023-12-31": {
+   "partial": false,
+   "value": 39750303.0
+  },
+  "062540109|2024-03-31": {
+   "partial": false,
+   "value": 39695792.0
+  },
+  "062540109|2024-06-30": {
+   "partial": false,
+   "value": 39730452.0
+  },
+  "062540109|2024-09-30": {
+   "partial": false,
+   "value": 39748153.0
+  },
+  "062540109|2024-12-31": {
+   "partial": false,
+   "value": 39760303.0
+  },
+  "062540109|2025-03-31": {
+   "partial": false,
+   "value": 39734801.0
+  },
+  "08265T208|2023-06-30": {
+   "partial": false,
+   "value": 311914602.0
+  },
+  "08265T208|2023-09-30": {
+   "partial": false,
+   "value": 313069132.0
+  },
+  "08265T208|2023-12-31": {
+   "partial": false,
+   "value": 312358823.0
+  },
+  "08265T208|2024-03-31": {
+   "partial": false,
+   "value": 314295102.0
+  },
+  "08265T208|2024-06-30": {
+   "partial": false,
+   "value": 314980580.0
+  },
+  "08265T208|2024-09-30": {
+   "partial": false,
+   "value": 315207216.0
+  },
+  "084670702|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "084670702|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "09073M104|2023-06-30": {
+   "partial": false,
+   "value": 158174312.0
+  },
+  "09073M104|2023-09-30": {
+   "partial": false,
+   "value": 158150379.0
+  },
+  "09073M104|2023-12-31": {
+   "partial": false,
+   "value": 157191685.0
+  },
+  "09073M104|2024-03-31": {
+   "partial": false,
+   "value": 157584637.0
+  },
+  "09073M104|2024-06-30": {
+   "partial": false,
+   "value": 158600408.0
+  },
+  "09073M104|2024-09-30": {
+   "partial": false,
+   "value": 158891800.0
+  },
+  "09073M104|2024-12-31": {
+   "partial": false,
+   "value": 158087683.0
+  },
+  "09073M104|2025-03-31": {
+   "partial": false,
+   "value": 156767295.0
+  },
+  "09073M104|2025-06-30": {
+   "partial": false,
+   "value": 155549587.0
+  },
+  "09073M104|2025-09-30": {
+   "partial": false,
+   "value": 155812701.0
+  },
+  "09073M104|2025-12-31": {
+   "partial": false,
+   "value": 156453292.0
+  },
+  "09073M104|2026-03-31": {
+   "partial": false,
+   "value": 156568751.0
+  },
+  "09073M104|2026-06-30": {
+   "partial": false,
+   "value": 156818238.0
+  },
+  "09073M104|2026-09-30": {
+   "partial": false,
+   "value": 157055564.0
+  },
+  "09260D107|2023-12-31": {
+   "partial": false,
+   "value": 714644445.0
+  },
+  "09260D107|2024-03-31": {
+   "partial": false,
+   "value": 714645995.0
+  },
+  "09260D107|2024-06-30": {
+   "partial": false,
+   "value": 720076731.0
+  },
+  "09260D107|2024-09-30": {
+   "partial": false,
+   "value": 722002699.0
+  },
+  "093671105|2024-06-30": {
+   "partial": false,
+   "value": 139594009.0
+  },
+  "093671105|2024-09-30": {
+   "partial": false,
+   "value": 137046262.0
+  },
+  "093671105|2024-12-31": {
+   "partial": false,
+   "value": 133849262.0
+  },
+  "093671105|2025-03-31": {
+   "partial": false,
+   "value": 133880414.0
+  },
+  "093671105|2025-06-30": {
+   "partial": false,
+   "value": 133947444.0
+  },
+  "09857L108|2023-06-30": {
+   "partial": false,
+   "value": 35692156.0
+  },
+  "09857L108|2023-09-30": {
+   "partial": false,
+   "value": 34889873.0
+  },
+  "09857L108|2023-12-31": {
+   "partial": false,
+   "value": 34171027.0
+  },
+  "09857L108|2024-03-31": {
+   "partial": false,
+   "value": 33927537.0
+  },
+  "09857L108|2024-06-30": {
+   "partial": false,
+   "value": 33524388.0
+  },
+  "09857L108|2024-09-30": {
+   "partial": false,
+   "value": 33096713.0
+  },
+  "109194100|2023-06-30": {
+   "partial": false,
+   "value": 57876598.0
+  },
+  "109194100|2023-09-30": {
+   "partial": false,
+   "value": 57904906.0
+  },
+  "109194100|2023-12-31": {
+   "partial": false,
+   "value": 57963805.0
+  },
+  "109194100|2024-03-31": {
+   "partial": false,
+   "value": 58004156.0
+  },
+  "109194100|2024-06-30": {
+   "partial": false,
+   "value": 58043155.0
+  },
+  "109194100|2024-09-30": {
+   "partial": false,
+   "value": 58183225.0
+  },
+  "109194100|2024-12-31": {
+   "partial": false,
+   "value": 57354223.0
+  },
+  "110122108|2023-06-30": {
+   "partial": false,
+   "value": 2089102921.0
+  },
+  "11133T103|2023-06-30": {
+   "partial": false,
+   "value": 118116862.0
+  },
+  "11133T103|2023-09-30": {
+   "partial": false,
+   "value": 117647038.0
+  },
+  "11133T103|2023-12-31": {
+   "partial": false,
+   "value": 117772219.0
+  },
+  "11133T103|2024-03-31": {
+   "partial": false,
+   "value": 118180477.0
+  },
+  "11133T103|2024-06-30": {
+   "partial": false,
+   "value": 116708830.0
+  },
+  "11133T103|2024-09-30": {
+   "partial": false,
+   "value": 116889364.0
+  },
+  "11133T103|2024-12-31": {
+   "partial": false,
+   "value": 117018687.0
+  },
+  "11133T103|2025-03-31": {
+   "partial": false,
+   "value": 117463440.0
+  },
+  "11135F101|2023-12-31": {
+   "partial": false,
+   "value": 468140569.0
+  },
+  "11135F101|2024-03-31": {
+   "partial": false,
+   "value": 463421237.0
+  },
+  "11271J107|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "11271J107|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "113004105|2023-06-30": {
+   "partial": false,
+   "value": 392100000.0
+  },
+  "113004105|2023-09-30": {
+   "partial": false,
+   "value": 392100000.0
+  },
+  "113004105|2023-12-31": {
+   "partial": false,
+   "value": 391700000.0
+  },
+  "113004105|2024-03-31": {
+   "partial": false,
+   "value": 391700000.0
+  },
+  "12510Q100|2024-03-31": {
+   "partial": false,
+   "value": 614584238.0
+  },
+  "12510Q100|2024-06-30": {
+   "partial": false,
+   "value": 623400373.0
+  },
+  "12510Q100|2024-09-30": {
+   "partial": false,
+   "value": 625502334.0
+  },
+  "12510Q100|2024-12-31": {
+   "partial": false,
+   "value": 656781611.0
+  },
+  "12510Q100|2025-03-31": {
+   "partial": false,
+   "value": 659060196.0
+  },
+  "12510Q100|2025-06-30": {
+   "partial": false,
+   "value": 649943555.0
+  },
+  "12510Q100|2025-09-30": {
+   "partial": false,
+   "value": 642019656.0
+  },
+  "12510Q100|2025-12-31": {
+   "partial": false,
+   "value": 607126060.0
+  },
+  "12510Q100|2026-03-31": {
+   "partial": false,
+   "value": 607126060.0
+  },
+  "12510Q100|2026-06-30": {
+   "partial": false,
+   "value": 588994704.0
+  },
+  "12510Q100|2026-09-30": {
+   "partial": false,
+   "value": 591041172.0
+  },
+  "143130102|2023-06-30": {
+   "partial": false,
+   "value": 158209623.0
+  },
+  "143130102|2023-09-30": {
+   "partial": false,
+   "value": 158668229.0
+  },
+  "143130102|2023-12-31": {
+   "partial": false,
+   "value": 157921209.0
+  },
+  "143130102|2024-03-31": {
+   "partial": false,
+   "value": 157387560.0
+  },
+  "143130102|2024-06-30": {
+   "partial": false,
+   "value": 156078952.0
+  },
+  "143130102|2024-09-30": {
+   "partial": false,
+   "value": 154924341.0
+  },
+  "143130102|2024-12-31": {
+   "partial": true,
+   "value": 153799974.0
+  },
+  "143130102|2025-03-31": {
+   "partial": false,
+   "value": 152684225.0
+  },
+  "143130102|2025-06-30": {
+   "partial": false,
+   "value": 152684225.0
+  },
+  "143130102|2025-09-30": {
+   "partial": false,
+   "value": 146845043.0
+  },
+  "143130102|2025-12-31": {
+   "partial": false,
+   "value": 141796641.0
+  },
+  "159864107|2023-06-30": {
+   "partial": false,
+   "value": 51271357.0
+  },
+  "159864107|2023-09-30": {
+   "partial": false,
+   "value": 51296804.0
+  },
+  "159864107|2023-12-31": {
+   "partial": false,
+   "value": 51349770.0
+  },
+  "159864107|2024-03-31": {
+   "partial": false,
+   "value": 51511687.0
+  },
+  "159864107|2024-06-30": {
+   "partial": false,
+   "value": 51630726.0
+  },
+  "159864107|2024-09-30": {
+   "partial": false,
+   "value": 51136178.0
+  },
+  "159864107|2024-12-31": {
+   "partial": false,
+   "value": 51141607.0
+  },
+  "159864107|2025-03-31": {
+   "partial": false,
+   "value": 49115712.0
+  },
+  "169656105|2023-06-30": {
+   "partial": false,
+   "value": 27587613.0
+  },
+  "169656105|2023-09-30": {
+   "partial": false,
+   "value": 27444660.0
+  },
+  "169656105|2023-12-31": {
+   "partial": false,
+   "value": 27421169.0
+  },
+  "169656105|2024-03-31": {
+   "partial": false,
+   "value": 27467000.0
+  },
+  "169656105|2024-06-30": {
+   "partial": false,
+   "value": 1369476000.0
+  },
+  "169656105|2024-09-30": {
+   "partial": false,
+   "value": 1362593000.0
+  },
+  "169656105|2024-12-31": {
+   "partial": false,
+   "value": 1355337000.0
+  },
+  "169656105|2025-03-31": {
+   "partial": false,
+   "value": 1347364000.0
+  },
+  "169656105|2025-06-30": {
+   "partial": false,
+   "value": 1340885000.0
+  },
+  "17275R102|2023-06-30": {
+   "partial": false,
+   "value": 4075058155.0
+  },
+  "17275R102|2023-09-30": {
+   "partial": false,
+   "value": 4054857783.0
+  },
+  "17275R102|2023-12-31": {
+   "partial": false,
+   "value": 4063475676.0
+  },
+  "17275R102|2024-03-31": {
+   "partial": false,
+   "value": 4049187080.0
+  },
+  "17275R102|2024-09-30": {
+   "partial": false,
+   "value": 3990734794.0
+  },
+  "17275R102|2024-12-31": {
+   "partial": false,
+   "value": 3978292432.0
+  },
+  "185123106|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "185123106|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "192422103|2023-06-30": {
+   "partial": false,
+   "value": 172293115.0
+  },
+  "192422103|2023-09-30": {
+   "partial": false,
+   "value": 172142092.0
+  },
+  "192422103|2023-12-31": {
+   "partial": false,
+   "value": 171633726.0
+  },
+  "192422103|2024-03-31": {
+   "partial": false,
+   "value": 171662056.0
+  },
+  "192422103|2024-06-30": {
+   "partial": false,
+   "value": 171500835.0
+  },
+  "192422103|2024-09-30": {
+   "partial": false,
+   "value": 171515279.0
+  },
+  "192422103|2024-12-31": {
+   "partial": false,
+   "value": 169865714.0
+  },
+  "192422103|2025-03-31": {
+   "partial": false,
+   "value": 167864778.0
+  },
+  "192422103|2025-06-30": {
+   "partial": false,
+   "value": 167899010.0
+  },
+  "192422103|2025-09-30": {
+   "partial": false,
+   "value": 167598049.0
+  },
+  "192422103|2025-12-31": {
+   "partial": false,
+   "value": 165707920.0
+  },
+  "192422103|2026-03-31": {
+   "partial": false,
+   "value": 166419451.0
+  },
+  "192422103|2026-06-30": {
+   "partial": false,
+   "value": 168223842.0
+  },
+  "192422103|2026-09-30": {
+   "partial": false,
+   "value": 168378060.0
+  },
+  "217204106|2025-06-30": {
+   "partial": false,
+   "value": 966936214.0
+  },
+  "217204106|2025-09-30": {
+   "partial": false,
+   "value": 967731528.0
+  },
+  "217204106|2025-12-31": {
+   "partial": false,
+   "value": 968017684.0
+  },
+  "217204106|2026-03-31": {
+   "partial": false,
+   "value": 963308388.0
+  },
+  "217204106|2026-06-30": {
+   "partial": false,
+   "value": 925811482.0
+  },
+  "217204106|2026-09-30": {
+   "partial": false,
+   "value": 926330452.0
+  },
+  "218352102|2025-09-30": {
+   "partial": false,
+   "value": 105188217.0
+  },
+  "218352102|2025-12-31": {
+   "partial": false,
+   "value": 106374020.0
+  },
+  "218352102|2026-03-31": {
+   "partial": false,
+   "value": 107351594.0
+  },
+  "218352102|2026-06-30": {
+   "partial": false,
+   "value": 108098397.0
+  },
+  "218352102|2026-09-30": {
+   "partial": false,
+   "value": 109443109.0
+  },
+  "219798105|2023-06-30": {
+   "partial": false,
+   "value": 66790619.0
+  },
+  "219798105|2023-09-30": {
+   "partial": false,
+   "value": 66818718.0
+  },
+  "219798105|2023-12-31": {
+   "partial": false,
+   "value": 66849490.0
+  },
+  "219948106|2024-03-31": {
+   "partial": false,
+   "value": 70268506.0
+  },
+  "219948106|2024-06-30": {
+   "partial": false,
+   "value": 69432952.0
+  },
+  "219948106|2024-09-30": {
+   "partial": false,
+   "value": 69710982.0
+  },
+  "22160N109|2023-06-30": {
+   "partial": false,
+   "value": 408336600.0
+  },
+  "22160N109|2023-09-30": {
+   "partial": false,
+   "value": 408363368.0
+  },
+  "22160N109|2023-12-31": {
+   "partial": false,
+   "value": 408409321.0
+  },
+  "22160N109|2024-03-31": {
+   "partial": false,
+   "value": 408342326.0
+  },
+  "22160N109|2024-06-30": {
+   "partial": false,
+   "value": 409816848.0
+  },
+  "22160N109|2024-09-30": {
+   "partial": false,
+   "value": 409959517.0
+  },
+  "22160N109|2024-12-31": {
+   "partial": false,
+   "value": 410125610.0
+  },
+  "22160N109|2025-03-31": {
+   "partial": false,
+   "value": 421886653.0
+  },
+  "22160N109|2025-06-30": {
+   "partial": false,
+   "value": 423650362.0
+  },
+  "22160N109|2025-09-30": {
+   "partial": false,
+   "value": 423822791.0
+  },
+  "22160N109|2025-12-31": {
+   "partial": false,
+   "value": 419793301.0
+  },
+  "22160N109|2026-03-31": {
+   "partial": false,
+   "value": 408355715.0
+  },
+  "22160N109|2026-06-30": {
+   "partial": false,
+   "value": 405197588.0
+  },
+  "22160N109|2026-09-30": {
+   "partial": false,
+   "value": 402337328.0
+  },
+  "228903100|2026-09-30": {
+   "partial": false,
+   "value": 48789772.0
+  },
+  "229050307|2023-06-30": {
+   "partial": false,
+   "value": 48879018.0
+  },
+  "229050307|2023-09-30": {
+   "partial": false,
+   "value": 48963717.0
+  },
+  "229050307|2023-12-31": {
+   "partial": false,
+   "value": 48977476.0
+  },
+  "229050307|2024-03-31": {
+   "partial": false,
+   "value": 49257444.0
+  },
+  "229050307|2024-06-30": {
+   "partial": false,
+   "value": 49412294.0
+  },
+  "229050307|2024-09-30": {
+   "partial": false,
+   "value": 49430583.0
+  },
+  "229050307|2024-12-31": {
+   "partial": false,
+   "value": 49910391.0
+  },
+  "229050307|2025-03-31": {
+   "partial": false,
+   "value": 50137218.0
+  },
+  "229050307|2025-06-30": {
+   "partial": false,
+   "value": 50066968.0
+  },
+  "229050307|2025-09-30": {
+   "partial": false,
+   "value": 50068904.0
+  },
+  "229050307|2025-12-31": {
+   "partial": false,
+   "value": 49856135.0
+  },
+  "229050307|2026-03-31": {
+   "partial": false,
+   "value": 50402313.0
+  },
+  "229050307|2026-06-30": {
+   "partial": false,
+   "value": 50649100.0
+  },
+  "229050307|2026-09-30": {
+   "partial": false,
+   "value": 50700429.0
+  },
+  "23285D109|2023-06-30": {
+   "partial": false,
+   "value": 136360208.0
+  },
+  "23285D109|2023-09-30": {
+   "partial": false,
+   "value": 135549154.0
+  },
+  "23285D109|2023-12-31": {
+   "partial": false,
+   "value": 130824069.0
+  },
+  "23285D109|2024-03-31": {
+   "partial": false,
+   "value": 131272929.0
+  },
+  "23285D109|2024-06-30": {
+   "partial": false,
+   "value": 131505592.0
+  },
+  "23285D109|2024-09-30": {
+   "partial": false,
+   "value": 128810614.0
+  },
+  "23285D109|2024-12-31": {
+   "partial": false,
+   "value": 128097379.0
+  },
+  "23285D109|2025-03-31": {
+   "partial": false,
+   "value": 126659196.0
+  },
+  "23285D109|2025-06-30": {
+   "partial": false,
+   "value": 127223778.0
+  },
+  "23285D109|2025-09-30": {
+   "partial": false,
+   "value": 127864830.0
+  },
+  "23285D109|2025-12-31": {
+   "partial": false,
+   "value": 128550136.0
+  },
+  "23285D109|2026-03-31": {
+   "partial": false,
+   "value": 129142587.0
+  },
+  "235851102|2023-06-30": {
+   "partial": false,
+   "value": 738352114.0
+  },
+  "235851102|2023-09-30": {
+   "partial": false,
+   "value": 738927107.0
+  },
+  "235851102|2023-12-31": {
+   "partial": false,
+   "value": 739701725.0
+  },
+  "235851102|2024-03-31": {
+   "partial": false,
+   "value": 740686541.0
+  },
+  "235851102|2024-06-30": {
+   "partial": false,
+   "value": 722213081.0
+  },
+  "235851102|2024-09-30": {
+   "partial": false,
+   "value": 722275141.0
+  },
+  "235851102|2024-12-31": {
+   "partial": false,
+   "value": 714709852.0
+  },
+  "235851102|2025-03-31": {
+   "partial": false,
+   "value": 715669594.0
+  },
+  "235851102|2025-06-30": {
+   "partial": false,
+   "value": 716051590.0
+  },
+  "235851102|2025-09-30": {
+   "partial": false,
+   "value": 706349563.0
+  },
+  "235851102|2025-12-31": {
+   "partial": false,
+   "value": 707139356.0
+  },
+  "237194105|2024-06-30": {
+   "partial": false,
+   "value": 118862950.0
+  },
+  "237194105|2024-09-30": {
+   "partial": false,
+   "value": 117500476.0
+  },
+  "237194105|2024-12-31": {
+   "partial": false,
+   "value": 117146786.0
+  },
+  "237194105|2025-03-31": {
+   "partial": false,
+   "value": 117026246.0
+  },
+  "237194105|2025-06-30": {
+   "partial": false,
+   "value": 117033830.0
+  },
+  "23804L103|2023-06-30": {
+   "partial": false,
+   "value": 322215000.0
+  },
+  "23804L103|2023-09-30": {
+   "partial": false,
+   "value": 325557000.0
+  },
+  "23804L103|2023-12-31": {
+   "partial": false,
+   "value": 324033000.0
+  },
+  "23804L103|2024-03-31": {
+   "partial": false,
+   "value": 331806000.0
+  },
+  "23804L103|2024-06-30": {
+   "partial": false,
+   "value": 334941000.0
+  },
+  "23804L103|2024-09-30": {
+   "partial": false,
+   "value": 337562000.0
+  },
+  "23804L103|2024-12-31": {
+   "partial": false,
+   "value": 336172000.0
+  },
+  "23804L103|2025-03-31": {
+   "partial": false,
+   "value": 343097000.0
+  },
+  "23804L103|2025-06-30": {
+   "partial": false,
+   "value": 346185000.0
+  },
+  "23804L103|2025-09-30": {
+   "partial": false,
+   "value": 348645000.0
+  },
+  "23804L103|2025-12-31": {
+   "partial": false,
+   "value": 347309000.0
+  },
+  "23804L103|2026-03-31": {
+   "partial": false,
+   "value": 353272000.0
+  },
+  "23804L103|2026-06-30": {
+   "partial": false,
+   "value": 356253000.0
+  },
+  "23804L103|2026-09-30": {
+   "partial": false,
+   "value": 358617000.0
+  },
+  "252131107|2023-06-30": {
+   "partial": false,
+   "value": 387871796.0
+  },
+  "252131107|2023-09-30": {
+   "partial": false,
+   "value": 386373935.0
+  },
+  "252131107|2023-12-31": {
+   "partial": false,
+   "value": 385515421.0
+  },
+  "252131107|2024-03-31": {
+   "partial": false,
+   "value": 397683837.0
+  },
+  "252131107|2024-06-30": {
+   "partial": false,
+   "value": 400726824.0
+  },
+  "252131107|2024-09-30": {
+   "partial": false,
+   "value": 390595390.0
+  },
+  "253393102|2023-06-30": {
+   "partial": false,
+   "value": 84142000.0
+  },
+  "253393102|2023-09-30": {
+   "partial": false,
+   "value": 81772000.0
+  },
+  "253393102|2023-12-31": {
+   "partial": false,
+   "value": 82302000.0
+  },
+  "253393102|2024-03-31": {
+   "partial": false,
+   "value": 80582000.0
+  },
+  "253393102|2024-06-30": {
+   "partial": false,
+   "value": 80432000.0
+  },
+  "253393102|2024-09-30": {
+   "partial": false,
+   "value": 80404000.0
+  },
+  "253393102|2024-12-31": {
+   "partial": false,
+   "value": 80468000.0
+  },
+  "253393102|2025-03-31": {
+   "partial": false,
+   "value": 79341000.0
+  },
+  "25401T603|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "25401T603|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "256746108|2023-06-30": {
+   "partial": false,
+   "value": 220385373.0
+  },
+  "256746108|2023-09-30": {
+   "partial": false,
+   "value": 220005537.0
+  },
+  "256746108|2023-12-31": {
+   "partial": false,
+   "value": 217871937.0
+  },
+  "256746108|2024-03-31": {
+   "partial": false,
+   "value": 217983018.0
+  },
+  "25862V105|2023-09-30": {
+   "partial": false,
+   "value": 169986052.0
+  },
+  "25862V105|2023-12-31": {
+   "partial": false,
+   "value": 171253902.0
+  },
+  "25862V105|2024-03-31": {
+   "partial": false,
+   "value": 171796441.0
+  },
+  "25862V105|2024-06-30": {
+   "partial": false,
+   "value": 170044811.0
+  },
+  "25862V105|2024-09-30": {
+   "partial": false,
+   "value": 169165009.0
+  },
+  "25862V105|2024-12-31": {
+   "partial": false,
+   "value": 166011725.0
+  },
+  "25862V105|2025-03-31": {
+   "partial": false,
+   "value": 162502601.0
+  },
+  "25862V105|2025-06-30": {
+   "partial": false,
+   "value": 163628379.0
+  },
+  "25862V105|2025-09-30": {
+   "partial": false,
+   "value": 161107214.0
+  },
+  "25862V105|2025-12-31": {
+   "partial": false,
+   "value": 161987971.0
+  },
+  "25862V105|2026-03-31": {
+   "partial": false,
+   "value": 153464189.0
+  },
+  "26603R106|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "26603R106|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "278865100|2023-06-30": {
+   "partial": false,
+   "value": 285033916.0
+  },
+  "278865100|2023-09-30": {
+   "partial": false,
+   "value": 285139820.0
+  },
+  "278865100|2023-12-31": {
+   "partial": false,
+   "value": 285513155.0
+  },
+  "278865100|2024-03-31": {
+   "partial": false,
+   "value": 285569775.0
+  },
+  "278865100|2024-06-30": {
+   "partial": false,
+   "value": 284537616.0
+  },
+  "278865100|2024-09-30": {
+   "partial": false,
+   "value": 283161817.0
+  },
+  "278865100|2024-12-31": {
+   "partial": false,
+   "value": 282997058.0
+  },
+  "278865100|2025-03-31": {
+   "partial": false,
+   "value": 283512618.0
+  },
+  "278865100|2025-06-30": {
+   "partial": false,
+   "value": 283624912.0
+  },
+  "28176E108|2023-06-30": {
+   "partial": false,
+   "value": 607916300.0
+  },
+  "28176E108|2023-09-30": {
+   "partial": false,
+   "value": 606500000.0
+  },
+  "28176E108|2023-12-31": {
+   "partial": false,
+   "value": 601300000.0
+  },
+  "28176E108|2024-03-31": {
+   "partial": false,
+   "value": 602600000.0
+  },
+  "28176E108|2024-06-30": {
+   "partial": false,
+   "value": 602400000.0
+  },
+  "28176E108|2024-09-30": {
+   "partial": false,
+   "value": 589800000.0
+  },
+  "28176E108|2024-12-31": {
+   "partial": false,
+   "value": 587900000.0
+  },
+  "28176E108|2025-03-31": {
+   "partial": false,
+   "value": 586600000.0
+  },
+  "29270J100|2023-06-30": {
+   "partial": false,
+   "value": 56406602.0
+  },
+  "29270J100|2023-09-30": {
+   "partial": false,
+   "value": 56517933.0
+  },
+  "29270J100|2023-12-31": {
+   "partial": false,
+   "value": 57078540.0
+  },
+  "29270J100|2024-03-31": {
+   "partial": false,
+   "value": 57330153.0
+  },
+  "29270J100|2024-06-30": {
+   "partial": false,
+   "value": 57724968.0
+  },
+  "29270J100|2024-09-30": {
+   "partial": false,
+   "value": 57893899.0
+  },
+  "29270J100|2024-12-31": {
+   "partial": false,
+   "value": 54955305.0
+  },
+  "29270J100|2025-03-31": {
+   "partial": false,
+   "value": 54499225.0
+  },
+  "29270J100|2025-06-30": {
+   "partial": false,
+   "value": 53198386.0
+  },
+  "29270J100|2025-09-30": {
+   "partial": false,
+   "value": 52972096.0
+  },
+  "29270J100|2025-12-31": {
+   "partial": false,
+   "value": 52828666.0
+  },
+  "29270J100|2026-03-31": {
+   "partial": false,
+   "value": 51545259.0
+  },
+  "29270J100|2026-06-30": {
+   "partial": false,
+   "value": 51044875.0
+  },
+  "292812104|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "292812104|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "29283F103|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "29362U104|2023-06-30": {
+   "partial": false,
+   "value": 150108285.0
+  },
+  "29362U104|2023-09-30": {
+   "partial": false,
+   "value": 150158883.0
+  },
+  "29362U104|2023-12-31": {
+   "partial": false,
+   "value": 150396207.0
+  },
+  "29362U104|2024-03-31": {
+   "partial": false,
+   "value": 150791477.0
+  },
+  "29362U104|2024-06-30": {
+   "partial": false,
+   "value": 150978385.0
+  },
+  "29362U104|2024-09-30": {
+   "partial": false,
+   "value": 150997961.0
+  },
+  "29404K106|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "29404K106|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "29404K106|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "29404K106|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "29404K106|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "29404K106|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "294429105|2023-06-30": {
+   "partial": false,
+   "value": 122720094.0
+  },
+  "294429105|2023-09-30": {
+   "partial": false,
+   "value": 123216776.0
+  },
+  "294429105|2023-12-31": {
+   "partial": false,
+   "value": 123956391.0
+  },
+  "294429105|2024-03-31": {
+   "partial": false,
+   "value": 123611310.0
+  },
+  "294429105|2024-06-30": {
+   "partial": false,
+   "value": 123736402.0
+  },
+  "294429105|2024-09-30": {
+   "partial": false,
+   "value": 123952015.0
+  },
+  "30212P303|2023-06-30": {
+   "partial": false,
+   "value": 138885000.0
+  },
+  "30212P303|2023-09-30": {
+   "partial": false,
+   "value": 134331000.0
+  },
+  "30212P303|2023-12-31": {
+   "partial": false,
+   "value": 131522000.0
+  },
+  "30212P303|2024-03-31": {
+   "partial": false,
+   "value": 128007000.0
+  },
+  "30212P303|2024-06-30": {
+   "partial": false,
+   "value": 125281000.0
+  },
+  "30212P303|2024-09-30": {
+   "partial": false,
+   "value": 123316000.0
+  },
+  "30212P303|2024-12-31": {
+   "partial": false,
+   "value": 123271000.0
+  },
+  "30303M102|2023-06-30": {
+   "partial": false,
+   "value": 2568000000.0
+  },
+  "30303M102|2023-09-30": {
+   "partial": false,
+   "value": 2576000000.0
+  },
+  "30303M102|2023-12-31": {
+   "partial": false,
+   "value": 2574000000.0
+  },
+  "30303M102|2024-03-31": {
+   "partial": false,
+   "value": 2545000000.0
+  },
+  "30303M102|2024-06-30": {
+   "partial": false,
+   "value": 2534000000.0
+  },
+  "30303M102|2024-09-30": {
+   "partial": false,
+   "value": 2529000000.0
+  },
+  "30303M102|2024-12-31": {
+   "partial": false,
+   "value": 2534000000.0
+  },
+  "30303M102|2025-03-31": {
+   "partial": false,
+   "value": 2527000000.0
+  },
+  "30303M102|2025-06-30": {
+   "partial": false,
+   "value": 2518000000.0
+  },
+  "30303M102|2025-09-30": {
+   "partial": false,
+   "value": 2517000000.0
+  },
+  "303250104|2024-03-31": {
+   "partial": false,
+   "value": 24710938.0
+  },
+  "303250104|2024-06-30": {
+   "partial": false,
+   "value": 24518533.0
+  },
+  "303250104|2024-09-30": {
+   "partial": false,
+   "value": 24347903.0
+  },
+  "303250104|2024-12-31": {
+   "partial": false,
+   "value": 24418138.0
+  },
+  "303250104|2025-03-31": {
+   "partial": false,
+   "value": 24341690.0
+  },
+  "303250104|2025-06-30": {
+   "partial": false,
+   "value": 24003656.0
+  },
+  "303250104|2025-09-30": {
+   "partial": false,
+   "value": 23709047.0
+  },
+  "303250104|2025-12-31": {
+   "partial": false,
+   "value": 23722134.0
+  },
+  "303250104|2026-03-31": {
+   "partial": false,
+   "value": 23190906.0
+  },
+  "303250104|2026-06-30": {
+   "partial": false,
+   "value": 21597635.0
+  },
+  "303250104|2026-09-30": {
+   "partial": false,
+   "value": 21380929.0
+  },
+  "311900104|2023-06-30": {
+   "partial": false,
+   "value": 571333004.0
+  },
+  "311900104|2023-09-30": {
+   "partial": false,
+   "value": 571413165.0
+  },
+  "311900104|2023-12-31": {
+   "partial": false,
+   "value": 572232755.0
+  },
+  "311900104|2024-03-31": {
+   "partial": false,
+   "value": 572547449.0
+  },
+  "311900104|2024-06-30": {
+   "partial": false,
+   "value": 572646104.0
+  },
+  "311900104|2024-09-30": {
+   "partial": false,
+   "value": 572886495.0
+  },
+  "311900104|2024-12-31": {
+   "partial": false,
+   "value": 573419704.0
+  },
+  "311900104|2025-03-31": {
+   "partial": false,
+   "value": 573620638.0
+  },
+  "311900104|2025-06-30": {
+   "partial": false,
+   "value": 1147636617.0
+  },
+  "337738108|2023-06-30": {
+   "partial": false,
+   "value": 609614903.0
+  },
+  "337738108|2023-09-30": {
+   "partial": false,
+   "value": 600185716.0
+  },
+  "337738108|2023-12-31": {
+   "partial": false,
+   "value": 590402536.0
+  },
+  "337738108|2024-03-31": {
+   "partial": false,
+   "value": 585101873.0
+  },
+  "337738108|2024-06-30": {
+   "partial": false,
+   "value": 575725190.0
+  },
+  "337738108|2024-09-30": {
+   "partial": false,
+   "value": 568918735.0
+  },
+  "337738108|2024-12-31": {
+   "partial": false,
+   "value": 561288944.0
+  },
+  "337738108|2025-03-31": {
+   "partial": false,
+   "value": 554433824.0
+  },
+  "337738108|2025-06-30": {
+   "partial": false,
+   "value": 543593180.0
+  },
+  "338307101|2023-06-30": {
+   "partial": false,
+   "value": 72212312.0
+  },
+  "338307101|2023-09-30": {
+   "partial": false,
+   "value": 72695935.0
+  },
+  "338307101|2023-12-31": {
+   "partial": false,
+   "value": 73326608.0
+  },
+  "338307101|2024-03-31": {
+   "partial": false,
+   "value": 73867985.0
+  },
+  "338307101|2024-06-30": {
+   "partial": false,
+   "value": 74736098.0
+  },
+  "338307101|2024-09-30": {
+   "partial": false,
+   "value": 75208409.0
+  },
+  "339041105|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "339041105|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "339041105|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "349381103|2026-06-30": {
+   "partial": false,
+   "value": 221514237.0
+  },
+  "349381103|2026-09-30": {
+   "partial": false,
+   "value": 224349649.0
+  },
+  "370334104|2024-06-30": {
+   "partial": false,
+   "value": 558145667.0
+  },
+  "370334104|2024-09-30": {
+   "partial": false,
+   "value": 555158898.0
+  },
+  "370334104|2024-12-31": {
+   "partial": false,
+   "value": 551231250.0
+  },
+  "377322102|2023-06-30": {
+   "partial": false,
+   "value": 48649562.0
+  },
+  "377322102|2023-09-30": {
+   "partial": false,
+   "value": 48799581.0
+  },
+  "377322102|2023-12-31": {
+   "partial": false,
+   "value": 49470423.0
+  },
+  "377322102|2024-03-31": {
+   "partial": false,
+   "value": 50367507.0
+  },
+  "377322102|2024-06-30": {
+   "partial": false,
+   "value": 54950459.0
+  },
+  "377322102|2024-09-30": {
+   "partial": false,
+   "value": 55137429.0
+  },
+  "377322102|2024-12-31": {
+   "partial": false,
+   "value": 56567386.0
+  },
+  "377322102|2025-03-31": {
+   "partial": false,
+   "value": 57140526.0
+  },
+  "377322102|2025-06-30": {
+   "partial": false,
+   "value": 57349987.0
+  },
+  "377322102|2025-09-30": {
+   "partial": false,
+   "value": 57434740.0
+  },
+  "377322102|2025-12-31": {
+   "partial": false,
+   "value": 58078812.0
+  },
+  "377322102|2026-03-31": {
+   "partial": false,
+   "value": 58733911.0
+  },
+  "377322102|2026-06-30": {
+   "partial": false,
+   "value": 58983937.0
+  },
+  "377322102|2026-09-30": {
+   "partial": false,
+   "value": 59196870.0
+  },
+  "38267D109|2023-06-30": {
+   "partial": false,
+   "value": 23689000.0
+  },
+  "38267D109|2023-09-30": {
+   "partial": false,
+   "value": 24124000.0
+  },
+  "38267D109|2023-12-31": {
+   "partial": false,
+   "value": 23929000.0
+  },
+  "38267D109|2024-03-31": {
+   "partial": false,
+   "value": 25087000.0
+  },
+  "38267D109|2024-06-30": {
+   "partial": false,
+   "value": 24693000.0
+  },
+  "38267D109|2024-09-30": {
+   "partial": false,
+   "value": 24293000.0
+  },
+  "38267D109|2024-12-31": {
+   "partial": false,
+   "value": 24657000.0
+  },
+  "38267D109|2025-03-31": {
+   "partial": false,
+   "value": 24791000.0
+  },
+  "38267D109|2025-06-30": {
+   "partial": false,
+   "value": 25216000.0
+  },
+  "38267D109|2025-09-30": {
+   "partial": false,
+   "value": 25149000.0
+  },
+  "38267D109|2025-12-31": {
+   "partial": false,
+   "value": 24975000.0
+  },
+  "38267D109|2026-03-31": {
+   "partial": false,
+   "value": 24269000.0
+  },
+  "38267D109|2026-06-30": {
+   "partial": false,
+   "value": 23718000.0
+  },
+  "38267D109|2026-09-30": {
+   "partial": false,
+   "value": 23718000.0
+  },
+  "384802104|2023-06-30": {
+   "partial": false,
+   "value": 50000883.0
+  },
+  "384802104|2023-09-30": {
+   "partial": false,
+   "value": 49634150.0
+  },
+  "384802104|2023-12-31": {
+   "partial": false,
+   "value": 49173357.0
+  },
+  "384802104|2024-03-31": {
+   "partial": false,
+   "value": 49068805.0
+  },
+  "384802104|2024-06-30": {
+   "partial": false,
+   "value": 48825703.0
+  },
+  "384802104|2024-09-30": {
+   "partial": false,
+   "value": 48700165.0
+  },
+  "384802104|2024-12-31": {
+   "partial": false,
+   "value": 48216708.0
+  },
+  "384802104|2025-03-31": {
+   "partial": false,
+   "value": 48039213.0
+  },
+  "40171V100|2023-06-30": {
+   "partial": false,
+   "value": 81444895.0
+  },
+  "40171V100|2023-09-30": {
+   "partial": false,
+   "value": 81440720.0
+  },
+  "40171V100|2023-12-31": {
+   "partial": false,
+   "value": 81930546.0
+  },
+  "40171V100|2024-03-31": {
+   "partial": false,
+   "value": 83322110.0
+  },
+  "40171V100|2024-06-30": {
+   "partial": false,
+   "value": 82663305.0
+  },
+  "40171V100|2024-09-30": {
+   "partial": false,
+   "value": 83025888.0
+  },
+  "40171V100|2024-12-31": {
+   "partial": false,
+   "value": 83519257.0
+  },
+  "40171V100|2025-03-31": {
+   "partial": false,
+   "value": 83880712.0
+  },
+  "40171V100|2025-06-30": {
+   "partial": false,
+   "value": 84195223.0
+  },
+  "40171V100|2025-09-30": {
+   "partial": false,
+   "value": 84530578.0
+  },
+  "40171V100|2025-12-31": {
+   "partial": false,
+   "value": 85019176.0
+  },
+  "40171V100|2026-03-31": {
+   "partial": false,
+   "value": 84657470.0
+  },
+  "40171V100|2026-06-30": {
+   "partial": false,
+   "value": 83256364.0
+  },
+  "40171V100|2026-09-30": {
+   "partial": false,
+   "value": 81992669.0
+  },
+  "42238D107|2026-06-30": {
+   "partial": false,
+   "value": 86953627.0
+  },
+  "42238D107|2026-09-30": {
+   "partial": false,
+   "value": 87887561.0
+  },
+  "42328H109|2023-06-30": {
+   "partial": false,
+   "value": 33034889.0
+  },
+  "42328H109|2023-09-30": {
+   "partial": false,
+   "value": 33052989.0
+  },
+  "42328H109|2023-12-31": {
+   "partial": false,
+   "value": 33116551.0
+  },
+  "42328H109|2024-03-31": {
+   "partial": false,
+   "value": 33197487.0
+  },
+  "42328H109|2024-06-30": {
+   "partial": false,
+   "value": 33219806.0
+  },
+  "42328H109|2024-09-30": {
+   "partial": false,
+   "value": 33242374.0
+  },
+  "42328H109|2024-12-31": {
+   "partial": false,
+   "value": 33296057.0
+  },
+  "42328H109|2025-03-31": {
+   "partial": false,
+   "value": 33331814.0
+  },
+  "426281101|2023-06-30": {
+   "partial": false,
+   "value": 72935131.0
+  },
+  "426281101|2023-09-30": {
+   "partial": false,
+   "value": 72828202.0
+  },
+  "426281101|2023-12-31": {
+   "partial": false,
+   "value": 72867678.0
+  },
+  "426281101|2024-03-31": {
+   "partial": false,
+   "value": 72900026.0
+  },
+  "426281101|2024-06-30": {
+   "partial": false,
+   "value": 72908319.0
+  },
+  "426281101|2024-09-30": {
+   "partial": false,
+   "value": 72959325.0
+  },
+  "426281101|2024-12-31": {
+   "partial": false,
+   "value": 72897671.0
+  },
+  "437076102|2023-06-30": {
+   "partial": false,
+   "value": 1005376130.0
+  },
+  "437076102|2023-09-30": {
+   "partial": false,
+   "value": 995261844.0
+  },
+  "437076102|2023-12-31": {
+   "partial": false,
+   "value": 995261844.0
+  },
+  "437076102|2024-03-31": {
+   "partial": false,
+   "value": 991015773.0
+  },
+  "437076102|2024-06-30": {
+   "partial": false,
+   "value": 993293377.0
+  },
+  "437076102|2024-09-30": {
+   "partial": false,
+   "value": 993362612.0
+  },
+  "437076102|2024-12-31": {
+   "partial": false,
+   "value": 993362612.0
+  },
+  "437076102|2025-03-31": {
+   "partial": false,
+   "value": 994032168.0
+  },
+  "437076102|2025-06-30": {
+   "partial": false,
+   "value": 994927985.0
+  },
+  "443573100|2023-06-30": {
+   "partial": false,
+   "value": 50015326.0
+  },
+  "443573100|2023-09-30": {
+   "partial": false,
+   "value": 50330543.0
+  },
+  "443573100|2023-12-31": {
+   "partial": false,
+   "value": 50674493.0
+  },
+  "443573100|2024-03-31": {
+   "partial": false,
+   "value": 50962443.0
+  },
+  "443573100|2024-06-30": {
+   "partial": false,
+   "value": 51348838.0
+  },
+  "443573100|2024-09-30": {
+   "partial": false,
+   "value": 51623568.0
+  },
+  "443573100|2024-12-31": {
+   "partial": false,
+   "value": 52153077.0
+  },
+  "443573100|2025-03-31": {
+   "partial": false,
+   "value": 52737566.0
+  },
+  "443573100|2025-06-30": {
+   "partial": false,
+   "value": 52693110.0
+  },
+  "452308109|2023-06-30": {
+   "partial": false,
+   "value": 302390322.0
+  },
+  "452308109|2023-09-30": {
+   "partial": false,
+   "value": 300885880.0
+  },
+  "452308109|2023-12-31": {
+   "partial": false,
+   "value": 298800000.0
+  },
+  "452308109|2024-03-31": {
+   "partial": false,
+   "value": 298400000.0
+  },
+  "452308109|2024-06-30": {
+   "partial": false,
+   "value": 296900000.0
+  },
+  "452308109|2024-09-30": {
+   "partial": false,
+   "value": 295300000.0
+  },
+  "452308109|2024-12-31": {
+   "partial": false,
+   "value": 293500000.0
+  },
+  "452308109|2025-03-31": {
+   "partial": false,
+   "value": 293000000.0
+  },
+  "45332Y109|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "45332Y109|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "45332Y109|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "45332Y109|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "45332Y109|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "45332Y109|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "45332Y109|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "457730109|2024-03-31": {
+   "partial": false,
+   "value": 29711048.0
+  },
+  "457730109|2024-06-30": {
+   "partial": false,
+   "value": 29821707.0
+  },
+  "457730109|2024-09-30": {
+   "partial": false,
+   "value": 29966914.0
+  },
+  "457730109|2024-12-31": {
+   "partial": false,
+   "value": 29669407.0
+  },
+  "457730109|2025-03-31": {
+   "partial": false,
+   "value": 29493924.0
+  },
+  "457730109|2025-06-30": {
+   "partial": false,
+   "value": 29574316.0
+  },
+  "457730109|2025-09-30": {
+   "partial": false,
+   "value": 29056434.0
+  },
+  "457730109|2025-12-31": {
+   "partial": false,
+   "value": 28589291.0
+  },
+  "457730109|2026-03-31": {
+   "partial": false,
+   "value": 28813153.0
+  },
+  "457730109|2026-06-30": {
+   "partial": false,
+   "value": 28910375.0
+  },
+  "457730109|2026-09-30": {
+   "partial": false,
+   "value": 28966119.0
+  },
+  "45780L104|2023-06-30": {
+   "partial": false,
+   "value": 23194473.0
+  },
+  "45780L104|2023-09-30": {
+   "partial": false,
+   "value": 23307814.0
+  },
+  "45780L104|2023-12-31": {
+   "partial": false,
+   "value": 23326783.0
+  },
+  "45780L104|2024-03-31": {
+   "partial": false,
+   "value": 23577109.0
+  },
+  "45780L104|2024-06-30": {
+   "partial": false,
+   "value": 23719012.0
+  },
+  "45780L104|2024-09-30": {
+   "partial": false,
+   "value": 23818413.0
+  },
+  "45780L104|2024-12-31": {
+   "partial": false,
+   "value": 26529544.0
+  },
+  "45784P101|2023-06-30": {
+   "partial": false,
+   "value": 69821118.0
+  },
+  "45784P101|2023-09-30": {
+   "partial": false,
+   "value": 69827619.0
+  },
+  "45784P101|2023-12-31": {
+   "partial": false,
+   "value": 69925730.0
+  },
+  "45784P101|2024-03-31": {
+   "partial": false,
+   "value": 70039511.0
+  },
+  "45784P101|2024-06-30": {
+   "partial": false,
+   "value": 70115482.0
+  },
+  "45784P101|2024-09-30": {
+   "partial": false,
+   "value": 70144775.0
+  },
+  "45784P101|2024-12-31": {
+   "partial": false,
+   "value": 70226104.0
+  },
+  "45784P101|2025-03-31": {
+   "partial": false,
+   "value": 70374923.0
+  },
+  "45784P101|2025-06-30": {
+   "partial": false,
+   "value": 70392535.0
+  },
+  "45827U109|2025-09-30": {
+   "partial": false,
+   "value": 81926481.0
+  },
+  "45827U109|2025-12-31": {
+   "partial": false,
+   "value": 80395789.0
+  },
+  "45827U109|2026-03-31": {
+   "partial": false,
+   "value": 77061595.0
+  },
+  "45827U109|2026-06-30": {
+   "partial": false,
+   "value": 76511148.0
+  },
+  "45827U109|2026-09-30": {
+   "partial": false,
+   "value": 76651377.0
+  },
+  "459200101|2024-03-31": {
+   "partial": false,
+   "value": 918602666.0
+  },
+  "46333X108|2023-06-30": {
+   "partial": false,
+   "value": 156029186.0
+  },
+  "46333X108|2023-09-30": {
+   "partial": false,
+   "value": 156129046.0
+  },
+  "46333X108|2023-12-31": {
+   "partial": false,
+   "value": 156528648.0
+  },
+  "46333X108|2024-03-31": {
+   "partial": false,
+   "value": 158957123.0
+  },
+  "46333X108|2024-06-30": {
+   "partial": false,
+   "value": 159739001.0
+  },
+  "464288240|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "46625H100|2023-06-30": {
+   "partial": false,
+   "value": 2906085273.0
+  },
+  "46625H100|2023-09-30": {
+   "partial": false,
+   "value": 2891008341.0
+  },
+  "46625H100|2023-12-31": {
+   "partial": false,
+   "value": 2880371498.0
+  },
+  "46625H100|2024-03-31": {
+   "partial": false,
+   "value": 2871667879.0
+  },
+  "46625H100|2024-06-30": {
+   "partial": false,
+   "value": 2845164727.0
+  },
+  "46625H100|2024-09-30": {
+   "partial": false,
+   "value": 2815340422.0
+  },
+  "46625H100|2024-12-31": {
+   "partial": false,
+   "value": 2796106099.0
+  },
+  "46625H100|2025-03-31": {
+   "partial": false,
+   "value": 2779094488.0
+  },
+  "46625H100|2025-06-30": {
+   "partial": false,
+   "value": 2749753854.0
+  },
+  "478160104|2023-06-30": {
+   "partial": false,
+   "value": 2598969594.0
+  },
+  "478160104|2023-09-30": {
+   "partial": false,
+   "value": 2407278620.0
+  },
+  "478160104|2023-12-31": {
+   "partial": false,
+   "value": 2408767228.0
+  },
+  "478160104|2024-03-31": {
+   "partial": false,
+   "value": 2406679183.0
+  },
+  "478160104|2024-06-30": {
+   "partial": false,
+   "value": 2407243667.0
+  },
+  "478160104|2024-09-30": {
+   "partial": false,
+   "value": 2407622972.0
+  },
+  "478160104|2024-12-31": {
+   "partial": false,
+   "value": 2407616693.0
+  },
+  "478160104|2025-03-31": {
+   "partial": false,
+   "value": 2406073279.0
+  },
+  "48251W104|2023-06-30": {
+   "partial": false,
+   "value": 857679856.0
+  },
+  "48251W104|2023-09-30": {
+   "partial": false,
+   "value": 885008676.0
+  },
+  "48251W104|2023-12-31": {
+   "partial": false,
+   "value": 885008676.0
+  },
+  "48251W104|2024-03-31": {
+   "partial": false,
+   "value": 885005588.0
+  },
+  "48251W104|2024-06-30": {
+   "partial": false,
+   "value": 887439879.0
+  },
+  "48251W104|2024-09-30": {
+   "partial": false,
+   "value": 888228909.0
+  },
+  "48251W104|2024-12-31": {
+   "partial": false,
+   "value": 888228909.0
+  },
+  "48251W104|2025-03-31": {
+   "partial": false,
+   "value": 888250533.0
+  },
+  "48251W104|2025-06-30": {
+   "partial": false,
+   "value": 890948725.0
+  },
+  "48251W104|2025-09-30": {
+   "partial": false,
+   "value": 891353410.0
+  },
+  "48251W104|2025-12-31": {
+   "partial": false,
+   "value": 891353410.0
+  },
+  "48251W104|2026-03-31": {
+   "partial": false,
+   "value": 891550894.0
+  },
+  "48251W104|2026-06-30": {
+   "partial": false,
+   "value": 897635601.0
+  },
+  "48251W104|2026-09-30": {
+   "partial": false,
+   "value": 892139534.0
+  },
+  "485924104|2026-06-30": {
+   "partial": false,
+   "value": 132533708.0
+  },
+  "485924104|2026-09-30": {
+   "partial": false,
+   "value": 132533708.0
+  },
+  "501147102|2026-03-31": {
+   "partial": false,
+   "value": 29479756.0
+  },
+  "501147102|2026-06-30": {
+   "partial": false,
+   "value": 29598836.0
+  },
+  "501147102|2026-09-30": {
+   "partial": false,
+   "value": 29633472.0
+  },
+  "532457108|2023-06-30": {
+   "partial": false,
+   "value": 949295173.0
+  },
+  "532457108|2023-09-30": {
+   "partial": false,
+   "value": 949307237.0
+  },
+  "532457108|2023-12-31": {
+   "partial": false,
+   "value": 950164452.0
+  },
+  "532457108|2024-03-31": {
+   "partial": false,
+   "value": 950405386.0
+  },
+  "532457108|2024-06-30": {
+   "partial": false,
+   "value": 950425778.0
+  },
+  "532457108|2024-09-30": {
+   "partial": false,
+   "value": 949315694.0
+  },
+  "532457108|2024-12-31": {
+   "partial": false,
+   "value": 948169999.0
+  },
+  "53947R105|2025-12-31": {
+   "partial": false,
+   "value": 93622471.0
+  },
+  "53947R105|2026-03-31": {
+   "partial": false,
+   "value": 93624471.0
+  },
+  "53947R105|2026-06-30": {
+   "partial": false,
+   "value": 93688471.0
+  },
+  "53947R105|2026-09-30": {
+   "partial": false,
+   "value": 93690471.0
+  },
+  "55261F104|2023-09-30": {
+   "partial": false,
+   "value": 165960333.0
+  },
+  "55261F104|2023-12-31": {
+   "partial": false,
+   "value": 166624291.0
+  },
+  "55261F104|2024-03-31": {
+   "partial": false,
+   "value": 166854421.0
+  },
+  "55261F104|2024-06-30": {
+   "partial": false,
+   "value": 167000691.0
+  },
+  "55261F104|2024-09-30": {
+   "partial": false,
+   "value": 165921158.0
+  },
+  "55261F104|2024-12-31": {
+   "partial": false,
+   "value": 164333454.0
+  },
+  "55261F104|2025-03-31": {
+   "partial": false,
+   "value": 160516041.0
+  },
+  "55261F104|2025-06-30": {
+   "partial": false,
+   "value": 156269291.0
+  },
+  "56146T103|2025-09-30": {
+   "partial": false,
+   "value": 40498628.0
+  },
+  "56146T103|2025-12-31": {
+   "partial": false,
+   "value": 40653333.0
+  },
+  "56146T103|2026-03-31": {
+   "partial": false,
+   "value": 40657000.0
+  },
+  "56146T103|2026-06-30": {
+   "partial": false,
+   "value": 40706667.0
+  },
+  "56146T103|2026-09-30": {
+   "partial": false,
+   "value": 47147469.0
+  },
+  "562750109|2023-06-30": {
+   "partial": false,
+   "value": 61668802.0
+  },
+  "562750109|2023-09-30": {
+   "partial": false,
+   "value": 61565157.0
+  },
+  "562750109|2023-12-31": {
+   "partial": false,
+   "value": 61566215.0
+  },
+  "562750109|2024-03-31": {
+   "partial": false,
+   "value": 61569883.0
+  },
+  "562750109|2024-06-30": {
+   "partial": false,
+   "value": 61245946.0
+  },
+  "562750109|2024-09-30": {
+   "partial": false,
+   "value": 61075279.0
+  },
+  "562750109|2024-12-31": {
+   "partial": false,
+   "value": 61124051.0
+  },
+  "562750109|2025-03-31": {
+   "partial": false,
+   "value": 60714988.0
+  },
+  "562750109|2025-06-30": {
+   "partial": false,
+   "value": 60468594.0
+  },
+  "562750109|2025-09-30": {
+   "partial": false,
+   "value": 60258247.0
+  },
+  "562750109|2025-12-31": {
+   "partial": false,
+   "value": 59847548.0
+  },
+  "562750109|2026-03-31": {
+   "partial": false,
+   "value": 59164602.0
+  },
+  "562750109|2026-06-30": {
+   "partial": false,
+   "value": 58304972.0
+  },
+  "562750109|2026-09-30": {
+   "partial": false,
+   "value": 58061893.0
+  },
+  "57060D108|2023-06-30": {
+   "partial": false,
+   "value": 37677426.0
+  },
+  "57060D108|2023-09-30": {
+   "partial": false,
+   "value": 37905448.0
+  },
+  "57060D108|2023-12-31": {
+   "partial": false,
+   "value": 37867743.0
+  },
+  "57060D108|2024-03-31": {
+   "partial": false,
+   "value": 37896895.0
+  },
+  "57060D108|2024-06-30": {
+   "partial": false,
+   "value": 37751975.0
+  },
+  "57060D108|2024-09-30": {
+   "partial": false,
+   "value": 37704364.0
+  },
+  "574795100|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "574795100|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "574795100|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "574795100|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "574795100|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "574795100|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "574795100|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "57636Q104|2023-06-30": {
+   "partial": false,
+   "value": 946000000.0
+  },
+  "57636Q104|2023-09-30": {
+   "partial": false,
+   "value": 941000000.0
+  },
+  "57636Q104|2023-12-31": {
+   "partial": false,
+   "value": 944000000.0
+  },
+  "57636Q104|2024-03-31": {
+   "partial": false,
+   "value": 933000000.0
+  },
+  "57636Q104|2024-06-30": {
+   "partial": false,
+   "value": 929000000.0
+  },
+  "57636Q104|2024-09-30": {
+   "partial": false,
+   "value": 923000000.0
+  },
+  "57636Q104|2024-12-31": {
+   "partial": false,
+   "value": 925000000.0
+  },
+  "57636Q104|2025-03-31": {
+   "partial": false,
+   "value": 912000000.0
+  },
+  "57636Q104|2025-06-30": {
+   "partial": false,
+   "value": 908000000.0
+  },
+  "57636Q104|2025-09-30": {
+   "partial": false,
+   "value": 903000000.0
+  },
+  "57636Q104|2025-12-31": {
+   "partial": false,
+   "value": 905000000.0
+  },
+  "57636Q104|2026-03-31": {
+   "partial": false,
+   "value": 891000000.0
+  },
+  "57636Q104|2026-06-30": {
+   "partial": false,
+   "value": 882000000.0
+  },
+  "57636Q104|2026-09-30": {
+   "partial": false,
+   "value": 875000000.0
+  },
+  "580135101|2023-06-30": {
+   "partial": false,
+   "value": 728763452.0
+  },
+  "580135101|2023-09-30": {
+   "partial": false,
+   "value": 725342030.0
+  },
+  "580135101|2023-12-31": {
+   "partial": false,
+   "value": 722051488.0
+  },
+  "580135101|2024-03-31": {
+   "partial": false,
+   "value": 720681656.0
+  },
+  "580135101|2024-06-30": {
+   "partial": false,
+   "value": 717343247.0
+  },
+  "580135101|2024-09-30": {
+   "partial": false,
+   "value": 716619686.0
+  },
+  "580135101|2024-12-31": {
+   "partial": false,
+   "value": 714461139.0
+  },
+  "580135101|2025-03-31": {
+   "partial": false,
+   "value": 715032727.0
+  },
+  "580135101|2025-06-30": {
+   "partial": false,
+   "value": 713604434.0
+  },
+  "58733R102|2023-06-30": {
+   "partial": false,
+   "value": 50092669.0
+  },
+  "58733R102|2023-09-30": {
+   "partial": false,
+   "value": 50559537.0
+  },
+  "58733R102|2023-12-31": {
+   "partial": false,
+   "value": 50697442.0
+  },
+  "58733R102|2024-03-31": {
+   "partial": false,
+   "value": 50697442.0
+  },
+  "58733R102|2024-06-30": {
+   "partial": false,
+   "value": 50697438.0
+  },
+  "58733R102|2024-09-30": {
+   "partial": false,
+   "value": 50697375.0
+  },
+  "58733R102|2024-12-31": {
+   "partial": false,
+   "value": 50697375.0
+  },
+  "58733R102|2025-03-31": {
+   "partial": false,
+   "value": 50697375.0
+  },
+  "58733R102|2025-06-30": {
+   "partial": false,
+   "value": 50697375.0
+  },
+  "58733R102|2025-09-30": {
+   "partial": false,
+   "value": 50697182.0
+  },
+  "58733R102|2025-12-31": {
+   "partial": false,
+   "value": 50697182.0
+  },
+  "58733R102|2026-03-31": {
+   "partial": false,
+   "value": 50697182.0
+  },
+  "58933Y105|2023-06-30": {
+   "partial": false,
+   "value": 2537521169.0
+  },
+  "58933Y105|2023-09-30": {
+   "partial": false,
+   "value": 2534023084.0
+  },
+  "58933Y105|2023-12-31": {
+   "partial": false,
+   "value": 2532643872.0
+  },
+  "58933Y105|2024-03-31": {
+   "partial": false,
+   "value": 2532806307.0
+  },
+  "58933Y105|2024-06-30": {
+   "partial": false,
+   "value": 2534809312.0
+  },
+  "58933Y105|2024-09-30": {
+   "partial": false,
+   "value": 2529635645.0
+  },
+  "58933Y105|2024-12-31": {
+   "partial": false,
+   "value": 2526036240.0
+  },
+  "58933Y105|2025-03-31": {
+   "partial": false,
+   "value": 2511031253.0
+  },
+  "594918104|2023-06-30": {
+   "partial": false,
+   "value": 7429763722.0
+  },
+  "594918104|2023-09-30": {
+   "partial": false,
+   "value": 7432262329.0
+  },
+  "594918104|2023-12-31": {
+   "partial": false,
+   "value": 7430436229.0
+  },
+  "594918104|2024-03-31": {
+   "partial": false,
+   "value": 7432305794.0
+  },
+  "594918104|2024-06-30": {
+   "partial": false,
+   "value": 7433038381.0
+  },
+  "594918104|2024-09-30": {
+   "partial": false,
+   "value": 7434880776.0
+  },
+  "594918104|2024-12-31": {
+   "partial": false,
+   "value": 7433982235.0
+  },
+  "594918104|2025-03-31": {
+   "partial": false,
+   "value": 7432543865.0
+  },
+  "594918104|2025-06-30": {
+   "partial": false,
+   "value": 7433166379.0
+  },
+  "594918104|2025-09-30": {
+   "partial": false,
+   "value": 7432377655.0
+  },
+  "594918104|2025-12-31": {
+   "partial": false,
+   "value": 7425629076.0
+  },
+  "594918104|2026-09-30": {
+   "partial": false,
+   "value": 7426194552.0
+  },
+  "60741F104|2023-06-30": {
+   "partial": false,
+   "value": 94162090.0
+  },
+  "60741F104|2024-03-31": {
+   "partial": false,
+   "value": 94901460.0
+  },
+  "60741F104|2024-06-30": {
+   "partial": false,
+   "value": 99548127.0
+  },
+  "615369105|2023-06-30": {
+   "partial": false,
+   "value": 183500000.0
+  },
+  "615369105|2023-09-30": {
+   "partial": false,
+   "value": 183000000.0
+  },
+  "615369105|2023-12-31": {
+   "partial": false,
+   "value": 182500000.0
+  },
+  "615369105|2024-03-31": {
+   "partial": false,
+   "value": 182600000.0
+  },
+  "615369105|2024-06-30": {
+   "partial": false,
+   "value": 182100000.0
+  },
+  "615369105|2024-09-30": {
+   "partial": false,
+   "value": 181200000.0
+  },
+  "615369105|2024-12-31": {
+   "partial": false,
+   "value": 180000000.0
+  },
+  "615369105|2025-03-31": {
+   "partial": false,
+   "value": 179900000.0
+  },
+  "615369105|2025-06-30": {
+   "partial": false,
+   "value": 179400000.0
+  },
+  "615369105|2025-09-30": {
+   "partial": false,
+   "value": 178400000.0
+  },
+  "615369105|2025-12-31": {
+   "partial": false,
+   "value": 177300000.0
+  },
+  "615369105|2026-03-31": {
+   "partial": false,
+   "value": 174700000.0
+  },
+  "615369105|2026-06-30": {
+   "partial": false,
+   "value": 173200000.0
+  },
+  "615369105|2026-09-30": {
+   "partial": false,
+   "value": 172400000.0
+  },
+  "617446448|2023-06-30": {
+   "partial": false,
+   "value": 1656966580.0
+  },
+  "617446448|2023-09-30": {
+   "partial": false,
+   "value": 1641311580.0
+  },
+  "617446448|2023-12-31": {
+   "partial": false,
+   "value": 1635268297.0
+  },
+  "617446448|2024-03-31": {
+   "partial": false,
+   "value": 1625162676.0
+  },
+  "617446448|2024-06-30": {
+   "partial": false,
+   "value": 1617863626.0
+  },
+  "617446448|2024-09-30": {
+   "partial": false,
+   "value": 1611035579.0
+  },
+  "617446448|2024-12-31": {
+   "partial": false,
+   "value": 1612855585.0
+  },
+  "617446448|2025-03-31": {
+   "partial": false,
+   "value": 1604319158.0
+  },
+  "632307104|2024-06-30": {
+   "partial": false,
+   "value": 123681432.0
+  },
+  "632307104|2024-09-30": {
+   "partial": false,
+   "value": 132020816.0
+  },
+  "63947X101|2023-06-30": {
+   "partial": false,
+   "value": 112253503.0
+  },
+  "63947X101|2023-09-30": {
+   "partial": false,
+   "value": 112911195.0
+  },
+  "63947X101|2023-12-31": {
+   "partial": false,
+   "value": 113133108.0
+  },
+  "63947X101|2024-03-31": {
+   "partial": false,
+   "value": 114216575.0
+  },
+  "63947X101|2024-06-30": {
+   "partial": false,
+   "value": 115084198.0
+  },
+  "63947X101|2024-09-30": {
+   "partial": false,
+   "value": 115559517.0
+  },
+  "63947X101|2024-12-31": {
+   "partial": false,
+   "value": 115793932.0
+  },
+  "63947X101|2025-03-31": {
+   "partial": false,
+   "value": 116449936.0
+  },
+  "63947X101|2025-06-30": {
+   "partial": false,
+   "value": 115941576.0
+  },
+  "63947X101|2025-09-30": {
+   "partial": false,
+   "value": 115814720.0
+  },
+  "63947X101|2025-12-31": {
+   "partial": false,
+   "value": 114684968.0
+  },
+  "63947X101|2026-03-31": {
+   "partial": false,
+   "value": 114534701.0
+  },
+  "63947X101|2026-06-30": {
+   "partial": false,
+   "value": 109552950.0
+  },
+  "63947X101|2026-09-30": {
+   "partial": false,
+   "value": 105736174.0
+  },
+  "640491106|2023-06-30": {
+   "partial": false,
+   "value": 216308912.0
+  },
+  "640491106|2023-09-30": {
+   "partial": false,
+   "value": 216310582.0
+  },
+  "640491106|2023-12-31": {
+   "partial": false,
+   "value": 216520296.0
+  },
+  "640491106|2024-03-31": {
+   "partial": false,
+   "value": 216607746.0
+  },
+  "65487K100|2026-09-30": {
+   "partial": false,
+   "value": 58234103.0
+  },
+  "67066G104|2024-06-30": {
+   "partial": false,
+   "value": 2460000000.0
+  },
+  "67066G104|2024-09-30": {
+   "partial": false,
+   "value": 24530000000.0
+  },
+  "67066G104|2024-12-31": {
+   "partial": false,
+   "value": 24490000000.0
+  },
+  "67066G104|2025-03-31": {
+   "partial": false,
+   "value": 24400000000.0
+  },
+  "67066G104|2025-06-30": {
+   "partial": false,
+   "value": 24400000000.0
+  },
+  "67103H107|2023-06-30": {
+   "partial": false,
+   "value": 60258342.0
+  },
+  "67103H107|2023-09-30": {
+   "partial": false,
+   "value": 59162175.0
+  },
+  "67103H107|2023-12-31": {
+   "partial": false,
+   "value": 59036585.0
+  },
+  "67103H107|2024-03-31": {
+   "partial": false,
+   "value": 58894096.0
+  },
+  "67103H107|2024-06-30": {
+   "partial": false,
+   "value": 58005664.0
+  },
+  "67103H107|2024-09-30": {
+   "partial": false,
+   "value": 57730693.0
+  },
+  "67103H107|2024-12-31": {
+   "partial": false,
+   "value": 57272442.0
+  },
+  "67103H107|2025-03-31": {
+   "partial": false,
+   "value": 57272442.0
+  },
+  "67103H107|2025-06-30": {
+   "partial": false,
+   "value": 848496680.0
+  },
+  "67103H107|2025-09-30": {
+   "partial": false,
+   "value": 844104092.0
+  },
+  "67103H107|2025-12-31": {
+   "partial": false,
+   "value": 838487034.0
+  },
+  "67103H107|2026-03-31": {
+   "partial": false,
+   "value": 828715079.0
+  },
+  "67103H107|2026-06-30": {
+   "partial": false,
+   "value": 808960792.0
+  },
+  "67103H107|2026-09-30": {
+   "partial": false,
+   "value": 802048733.0
+  },
+  "68134L109|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "68134L109|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "68213N109|2023-06-30": {
+   "partial": false,
+   "value": 45212042.0
+  },
+  "68213N109|2023-09-30": {
+   "partial": false,
+   "value": 45469376.0
+  },
+  "68213N109|2023-12-31": {
+   "partial": false,
+   "value": 45915296.0
+  },
+  "68213N109|2024-03-31": {
+   "partial": false,
+   "value": 45923492.0
+  },
+  "68213N109|2024-06-30": {
+   "partial": false,
+   "value": 45993797.0
+  },
+  "68213N109|2024-09-30": {
+   "partial": false,
+   "value": 46316825.0
+  },
+  "68389X105|2023-06-30": {
+   "partial": false,
+   "value": 2714259000.0
+  },
+  "68389X105|2023-09-30": {
+   "partial": false,
+   "value": 2739821000.0
+  },
+  "68389X105|2023-12-31": {
+   "partial": false,
+   "value": 2748922000.0
+  },
+  "68389X105|2024-03-31": {
+   "partial": false,
+   "value": 2748514000.0
+  },
+  "68389X105|2024-06-30": {
+   "partial": false,
+   "value": 2755860000.0
+  },
+  "68389X105|2024-09-30": {
+   "partial": false,
+   "value": 2770968000.0
+  },
+  "68389X105|2024-12-31": {
+   "partial": false,
+   "value": 2796956000.0
+  },
+  "68389X105|2025-03-31": {
+   "partial": false,
+   "value": 2804234000.0
+  },
+  "68389X105|2025-06-30": {
+   "partial": false,
+   "value": 2808833000.0
+  },
+  "68752L100|2023-06-30": {
+   "partial": false,
+   "value": 23351596.0
+  },
+  "68752L100|2023-09-30": {
+   "partial": false,
+   "value": 23353384.0
+  },
+  "68752L100|2023-12-31": {
+   "partial": false,
+   "value": 23549496.0
+  },
+  "68752L100|2024-03-31": {
+   "partial": false,
+   "value": 23549496.0
+  },
+  "68752L100|2024-06-30": {
+   "partial": false,
+   "value": 24214426.0
+  },
+  "68752L100|2024-09-30": {
+   "partial": false,
+   "value": 24215936.0
+  },
+  "68752L100|2024-12-31": {
+   "partial": false,
+   "value": 24215936.0
+  },
+  "68752L100|2025-03-31": {
+   "partial": false,
+   "value": 24286590.0
+  },
+  "68752L100|2025-06-30": {
+   "partial": false,
+   "value": 25073602.0
+  },
+  "68752L100|2025-09-30": {
+   "partial": false,
+   "value": 25077330.0
+  },
+  "68752L100|2025-12-31": {
+   "partial": false,
+   "value": 25278787.0
+  },
+  "68752L100|2026-03-31": {
+   "partial": false,
+   "value": 25684994.0
+  },
+  "68752L100|2026-06-30": {
+   "partial": false,
+   "value": 26109788.0
+  },
+  "68752L100|2026-09-30": {
+   "partial": false,
+   "value": 26110476.0
+  },
+  "693282105|2025-12-31": {
+   "partial": false,
+   "value": 39890709.0
+  },
+  "693282105|2026-03-31": {
+   "partial": false,
+   "value": 39921090.0
+  },
+  "693282105|2026-06-30": {
+   "partial": false,
+   "value": 42227216.0
+  },
+  "693282105|2026-09-30": {
+   "partial": false,
+   "value": 42251428.0
+  },
+  "70014A104|2026-06-30": {
+   "partial": false,
+   "value": 21751211.0
+  },
+  "70014A104|2026-09-30": {
+   "partial": false,
+   "value": 22031235.0
+  },
+  "704326107|2023-06-30": {
+   "partial": false,
+   "value": 360545780.0
+  },
+  "704326107|2023-09-30": {
+   "partial": false,
+   "value": 361232387.0
+  },
+  "704326107|2023-12-31": {
+   "partial": false,
+   "value": 359821826.0
+  },
+  "704326107|2024-03-31": {
+   "partial": false,
+   "value": 359963341.0
+  },
+  "704326107|2024-06-30": {
+   "partial": false,
+   "value": 360126911.0
+  },
+  "704326107|2024-09-30": {
+   "partial": false,
+   "value": 359898021.0
+  },
+  "704326107|2024-12-31": {
+   "partial": false,
+   "value": 360063074.0
+  },
+  "704326107|2025-03-31": {
+   "partial": false,
+   "value": 360190668.0
+  },
+  "704326107|2025-06-30": {
+   "partial": false,
+   "value": 360243877.0
+  },
+  "70432V102|2023-06-30": {
+   "partial": false,
+   "value": 60467053.0
+  },
+  "70432V102|2023-09-30": {
+   "partial": false,
+   "value": 60228165.0
+  },
+  "70432V102|2023-12-31": {
+   "partial": false,
+   "value": 57551437.0
+  },
+  "70432V102|2024-03-31": {
+   "partial": false,
+   "value": 58110019.0
+  },
+  "70432V102|2024-06-30": {
+   "partial": false,
+   "value": 57432442.0
+  },
+  "70432V102|2024-09-30": {
+   "partial": false,
+   "value": 57662043.0
+  },
+  "70432V102|2024-12-31": {
+   "partial": false,
+   "value": 57264718.0
+  },
+  "70432V102|2025-03-31": {
+   "partial": false,
+   "value": 57819755.0
+  },
+  "70432V102|2025-06-30": {
+   "partial": false,
+   "value": 57876797.0
+  },
+  "70432V102|2025-09-30": {
+   "partial": false,
+   "value": 56269005.0
+  },
+  "70432V102|2025-12-31": {
+   "partial": false,
+   "value": 54275097.0
+  },
+  "70432V102|2026-03-31": {
+   "partial": false,
+   "value": 47631450.0
+  },
+  "70432V102|2026-06-30": {
+   "partial": false,
+   "value": 45071619.0
+  },
+  "70432V102|2026-09-30": {
+   "partial": false,
+   "value": 45034789.0
+  },
+  "713448108|2023-06-30": {
+   "partial": false,
+   "value": 1376580611.0
+  },
+  "713448108|2023-09-30": {
+   "partial": false,
+   "value": 1374863961.0
+  },
+  "713448108|2023-12-31": {
+   "partial": false,
+   "value": 1374429271.0
+  },
+  "713448108|2024-03-31": {
+   "partial": false,
+   "value": 1374785980.0
+  },
+  "713448108|2024-06-30": {
+   "partial": false,
+   "value": 1373572400.0
+  },
+  "713448108|2024-09-30": {
+   "partial": false,
+   "value": 1371989025.0
+  },
+  "713448108|2024-12-31": {
+   "partial": false,
+   "value": 1371499838.0
+  },
+  "713448108|2025-03-31": {
+   "partial": false,
+   "value": 1371079540.0
+  },
+  "713448108|2025-06-30": {
+   "partial": false,
+   "value": 1369077204.0
+  },
+  "71385M107|2026-03-31": {
+   "partial": false,
+   "value": 163127063.0
+  },
+  "71385M107|2026-06-30": {
+   "partial": false,
+   "value": 163686923.0
+  },
+  "71385M107|2026-09-30": {
+   "partial": false,
+   "value": 163821923.0
+  },
+  "718172109|2023-06-30": {
+   "partial": false,
+   "value": 1552345193.0
+  },
+  "718172109|2023-09-30": {
+   "partial": false,
+   "value": 1552405991.0
+  },
+  "718172109|2023-12-31": {
+   "partial": false,
+   "value": 1552456597.0
+  },
+  "718172109|2024-09-30": {
+   "partial": false,
+   "value": 1554833410.0
+  },
+  "718172109|2025-03-31": {
+   "partial": false,
+   "value": 1556517182.0
+  },
+  "74144T108|2023-06-30": {
+   "partial": false,
+   "value": 224295099.0
+  },
+  "74144T108|2023-09-30": {
+   "partial": false,
+   "value": 223470324.0
+  },
+  "74144T108|2023-12-31": {
+   "partial": false,
+   "value": 223656595.0
+  },
+  "74144T108|2024-03-31": {
+   "partial": false,
+   "value": 223299903.0
+  },
+  "74144T108|2024-06-30": {
+   "partial": false,
+   "value": 222597816.0
+  },
+  "74144T108|2024-09-30": {
+   "partial": false,
+   "value": 222159470.0
+  },
+  "74144T108|2024-12-31": {
+   "partial": false,
+   "value": 222634484.0
+  },
+  "74144T108|2025-03-31": {
+   "partial": false,
+   "value": 220316088.0
+  },
+  "74144T108|2025-06-30": {
+   "partial": false,
+   "value": 219715241.0
+  },
+  "742718109|2023-06-30": {
+   "partial": false,
+   "value": 2357306187.0
+  },
+  "742718109|2023-09-30": {
+   "partial": false,
+   "value": 2356886211.0
+  },
+  "742718109|2023-12-31": {
+   "partial": false,
+   "value": 2353021054.0
+  },
+  "742718109|2024-03-31": {
+   "partial": false,
+   "value": 2360135282.0
+  },
+  "742718109|2024-06-30": {
+   "partial": false,
+   "value": 2354050987.0
+  },
+  "742718109|2024-09-30": {
+   "partial": false,
+   "value": 2355041729.0
+  },
+  "742718109|2024-12-31": {
+   "partial": false,
+   "value": 2344851814.0
+  },
+  "742718109|2025-03-31": {
+   "partial": false,
+   "value": 2344542034.0
+  },
+  "742718109|2025-06-30": {
+   "partial": false,
+   "value": 2342371488.0
+  },
+  "74346Y103|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "74346Y103|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "743713109|2023-06-30": {
+   "partial": false,
+   "value": 26095434.0
+  },
+  "745867101|2023-06-30": {
+   "partial": false,
+   "value": 219445457.0
+  },
+  "745867101|2023-09-30": {
+   "partial": false,
+   "value": 215594980.0
+  },
+  "745867101|2023-12-31": {
+   "partial": false,
+   "value": 212112455.0
+  },
+  "745867101|2024-03-31": {
+   "partial": false,
+   "value": 210342113.0
+  },
+  "745867101|2024-09-30": {
+   "partial": false,
+   "value": 205082181.0
+  },
+  "74736L109|2023-06-30": {
+   "partial": false,
+   "value": 58446532.0
+  },
+  "74736L109|2023-09-30": {
+   "partial": false,
+   "value": 58635005.0
+  },
+  "74736L109|2023-12-31": {
+   "partial": false,
+   "value": 59074211.0
+  },
+  "74736L109|2024-03-31": {
+   "partial": false,
+   "value": 60099512.0
+  },
+  "74736L109|2024-06-30": {
+   "partial": false,
+   "value": 60283172.0
+  },
+  "74736L109|2024-09-30": {
+   "partial": false,
+   "value": 60401048.0
+  },
+  "74736L109|2024-12-31": {
+   "partial": false,
+   "value": 60727986.0
+  },
+  "74736L109|2025-03-31": {
+   "partial": false,
+   "value": 62303843.0
+  },
+  "74736L109|2025-06-30": {
+   "partial": false,
+   "value": 62442411.0
+  },
+  "74736L109|2025-09-30": {
+   "partial": false,
+   "value": 62530005.0
+  },
+  "74736L109|2025-12-31": {
+   "partial": false,
+   "value": 62404372.0
+  },
+  "74736L109|2026-03-31": {
+   "partial": false,
+   "value": 62600423.0
+  },
+  "74736L109|2026-06-30": {
+   "partial": false,
+   "value": 62354695.0
+  },
+  "74736L109|2026-09-30": {
+   "partial": false,
+   "value": 61781542.0
+  },
+  "74762E102|2023-06-30": {
+   "partial": false,
+   "value": 145198975.0
+  },
+  "74762E102|2023-09-30": {
+   "partial": false,
+   "value": 145284890.0
+  },
+  "74762E102|2023-12-31": {
+   "partial": false,
+   "value": 145748976.0
+  },
+  "74762E102|2024-03-31": {
+   "partial": false,
+   "value": 146388455.0
+  },
+  "74762E102|2024-06-30": {
+   "partial": false,
+   "value": 147329779.0
+  },
+  "74762E102|2024-09-30": {
+   "partial": false,
+   "value": 147611595.0
+  },
+  "74762E102|2024-12-31": {
+   "partial": false,
+   "value": 148198321.0
+  },
+  "74762E102|2025-03-31": {
+   "partial": false,
+   "value": 148198715.0
+  },
+  "74762E102|2025-06-30": {
+   "partial": false,
+   "value": 149005943.0
+  },
+  "75524B104|2023-06-30": {
+   "partial": false,
+   "value": 29056110.0
+  },
+  "75524B104|2023-09-30": {
+   "partial": false,
+   "value": 29084999.0
+  },
+  "75524B104|2023-12-31": {
+   "partial": false,
+   "value": 29181921.0
+  },
+  "75524B104|2024-03-31": {
+   "partial": false,
+   "value": 29211612.0
+  },
+  "75524B104|2024-06-30": {
+   "partial": false,
+   "value": 29229863.0
+  },
+  "75524B104|2024-09-30": {
+   "partial": false,
+   "value": 31409360.0
+  },
+  "75704L104|2025-03-31": {
+   "partial": false,
+   "value": 13955918.0
+  },
+  "75704L104|2025-06-30": {
+   "partial": false,
+   "value": 13977738.0
+  },
+  "75704L104|2025-09-30": {
+   "partial": false,
+   "value": 13971789.0
+  },
+  "75704L104|2025-12-31": {
+   "partial": false,
+   "value": 14109914.0
+  },
+  "75704L104|2026-03-31": {
+   "partial": false,
+   "value": 14108921.0
+  },
+  "75704L104|2026-06-30": {
+   "partial": false,
+   "value": 16046975.0
+  },
+  "75704L104|2026-09-30": {
+   "partial": false,
+   "value": 16051137.0
+  },
+  "759916109|2023-06-30": {
+   "partial": false,
+   "value": 55756322.0
+  },
+  "759916109|2023-09-30": {
+   "partial": false,
+   "value": 55832013.0
+  },
+  "759916109|2023-12-31": {
+   "partial": false,
+   "value": 55771075.0
+  },
+  "759916109|2024-03-31": {
+   "partial": false,
+   "value": 55875894.0
+  },
+  "759916109|2024-06-30": {
+   "partial": false,
+   "value": 56006498.0
+  },
+  "759916109|2024-09-30": {
+   "partial": false,
+   "value": 56026725.0
+  },
+  "759916109|2024-12-31": {
+   "partial": false,
+   "value": 56026725.0
+  },
+  "759916109|2025-03-31": {
+   "partial": false,
+   "value": 56148556.0
+  },
+  "759916109|2025-06-30": {
+   "partial": false,
+   "value": 56257618.0
+  },
+  "759916109|2025-09-30": {
+   "partial": false,
+   "value": 56290749.0
+  },
+  "759916109|2025-12-31": {
+   "partial": false,
+   "value": 56331110.0
+  },
+  "759916109|2026-03-31": {
+   "partial": false,
+   "value": 56407740.0
+  },
+  "759916109|2026-06-30": {
+   "partial": false,
+   "value": 56435621.0
+  },
+  "759916109|2026-09-30": {
+   "partial": false,
+   "value": 63923738.0
+  },
+  "775711104|2026-09-30": {
+   "partial": false,
+   "value": 478045280.0
+  },
+  "776696106|2023-06-30": {
+   "partial": false,
+   "value": 106710899.0
+  },
+  "776696106|2023-09-30": {
+   "partial": false,
+   "value": 106822117.0
+  },
+  "776696106|2023-12-31": {
+   "partial": false,
+   "value": 107022333.0
+  },
+  "776696106|2024-03-31": {
+   "partial": false,
+   "value": 107044532.0
+  },
+  "776696106|2024-06-30": {
+   "partial": false,
+   "value": 107198665.0
+  },
+  "776696106|2024-09-30": {
+   "partial": false,
+   "value": 107229151.0
+  },
+  "776696106|2024-12-31": {
+   "partial": false,
+   "value": 107385207.0
+  },
+  "776696106|2025-03-31": {
+   "partial": false,
+   "value": 107515397.0
+  },
+  "776696106|2025-06-30": {
+   "partial": false,
+   "value": 107613824.0
+  },
+  "776696106|2025-09-30": {
+   "partial": false,
+   "value": 107637430.0
+  },
+  "776696106|2025-12-31": {
+   "partial": false,
+   "value": 102927515.0
+  },
+  "776696106|2026-03-31": {
+   "partial": false,
+   "value": 100917359.0
+  },
+  "776696106|2026-06-30": {
+   "partial": false,
+   "value": 98900874.0
+  },
+  "776696106|2026-09-30": {
+   "partial": false,
+   "value": 99036429.0
+  },
+  "78349D107|2024-09-30": {
+   "partial": false,
+   "value": 40304465.0
+  },
+  "78349D107|2024-12-31": {
+   "partial": false,
+   "value": 40490542.0
+  },
+  "78349D107|2025-03-31": {
+   "partial": false,
+   "value": 40636981.0
+  },
+  "78349D107|2025-06-30": {
+   "partial": false,
+   "value": 40915963.0
+  },
+  "78349D107|2025-09-30": {
+   "partial": false,
+   "value": 41116640.0
+  },
+  "78349D107|2025-12-31": {
+   "partial": false,
+   "value": 41266335.0
+  },
+  "78349D107|2026-03-31": {
+   "partial": false,
+   "value": 41396609.0
+  },
+  "78349D107|2026-06-30": {
+   "partial": false,
+   "value": 41593256.0
+  },
+  "78410G104|2023-12-31": {
+   "partial": false,
+   "value": 108108678.0
+  },
+  "78410G104|2024-03-31": {
+   "partial": false,
+   "value": 107443014.0
+  },
+  "78410G104|2024-06-30": {
+   "partial": false,
+   "value": 107472463.0
+  },
+  "78463M107|2024-12-31": {
+   "partial": false,
+   "value": 37773837.0
+  },
+  "78463M107|2025-03-31": {
+   "partial": false,
+   "value": 37977378.0
+  },
+  "78463M107|2025-06-30": {
+   "partial": false,
+   "value": 37908762.0
+  },
+  "78463M107|2025-09-30": {
+   "partial": false,
+   "value": 37709094.0
+  },
+  "78463M107|2025-12-31": {
+   "partial": false,
+   "value": 37390873.0
+  },
+  "78463M107|2026-03-31": {
+   "partial": false,
+   "value": 36712702.0
+  },
+  "78463M107|2026-06-30": {
+   "partial": false,
+   "value": 36000174.0
+  },
+  "78463M107|2026-09-30": {
+   "partial": false,
+   "value": 35440926.0
+  },
+  "79466L302|2023-06-30": {
+   "partial": false,
+   "value": 974000000.0
+  },
+  "79466L302|2023-09-30": {
+   "partial": false,
+   "value": 973000000.0
+  },
+  "79466L302|2023-12-31": {
+   "partial": false,
+   "value": 968000000.0
+  },
+  "79466L302|2024-03-31": {
+   "partial": false,
+   "value": 970000000.0
+  },
+  "79466L302|2024-06-30": {
+   "partial": false,
+   "value": 969000000.0
+  },
+  "79466L302|2024-09-30": {
+   "partial": false,
+   "value": 956000000.0
+  },
+  "79466L302|2024-12-31": {
+   "partial": false,
+   "value": 957000000.0
+  },
+  "79466L302|2025-03-31": {
+   "partial": false,
+   "value": 961000000.0
+  },
+  "79466L302|2025-06-30": {
+   "partial": false,
+   "value": 956000000.0
+  },
+  "79466L302|2026-03-31": {
+   "partial": false,
+   "value": 923000000.0
+  },
+  "79466L302|2026-06-30": {
+   "partial": false,
+   "value": 819000000.0
+  },
+  "79466L302|2026-09-30": {
+   "partial": false,
+   "value": 823000000.0
+  },
+  "808513105|2023-06-30": {
+   "partial": false,
+   "value": 1820000000.0
+  },
+  "808513105|2023-09-30": {
+   "partial": false,
+   "value": 1821000000.0
+  },
+  "808513105|2023-12-31": {
+   "partial": false,
+   "value": 1824000000.0
+  },
+  "808513105|2024-03-31": {
+   "partial": false,
+   "value": 1825000000.0
+  },
+  "808513105|2024-06-30": {
+   "partial": false,
+   "value": 1828000000.0
+  },
+  "808513105|2024-09-30": {
+   "partial": false,
+   "value": 1829000000.0
+  },
+  "808513105|2024-12-31": {
+   "partial": false,
+   "value": 1813567665.0
+  },
+  "808513105|2025-03-31": {
+   "partial": false,
+   "value": 1816970383.0
+  },
+  "81762P102|2026-03-31": {
+   "partial": false,
+   "value": 1031000000.0
+  },
+  "81762P102|2026-06-30": {
+   "partial": false,
+   "value": 1034000000.0
+  },
+  "81762P102|2026-09-30": {
+   "partial": false,
+   "value": 1038000000.0
+  },
+  "82489T104|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "82489T104|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "82489T104|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "82489T104|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "82509L107|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "82509L107|2023-09-30": {
+   "partial": false,
+   "value": 1281554559.0
+  },
+  "82509L107|2023-12-31": {
+   "partial": false,
+   "value": 1281554559.0
+  },
+  "82509L107|2024-03-31": {
+   "partial": false,
+   "value": 1287376719.0
+  },
+  "82509L107|2024-06-30": {
+   "partial": false,
+   "value": 1288900183.0
+  },
+  "82509L107|2024-09-30": {
+   "partial": false,
+   "value": 1290585426.0
+  },
+  "82509L107|2024-12-31": {
+   "partial": false,
+   "value": 1289812124.0
+  },
+  "82509L107|2025-03-31": {
+   "partial": false,
+   "value": 1295377376.0
+  },
+  "82509L107|2025-06-30": {
+   "partial": false,
+   "value": 1297746050.0
+  },
+  "82509L107|2025-09-30": {
+   "partial": false,
+   "value": 1300069685.0
+  },
+  "82509L107|2025-12-31": {
+   "partial": false,
+   "value": 1298955860.0
+  },
+  "82509L107|2026-03-31": {
+   "partial": false,
+   "value": 1303357874.0
+  },
+  "829073105|2023-06-30": {
+   "partial": false,
+   "value": 42672848.0
+  },
+  "829073105|2023-09-30": {
+   "partial": false,
+   "value": 42672921.0
+  },
+  "829073105|2023-12-31": {
+   "partial": false,
+   "value": 42467634.0
+  },
+  "829073105|2024-03-31": {
+   "partial": false,
+   "value": 42157919.0
+  },
+  "829073105|2024-06-30": {
+   "partial": false,
+   "value": 42162738.0
+  },
+  "829073105|2024-09-30": {
+   "partial": false,
+   "value": 42164088.0
+  },
+  "82982L103|2023-06-30": {
+   "partial": false,
+   "value": 45058416.0
+  },
+  "82982L103|2023-09-30": {
+   "partial": false,
+   "value": 45125414.0
+  },
+  "82982L103|2023-12-31": {
+   "partial": false,
+   "value": 45139896.0
+  },
+  "82982L103|2024-03-31": {
+   "partial": false,
+   "value": 45212090.0
+  },
+  "82982L103|2024-06-30": {
+   "partial": false,
+   "value": 45121230.0
+  },
+  "82982L103|2024-09-30": {
+   "partial": false,
+   "value": 45120885.0
+  },
+  "82982L103|2024-12-31": {
+   "partial": false,
+   "value": 44964924.0
+  },
+  "82982T106|2026-03-31": {
+   "partial": false,
+   "value": 26396828.0
+  },
+  "82982T106|2026-06-30": {
+   "partial": false,
+   "value": 30071036.0
+  },
+  "82982T106|2026-09-30": {
+   "partial": false,
+   "value": 30209731.0
+  },
+  "83200N103|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "83200N103|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "83200N103|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "83200N103|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "83200N103|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "83200N103|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "83200N103|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "833034101|2023-06-30": {
+   "partial": false,
+   "value": 52916548.0
+  },
+  "833034101|2023-09-30": {
+   "partial": false,
+   "value": 52779959.0
+  },
+  "833034101|2023-12-31": {
+   "partial": false,
+   "value": 52713542.0
+  },
+  "833034101|2024-03-31": {
+   "partial": false,
+   "value": 52718549.0
+  },
+  "833034101|2024-06-30": {
+   "partial": false,
+   "value": 52682657.0
+  },
+  "833034101|2024-09-30": {
+   "partial": false,
+   "value": 52507402.0
+  },
+  "833034101|2024-12-31": {
+   "partial": false,
+   "value": 52393235.0
+  },
+  "833034101|2025-03-31": {
+   "partial": false,
+   "value": 52291024.0
+  },
+  "833034101|2025-06-30": {
+   "partial": false,
+   "value": 52163371.0
+  },
+  "855244109|2023-06-30": {
+   "partial": false,
+   "value": 1145400000.0
+  },
+  "855244109|2023-09-30": {
+   "partial": false,
+   "value": 1136700000.0
+  },
+  "855244109|2023-12-31": {
+   "partial": false,
+   "value": 1132200000.0
+  },
+  "855244109|2024-03-31": {
+   "partial": false,
+   "value": 1132700000.0
+  },
+  "855244109|2024-06-30": {
+   "partial": false,
+   "value": 1133200000.0
+  },
+  "855244109|2024-09-30": {
+   "partial": false,
+   "value": 1133800000.0
+  },
+  "855244109|2024-12-31": {
+   "partial": false,
+   "value": 1135900000.0
+  },
+  "855244109|2025-03-31": {
+   "partial": false,
+   "value": 1136400000.0
+  },
+  "855244109|2025-06-30": {
+   "partial": false,
+   "value": 1136700000.0
+  },
+  "871829107|2023-06-30": {
+   "partial": false,
+   "value": 504925847.0
+  },
+  "871829107|2023-09-30": {
+   "partial": false,
+   "value": 504371970.0
+  },
+  "871829107|2023-12-31": {
+   "partial": false,
+   "value": 497829748.0
+  },
+  "871829107|2024-03-31": {
+   "partial": false,
+   "value": 497982485.0
+  },
+  "871829107|2024-06-30": {
+   "partial": false,
+   "value": 491520584.0
+  },
+  "871829107|2024-09-30": {
+   "partial": false,
+   "value": 491226100.0
+  },
+  "871829107|2024-12-31": {
+   "partial": false,
+   "value": 489229644.0
+  },
+  "871829107|2025-03-31": {
+   "partial": false,
+   "value": 484751681.0
+  },
+  "871829107|2025-06-30": {
+   "partial": false,
+   "value": 478212357.0
+  },
+  "872540109|2023-06-30": {
+   "partial": false,
+   "value": 1149238467.0
+  },
+  "872540109|2023-09-30": {
+   "partial": false,
+   "value": 1144080554.0
+  },
+  "872540109|2023-12-31": {
+   "partial": false,
+   "value": 1139676816.0
+  },
+  "872540109|2024-03-31": {
+   "partial": false,
+   "value": 1132973879.0
+  },
+  "872540109|2024-06-30": {
+   "partial": false,
+   "value": 1130149156.0
+  },
+  "872540109|2024-09-30": {
+   "partial": false,
+   "value": 1127872845.0
+  },
+  "872540109|2024-12-31": {
+   "partial": false,
+   "value": 1124158029.0
+  },
+  "872540109|2025-03-31": {
+   "partial": false,
+   "value": 1117100487.0
+  },
+  "872540109|2025-06-30": {
+   "partial": false,
+   "value": 1115615624.0
+  },
+  "875372203|2023-06-30": {
+   "partial": false,
+   "value": 65077705.0
+  },
+  "875372203|2023-09-30": {
+   "partial": false,
+   "value": 65209703.0
+  },
+  "875372203|2023-12-31": {
+   "partial": false,
+   "value": 65631041.0
+  },
+  "875372203|2024-03-31": {
+   "partial": false,
+   "value": 64589518.0
+  },
+  "875372203|2024-06-30": {
+   "partial": false,
+   "value": 65464900.0
+  },
+  "875372203|2024-09-30": {
+   "partial": false,
+   "value": 65676532.0
+  },
+  "875372203|2024-12-31": {
+   "partial": false,
+   "value": 66473272.0
+  },
+  "875372203|2025-03-31": {
+   "partial": false,
+   "value": 66607206.0
+  },
+  "875372203|2025-06-30": {
+   "partial": false,
+   "value": 67569471.0
+  },
+  "875372203|2025-09-30": {
+   "partial": false,
+   "value": 67802359.0
+  },
+  "87612E106|2023-06-30": {
+   "partial": false,
+   "value": 461559612.0
+  },
+  "87612E106|2023-09-30": {
+   "partial": false,
+   "value": 461605464.0
+  },
+  "87612E106|2023-12-31": {
+   "partial": false,
+   "value": 461661800.0
+  },
+  "87612E106|2024-03-31": {
+   "partial": false,
+   "value": 461690206.0
+  },
+  "87612E106|2024-06-30": {
+   "partial": false,
+   "value": 462636573.0
+  },
+  "87612E106|2024-09-30": {
+   "partial": false,
+   "value": 460674666.0
+  },
+  "87612E106|2024-12-31": {
+   "partial": false,
+   "value": 458211929.0
+  },
+  "87612E106|2025-03-31": {
+   "partial": false,
+   "value": 455576464.0
+  },
+  "88025U109|2023-06-30": {
+   "partial": false,
+   "value": 116707672.0
+  },
+  "88025U109|2023-09-30": {
+   "partial": false,
+   "value": 119095362.0
+  },
+  "88025U109|2023-12-31": {
+   "partial": false,
+   "value": 119095362.0
+  },
+  "88025U109|2024-03-31": {
+   "partial": false,
+   "value": 119095362.0
+  },
+  "88025U109|2024-06-30": {
+   "partial": false,
+   "value": 120066972.0
+  },
+  "88025U109|2024-09-30": {
+   "partial": false,
+   "value": 122291837.0
+  },
+  "88025U109|2024-12-31": {
+   "partial": false,
+   "value": 122291837.0
+  },
+  "882508104|2023-06-30": {
+   "partial": false,
+   "value": 907966327.0
+  },
+  "882508104|2023-09-30": {
+   "partial": false,
+   "value": 908204093.0
+  },
+  "882508104|2023-12-31": {
+   "partial": false,
+   "value": 909287673.0
+  },
+  "882508104|2024-03-31": {
+   "partial": false,
+   "value": 910482146.0
+  },
+  "882508104|2024-06-30": {
+   "partial": false,
+   "value": 913045963.0
+  },
+  "882508104|2024-09-30": {
+   "partial": false,
+   "value": 912216614.0
+  },
+  "882508104|2024-12-31": {
+   "partial": false,
+   "value": 910332971.0
+  },
+  "882508104|2025-06-30": {
+   "partial": false,
+   "value": 909137169.0
+  },
+  "892356106|2023-06-30": {
+   "partial": false,
+   "value": 108807868.0
+  },
+  "892356106|2023-09-30": {
+   "partial": false,
+   "value": 108114204.0
+  },
+  "892356106|2023-12-31": {
+   "partial": false,
+   "value": 107916530.0
+  },
+  "892356106|2024-03-31": {
+   "partial": false,
+   "value": 107810395.0
+  },
+  "892356106|2024-06-30": {
+   "partial": false,
+   "value": 107868874.0
+  },
+  "892356106|2024-09-30": {
+   "partial": false,
+   "value": 106839001.0
+  },
+  "892356106|2024-12-31": {
+   "partial": false,
+   "value": 531548314.0
+  },
+  "892356106|2025-03-31": {
+   "partial": false,
+   "value": 530202933.0
+  },
+  "893641100|2026-09-30": {
+   "partial": false,
+   "value": 54589836.0
+  },
+  "89377M109|2025-03-31": {
+   "partial": false,
+   "value": 33833788.0
+  },
+  "89377M109|2025-06-30": {
+   "partial": false,
+   "value": 34090356.0
+  },
+  "89377M109|2025-09-30": {
+   "partial": false,
+   "value": 34174325.0
+  },
+  "89377M109|2025-12-31": {
+   "partial": false,
+   "value": 34302451.0
+  },
+  "89377M109|2026-03-31": {
+   "partial": false,
+   "value": 34560911.0
+  },
+  "89377M109|2026-06-30": {
+   "partial": false,
+   "value": 34675145.0
+  },
+  "89377M109|2026-09-30": {
+   "partial": false,
+   "value": 34733883.0
+  },
+  "902252105|2023-06-30": {
+   "partial": false,
+   "value": 42078410.0
+  },
+  "902252105|2023-09-30": {
+   "partial": false,
+   "value": 42124186.0
+  },
+  "902252105|2023-12-31": {
+   "partial": false,
+   "value": 42276136.0
+  },
+  "902252105|2024-03-31": {
+   "partial": false,
+   "value": 42455267.0
+  },
+  "902252105|2024-06-30": {
+   "partial": false,
+   "value": 42672664.0
+  },
+  "902252105|2024-09-30": {
+   "partial": false,
+   "value": 42798585.0
+  },
+  "902252105|2024-12-31": {
+   "partial": false,
+   "value": 43013800.0
+  },
+  "902252105|2025-03-31": {
+   "partial": false,
+   "value": 43123546.0
+  },
+  "902252105|2025-06-30": {
+   "partial": false,
+   "value": 43261810.0
+  },
+  "902252105|2025-09-30": {
+   "partial": false,
+   "value": 43027728.0
+  },
+  "902252105|2025-12-31": {
+   "partial": false,
+   "value": 42985340.0
+  },
+  "902252105|2026-03-31": {
+   "partial": false,
+   "value": 42167455.0
+  },
+  "902252105|2026-06-30": {
+   "partial": false,
+   "value": 40952274.0
+  },
+  "902252105|2026-09-30": {
+   "partial": false,
+   "value": 39759524.0
+  },
+  "902673102|2024-06-30": {
+   "partial": false,
+   "value": 7674363.0
+  },
+  "902673102|2024-09-30": {
+   "partial": false,
+   "value": 7674363.0
+  },
+  "902673102|2024-12-31": {
+   "partial": false,
+   "value": 7680305.0
+  },
+  "902673102|2025-03-31": {
+   "partial": false,
+   "value": 7680305.0
+  },
+  "902673102|2025-06-30": {
+   "partial": false,
+   "value": 7711126.0
+  },
+  "902673102|2025-09-30": {
+   "partial": false,
+   "value": 7712444.0
+  },
+  "902673102|2025-12-31": {
+   "partial": false,
+   "value": 7713300.0
+  },
+  "902673102|2026-03-31": {
+   "partial": false,
+   "value": 7736939.0
+  },
+  "902673102|2026-06-30": {
+   "partial": false,
+   "value": 7745790.0
+  },
+  "902673102|2026-09-30": {
+   "partial": false,
+   "value": 7746986.0
+  },
+  "90353T100|2024-03-31": {
+   "partial": false,
+   "value": 2089520408.0
+  },
+  "90384S303|2023-06-30": {
+   "partial": false,
+   "value": 49801592.0
+  },
+  "90384S303|2023-09-30": {
+   "partial": false,
+   "value": 49228649.0
+  },
+  "90384S303|2023-12-31": {
+   "partial": false,
+   "value": 48561517.0
+  },
+  "90384S303|2024-03-31": {
+   "partial": false,
+   "value": 48268744.0
+  },
+  "90384S303|2024-06-30": {
+   "partial": false,
+   "value": 47716365.0
+  },
+  "90384S303|2024-09-30": {
+   "partial": false,
+   "value": 47114727.0
+  },
+  "911312106|2023-06-30": {
+   "partial": false,
+   "value": 860000000.0
+  },
+  "911312106|2023-09-30": {
+   "partial": false,
+   "value": 857000000.0
+  },
+  "911312106|2023-12-31": {
+   "partial": false,
+   "value": 859000000.0
+  },
+  "911312106|2024-03-31": {
+   "partial": false,
+   "value": 856000000.0
+  },
+  "911312106|2024-06-30": {
+   "partial": false,
+   "value": 856000000.0
+  },
+  "911312106|2024-09-30": {
+   "partial": false,
+   "value": 855000000.0
+  },
+  "911312106|2024-12-31": {
+   "partial": false,
+   "value": 855000000.0
+  },
+  "911312106|2025-03-31": {
+   "partial": false,
+   "value": 850000000.0
+  },
+  "91324P102|2023-06-30": {
+   "partial": false,
+   "value": 926305139.0
+  },
+  "91324P102|2023-09-30": {
+   "partial": false,
+   "value": 924925293.0
+  },
+  "91324P102|2023-12-31": {
+   "partial": false,
+   "value": 921934109.0
+  },
+  "91324P102|2024-03-31": {
+   "partial": false,
+   "value": 920385075.0
+  },
+  "91324P102|2024-06-30": {
+   "partial": false,
+   "value": 923418150.0
+  },
+  "91324P102|2024-09-30": {
+   "partial": false,
+   "value": 920284334.0
+  },
+  "91324P102|2024-12-31": {
+   "partial": false,
+   "value": 914712333.0
+  },
+  "91324P102|2025-03-31": {
+   "partial": false,
+   "value": 907140441.0
+  },
+  "922475108|2023-06-30": {
+   "partial": false,
+   "value": 160396000.0
+  },
+  "922475108|2023-09-30": {
+   "partial": false,
+   "value": 161015649.0
+  },
+  "922475108|2023-12-31": {
+   "partial": false,
+   "value": 161015649.0
+  },
+  "922475108|2024-03-31": {
+   "partial": false,
+   "value": 161316597.0
+  },
+  "922475108|2024-06-30": {
+   "partial": false,
+   "value": 161651713.0
+  },
+  "922475108|2024-09-30": {
+   "partial": false,
+   "value": 161933810.0
+  },
+  "922475108|2024-12-31": {
+   "partial": false,
+   "value": 162350353.0
+  },
+  "922475108|2025-03-31": {
+   "partial": false,
+   "value": 162696040.0
+  },
+  "922475108|2025-06-30": {
+   "partial": false,
+   "value": 163412273.0
+  },
+  "922475108|2025-09-30": {
+   "partial": false,
+   "value": 163908013.0
+  },
+  "922475108|2025-12-31": {
+   "partial": false,
+   "value": 164381855.0
+  },
+  "922475108|2026-03-31": {
+   "partial": false,
+   "value": 163330933.0
+  },
+  "922475108|2026-06-30": {
+   "partial": false,
+   "value": 162443291.0
+  },
+  "922475108|2026-09-30": {
+   "partial": false,
+   "value": 161908850.0
+  },
+  "92337F107|2025-12-31": {
+   "partial": false,
+   "value": 79458427.0
+  },
+  "92337F107|2026-03-31": {
+   "partial": false,
+   "value": 79792647.0
+  },
+  "92337F107|2026-06-30": {
+   "partial": false,
+   "value": 80390731.0
+  },
+  "92337F107|2026-09-30": {
+   "partial": false,
+   "value": 80695480.0
+  },
+  "92345Y106|2023-06-30": {
+   "partial": false,
+   "value": 145027078.0
+  },
+  "92345Y106|2023-09-30": {
+   "partial": false,
+   "value": 144986558.0
+  },
+  "92345Y106|2023-12-31": {
+   "partial": false,
+   "value": 143389884.0
+  },
+  "92345Y106|2024-03-31": {
+   "partial": false,
+   "value": 142675237.0
+  },
+  "92345Y106|2024-06-30": {
+   "partial": false,
+   "value": 142423816.0
+  },
+  "92345Y106|2024-09-30": {
+   "partial": false,
+   "value": 141210634.0
+  },
+  "92345Y106|2024-12-31": {
+   "partial": false,
+   "value": 140276165.0
+  },
+  "92345Y106|2025-03-31": {
+   "partial": false,
+   "value": 139884077.0
+  },
+  "92345Y106|2025-06-30": {
+   "partial": false,
+   "value": 139714971.0
+  },
+  "92345Y106|2025-09-30": {
+   "partial": false,
+   "value": 139372570.0
+  },
+  "92346J108|2023-06-30": {
+   "partial": false,
+   "value": 47642194.0
+  },
+  "92346J108|2023-09-30": {
+   "partial": false,
+   "value": 47724543.0
+  },
+  "92346J108|2023-12-31": {
+   "partial": false,
+   "value": 48290164.0
+  },
+  "92346J108|2024-03-31": {
+   "partial": false,
+   "value": 48601736.0
+  },
+  "92346J108|2024-06-30": {
+   "partial": false,
+   "value": 49030175.0
+  },
+  "92346J108|2024-09-30": {
+   "partial": false,
+   "value": 49358408.0
+  },
+  "92346J108|2024-12-31": {
+   "partial": false,
+   "value": 49969568.0
+  },
+  "92346J108|2025-03-31": {
+   "partial": false,
+   "value": 50342969.0
+  },
+  "92346J108|2025-06-30": {
+   "partial": false,
+   "value": 50460205.0
+  },
+  "92346J108|2025-09-30": {
+   "partial": false,
+   "value": 50574026.0
+  },
+  "92346J108|2025-12-31": {
+   "partial": false,
+   "value": 50763319.0
+  },
+  "92346J108|2026-03-31": {
+   "partial": false,
+   "value": 51068228.0
+  },
+  "92346J108|2026-06-30": {
+   "partial": false,
+   "value": 51206614.0
+  },
+  "92346J108|2026-09-30": {
+   "partial": false,
+   "value": 51029770.0
+  },
+  "92538J106|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "92538J106|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "925815102|2023-06-30": {
+   "partial": false,
+   "value": 44230000.0
+  },
+  "925815102|2023-09-30": {
+   "partial": false,
+   "value": 44433000.0
+  },
+  "925815102|2023-12-31": {
+   "partial": false,
+   "value": 44320000.0
+  },
+  "925815102|2024-03-31": {
+   "partial": false,
+   "value": 44516000.0
+  },
+  "925815102|2024-06-30": {
+   "partial": false,
+   "value": 44855000.0
+  },
+  "925815102|2024-09-30": {
+   "partial": false,
+   "value": 45117000.0
+  },
+  "925815102|2024-12-31": {
+   "partial": false,
+   "value": 44912000.0
+  },
+  "925815102|2025-03-31": {
+   "partial": false,
+   "value": 45217000.0
+  },
+  "92826C839|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "92826C839|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "92939U106|2023-06-30": {
+   "partial": false,
+   "value": 315434531.0
+  },
+  "92939U106|2023-09-30": {
+   "partial": false,
+   "value": 315434531.0
+  },
+  "92939U106|2023-12-31": {
+   "partial": false,
+   "value": 315561510.0
+  },
+  "92939U106|2024-03-31": {
+   "partial": false,
+   "value": 315822587.0
+  },
+  "92939U106|2024-06-30": {
+   "partial": false,
+   "value": 316079401.0
+  },
+  "92939U106|2024-09-30": {
+   "partial": false,
+   "value": 316354446.0
+  },
+  "92939U106|2024-12-31": {
+   "partial": false,
+   "value": 317752123.0
+  },
+  "92939U106|2025-03-31": {
+   "partial": false,
+   "value": 319133501.0
+  },
+  "92939U106|2025-06-30": {
+   "partial": false,
+   "value": 321866395.0
+  },
+  "93403J106|2026-06-30": {
+   "partial": false,
+   "value": 123935000.0
+  },
+  "93403J106|2026-09-30": {
+   "partial": false,
+   "value": 124707000.0
+  },
+  "969904101|2023-09-30": {
+   "partial": false,
+   "value": 64144950.0
+  },
+  "969904101|2023-12-31": {
+   "partial": false,
+   "value": 64144519.0
+  },
+  "969904101|2024-03-31": {
+   "partial": false,
+   "value": 64112265.0
+  },
+  "98139A105|2023-06-30": {
+   "partial": false,
+   "value": 54009963.0
+  },
+  "98139A105|2023-09-30": {
+   "partial": false,
+   "value": 54256941.0
+  },
+  "98139A105|2023-12-31": {
+   "partial": false,
+   "value": 54099757.0
+  },
+  "98139A105|2024-03-31": {
+   "partial": false,
+   "value": 54915852.0
+  },
+  "98139A105|2024-06-30": {
+   "partial": false,
+   "value": 55177162.0
+  },
+  "98139A105|2024-09-30": {
+   "partial": false,
+   "value": 55581841.0
+  },
+  "98139A105|2024-12-31": {
+   "partial": false,
+   "value": 55355381.0
+  },
+  "98139A105|2025-03-31": {
+   "partial": false,
+   "value": 56157533.0
+  },
+  "98139A105|2025-06-30": {
+   "partial": false,
+   "value": 56076723.0
+  },
+  "98139A105|2025-09-30": {
+   "partial": false,
+   "value": 56347994.0
+  },
+  "98139A105|2025-12-31": {
+   "partial": false,
+   "value": 56272517.0
+  },
+  "98139A105|2026-03-31": {
+   "partial": false,
+   "value": 56885568.0
+  },
+  "98139A105|2026-06-30": {
+   "partial": false,
+   "value": 55638926.0
+  },
+  "98139A105|2026-09-30": {
+   "partial": false,
+   "value": 54630571.0
+  },
+  "98379L100|2026-03-31": {
+   "partial": false,
+   "value": 27604183.0
+  },
+  "98379L100|2026-06-30": {
+   "partial": false,
+   "value": 27570748.0
+  },
+  "98379L100|2026-09-30": {
+   "partial": false,
+   "value": 27516898.0
+  },
+  "98423F109|2023-06-30": {
+   "partial": false,
+   "value": 45292345.0
+  },
+  "98423F109|2023-09-30": {
+   "partial": false,
+   "value": 45394804.0
+  },
+  "98423F109|2023-12-31": {
+   "partial": false,
+   "value": 45394804.0
+  },
+  "98423F109|2024-03-31": {
+   "partial": false,
+   "value": 46123556.0
+  },
+  "98423F109|2024-06-30": {
+   "partial": false,
+   "value": 46123556.0
+  },
+  "98423F109|2024-09-30": {
+   "partial": false,
+   "value": 49082722.0
+  },
+  "98423F109|2024-12-31": {
+   "partial": false,
+   "value": 49082722.0
+  },
+  "98423F109|2025-03-31": {
+   "partial": false,
+   "value": 49082722.0
+  },
+  "98423F109|2025-06-30": {
+   "partial": false,
+   "value": 50920588.0
+  },
+  "98423F109|2025-09-30": {
+   "partial": false,
+   "value": 50920588.0
+  },
+  "98423F109|2025-12-31": {
+   "partial": false,
+   "value": 50920588.0
+  },
+  "98423F109|2026-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "98423F109|2026-06-30": {
+   "partial": false,
+   "value": 57333901.0
+  },
+  "98423F109|2026-09-30": {
+   "partial": false,
+   "value": 57333901.0
+  },
+  "987184108|2023-06-30": {
+   "partial": false,
+   "value": 14310349.0
+  },
+  "987184108|2023-09-30": {
+   "partial": false,
+   "value": 14321761.0
+  },
+  "987184108|2023-12-31": {
+   "partial": false,
+   "value": 14321761.0
+  },
+  "987184108|2024-03-31": {
+   "partial": false,
+   "value": 14334183.0
+  },
+  "987184108|2024-06-30": {
+   "partial": false,
+   "value": 14362103.0
+  },
+  "987184108|2024-09-30": {
+   "partial": false,
+   "value": 14374163.0
+  },
+  "987184108|2024-12-31": {
+   "partial": false,
+   "value": 14374163.0
+  },
+  "987184108|2025-03-31": {
+   "partial": false,
+   "value": 14389449.0
+  },
+  "98978V103|2023-06-30": {
+   "partial": false,
+   "value": 460316905.0
+  },
+  "98978V103|2023-09-30": {
+   "partial": false,
+   "value": 459113691.0
+  },
+  "98978V103|2023-12-31": {
+   "partial": false,
+   "value": 457867115.0
+  },
+  "98978V103|2024-03-31": {
+   "partial": false,
+   "value": 456295137.0
+  },
+  "98978V103|2024-06-30": {
+   "partial": false,
+   "value": 453050990.0
+  },
+  "98978V103|2024-09-30": {
+   "partial": false,
+   "value": 451165011.0
+  },
+  "G25457105|2026-03-31": {
+   "partial": false,
+   "value": 184449940.0
+  },
+  "G25457105|2026-06-30": {
+   "partial": false,
+   "value": 186477898.0
+  },
+  "G25457105|2026-09-30": {
+   "partial": false,
+   "value": 187951918.0
+  },
+  "G3643J108|2024-03-31": {
+   "partial": false,
+   "value": 177569013.0
+  },
+  "G3643J108|2024-06-30": {
+   "partial": false,
+   "value": 177723653.0
+  },
+  "G3643J108|2024-09-30": {
+   "partial": false,
+   "value": 178035332.0
+  },
+  "G3643J108|2024-12-31": {
+   "partial": false,
+   "value": 177470787.0
+  },
+  "G3643J108|2025-03-31": {
+   "partial": false,
+   "value": 176687870.0
+  },
+  "G3643J108|2025-06-30": {
+   "partial": false,
+   "value": 176099559.0
+  },
+  "G3643J108|2025-09-30": {
+   "partial": false,
+   "value": 175274718.0
+  },
+  "G3643J108|2025-12-31": {
+   "partial": false,
+   "value": 175301968.0
+  },
+  "G3643J108|2026-03-31": {
+   "partial": false,
+   "value": 173972199.0
+  },
+  "G4705A100|2023-06-30": {
+   "partial": false,
+   "value": 82151049.0
+  },
+  "G4705A100|2023-09-30": {
+   "partial": false,
+   "value": 82495086.0
+  },
+  "G4705A100|2023-12-31": {
+   "partial": false,
+   "value": 82495086.0
+  },
+  "G4705A100|2024-03-31": {
+   "partial": false,
+   "value": 82495086.0
+  },
+  "G4705A100|2024-06-30": {
+   "partial": false,
+   "value": 82816600.0
+  },
+  "G4705A100|2024-09-30": {
+   "partial": false,
+   "value": 80756860.0
+  },
+  "G4705A100|2024-12-31": {
+   "partial": false,
+   "value": 80756860.0
+  },
+  "G4705A100|2025-03-31": {
+   "partial": false,
+   "value": 80756860.0
+  },
+  "G4705A100|2025-06-30": {
+   "partial": false,
+   "value": 77772130.0
+  },
+  "G4705A100|2025-09-30": {
+   "partial": false,
+   "value": 76567325.0
+  },
+  "G4705A100|2025-12-31": {
+   "partial": false,
+   "value": 76567325.0
+  },
+  "G4705A100|2026-03-31": {
+   "partial": false,
+   "value": 76567325.0
+  },
+  "G50871105|2023-06-30": {
+   "partial": false,
+   "value": 63134812.0
+  },
+  "G50871105|2023-09-30": {
+   "partial": false,
+   "value": 62956913.0
+  },
+  "G50871105|2023-12-31": {
+   "partial": false,
+   "value": 62345283.0
+  },
+  "G50871105|2024-03-31": {
+   "partial": false,
+   "value": 63039537.0
+  },
+  "H82027105|2024-03-31": {
+   "partial": false,
+   "value": 65230559.0
+  },
+  "H82027105|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "H82027105|2024-09-30": {
+   "partial": false,
+   "value": 66687085.0
+  },
+  "H82027105|2024-12-31": {
+   "partial": false,
+   "value": 66687085.0
+  },
+  "H82027105|2025-03-31": {
+   "partial": false,
+   "value": 66687085.0
+  },
+  "H82027105|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "H82027105|2025-09-30": {
+   "partial": false,
+   "value": 68486338.0
+  },
+  "H82027105|2025-12-31": {
+   "partial": false,
+   "value": 68486338.0
+  },
+  "H82027105|2026-03-31": {
+   "partial": false,
+   "value": 68486338.0
+  },
+  "H82027105|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "H82027105|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M20791105|2024-12-31": {
+   "partial": false,
+   "value": 45449306.0
+  },
+  "M20791105|2025-03-31": {
+   "partial": false,
+   "value": 45449306.0
+  },
+  "M20791105|2025-06-30": {
+   "partial": false,
+   "value": 45702445.0
+  },
+  "M20791105|2025-09-30": {
+   "partial": false,
+   "value": 45828133.0
+  },
+  "M20791105|2025-12-31": {
+   "partial": false,
+   "value": 45828133.0
+  },
+  "M20791105|2026-03-31": {
+   "partial": false,
+   "value": 45828133.0
+  },
+  "M20791105|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M20791105|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2197Q107|2026-03-31": {
+   "partial": false,
+   "value": 249439817.0
+  },
+  "M2197Q107|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2197Q107|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M22465104|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M22465104|2023-09-30": {
+   "partial": false,
+   "value": 112906427.0
+  },
+  "M22465104|2023-12-31": {
+   "partial": false,
+   "value": 112906427.0
+  },
+  "M22465104|2024-03-31": {
+   "partial": false,
+   "value": 112906427.0
+  },
+  "M22465104|2024-06-30": {
+   "partial": false,
+   "value": 111385823.0
+  },
+  "M22465104|2024-09-30": {
+   "partial": false,
+   "value": 108368523.0
+  },
+  "M22465104|2024-12-31": {
+   "partial": false,
+   "value": 108368523.0
+  },
+  "M22465104|2025-03-31": {
+   "partial": false,
+   "value": 108368523.0
+  },
+  "M22465104|2025-06-30": {
+   "partial": false,
+   "value": 107354722.0
+  },
+  "M22465104|2025-09-30": {
+   "partial": false,
+   "value": 105596035.0
+  },
+  "M22465104|2025-12-31": {
+   "partial": false,
+   "value": 105596035.0
+  },
+  "M22465104|2026-03-31": {
+   "partial": false,
+   "value": 105596035.0
+  },
+  "M2682V108|2023-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2023-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2023-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2024-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2024-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2024-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2025-03-31": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2025-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M2682V108|2025-12-31": {
+   "partial": false,
+   "value": null
+  },
+  "M5216V106|2024-03-31": {
+   "partial": false,
+   "value": 165773914.0
+  },
+  "M5216V106|2024-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M5216V106|2024-09-30": {
+   "partial": false,
+   "value": 169131268.0
+  },
+  "M5216V106|2024-12-31": {
+   "partial": false,
+   "value": 169131268.0
+  },
+  "M5216V106|2025-03-31": {
+   "partial": false,
+   "value": 169131268.0
+  },
+  "M5216V106|2025-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M5216V106|2025-09-30": {
+   "partial": false,
+   "value": 169049616.0
+  },
+  "M5216V106|2025-12-31": {
+   "partial": false,
+   "value": 169049616.0
+  },
+  "M5216V106|2026-03-31": {
+   "partial": false,
+   "value": 169049616.0
+  },
+  "M5216V106|2026-06-30": {
+   "partial": false,
+   "value": null
+  },
+  "M5216V106|2026-09-30": {
+   "partial": false,
+   "value": null
+  },
+  "M7S64H106|2024-03-31": {
+   "partial": false,
+   "value": 48923903.0
+  },
+  "M7S64H106|2024-06-30": {
+   "partial": false,
+   "value": 49858787.0
+  },
+  "M7S64H106|2024-09-30": {
+   "partial": false,
+   "value": 50773337.0
+  },
+  "M7S64H106|2024-12-31": {
+   "partial": false,
+   "value": 50773337.0
+  },
+  "M7S64H106|2025-03-31": {
+   "partial": false,
+   "value": 50773337.0
+  },
+  "M7S64H106|2025-06-30": {
+   "partial": false,
+   "value": 51551462.0
+  },
+  "M7S64H106|2025-09-30": {
+   "partial": false,
+   "value": 51160822.0
+  },
+  "M7S64H106|2025-12-31": {
+   "partial": false,
+   "value": 51160822.0
+  }
+ }
+}
