@@ -4,6 +4,11 @@
       "signal_id": "demo1-key_person-1",
       "text": "후임 지정 여부가 확인되지 않았을 뿐 이탈 자체가 전략 변경은 아닙니다.",
       "concede": false
+    },
+    {
+      "signal_id": "demo1-strategy_drift-1",
+      "text": "운용자산 감소만으로 고객 이탈을 단정할 근거는 공시에 없습니다.",
+      "concede": false
     }
   ]
 }
