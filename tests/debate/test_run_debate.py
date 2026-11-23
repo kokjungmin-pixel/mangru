@@ -208,3 +208,57 @@ def test_models_from_env_when_not_mock(analysis, data, monkeypatch):
     assert model_name("judge") == "확인 불가"
     monkeypatch.setenv("LLM_MOCK", "1")
     assert model_name("keep") == "mock"
+
+
+# ======================================================================
+# 6-7 mock 실행은 결과가 늘 같다 (심판 mock 은 A측 = 유지 측)
+# ======================================================================
+import json                                    # noqa: E402
+
+from src import config                         # noqa: E402
+from src.debate import default_rng             # noqa: E402
+
+A11_PATH = config.ROOT / "tests" / "debate" / "fixtures" / "a11_analysis.json"
+
+
+def _a(rng, analysis) -> str:
+    return judge_mod.blind_input(analysis, [], [], [], rng)["sides"]["A"]
+
+
+def test_mock_default_rng_puts_keep_on_a(analysis):
+    a11 = json.loads(A11_PATH.read_text(encoding="utf-8"))
+    for an in (analysis, a11):
+        assert all(_a(default_rng(), an) == "keep" for _ in range(10))
+
+
+def test_real_default_rng_is_random(analysis, monkeypatch):
+    monkeypatch.setenv("LLM_MOCK", "0")
+    assert {_a(default_rng(), analysis) for _ in range(40)} == {"keep", "terminate"}
+
+
+def test_mock_real_mode_without_rng_is_repeatable_and_matches_sample(analysis, data):
+    d = sample("debate")
+    outs = []
+    for _ in range(5):
+        llm.reset_call_count()
+        outs.append(run_debate(copy.deepcopy(analysis), data, demo_mode=False))
+    assert all(o == outs[0] for o in outs)
+    for key in ("verdicts", "unexplained_count", "recommendation"):
+        assert outs[0][key] == d[key], key
+
+
+def test_graph_real_mode_debate_is_eight_calls_and_repeatable(monkeypatch):
+    """실제 모드 그래프(stream_run)에서 토론이 LLM_MOCK 고정 응답으로 끝까지 돌고 결과가 매번 같다."""
+    import src.graph as G
+    monkeypatch.setattr(G, "collect", lambda plan, demo_mode: sample("manager_data"))   # 네트워크 없이
+    monkeypatch.setattr(G, "analyze", lambda data, plan: sample("analysis"))
+    runs = []
+    for _ in range(3):
+        st = list(G.stream_run("Akre 점검해줘", False))[-1]["state"]
+        assert llm.call_count() == 8                 # stream_run 이 시작 때 호출 수를 0으로 되돌린다
+        runs.append(st["debate"])
+    d = runs[0]
+    validate(d, DebateResult)
+    assert d["held"] is True and d["warnings"] == []
+    assert all(r == d for r in runs)
+    assert d["verdicts"] == sample("debate")["verdicts"]

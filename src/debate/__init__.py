@@ -8,6 +8,8 @@
   정상이면 LLM 8번. warnings 는 단계 순서대로 모은다.
 - 중간에 LLMUnavailable(API 오류·형식 오류 2회·호출 상한) → B5 "토론 실패": held=False, 권고 conditional,
   근거 ["토론을 완료하지 못함: 담당자 확인 필요"], warnings 에 사유. 저장본으로 대신하는 처리는 B6에서.
+- 심판의 A/B 배정·신호 순서 무작위(default_rng): 실제 호출이면 매번 새 무작위.
+  LLM_MOCK=1 이면 고정 seed — 심판 mock 응답(judge_scores.txt)이 A측 = 유지 측이라 A가 늘 유지 측이 되게 한다.
 """
 import random
 
@@ -15,13 +17,18 @@ from src.debate.decide import OPTION_ORDER, decide_all, no_debate_options
 from src.debate.judge import run_judge
 from src.debate.questions import make_questions, question_materials
 from src.debate.rounds import REBUTTAL_ROUNDS, run_rounds
-from src.llm import LLMUnavailable, model_name
+from src.llm import LLMUnavailable, is_mock, model_name
 from src.mock_data import sample
 from src.state import AnalysisResult, DebateResult, ManagerData
 from src.validate import validate
 
 NO_SAVED = "저장된 토론 없음: 계약 샘플 사용"
 FAIL_GROUND = "토론을 완료하지 못함: 담당자 확인 필요"
+MOCK_SEED = 1          # random.Random(1).choice(["keep", "terminate"]) == "keep" (테스트로 확인)
+
+
+def default_rng() -> random.Random:
+    return random.Random(MOCK_SEED) if is_mock() else random.Random()
 
 
 def _models() -> dict[str, str]:
@@ -57,7 +64,7 @@ def _debate(analysis: AnalysisResult, rng: random.Random) -> DebateResult:
 
 def run_debate(analysis: AnalysisResult, data: ManagerData, demo_mode: bool = True,
                rng: random.Random | None = None) -> DebateResult:
-    """rng: 심판의 A/B 배정·신호 순서용. 없으면 새로 만든다(테스트에서만 넘긴다)."""
+    """rng: 심판의 A/B 배정·신호 순서용. 없으면 default_rng() (테스트에서만 넘긴다)."""
     if not analysis["debate_required"]:
         result = _not_held(analysis, "maintain", no_debate_options(analysis["signals"]), [])
     elif demo_mode:
@@ -65,7 +72,7 @@ def run_debate(analysis: AnalysisResult, data: ManagerData, demo_mode: bool = Tr
         result["warnings"] = result["warnings"] + [NO_SAVED]
     else:
         try:
-            result = _debate(analysis, rng or random.Random())
+            result = _debate(analysis, rng or default_rng())
         except LLMUnavailable as e:
             result = _failed(analysis, str(e))
     validate(result, DebateResult)

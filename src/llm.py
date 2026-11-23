@@ -86,6 +86,11 @@ def _model_for(role: str) -> str:
     return model
 
 
+def is_mock() -> bool:
+    """LLM_MOCK=1(기본값)인가. 토론이 mock 실행의 무작위 seed 를 고정할 때 쓴다."""
+    return _mock_on()
+
+
 def model_name(role: str) -> str:
     """DebateResult.models 에 적을 이름. LLM_MOCK=1 이면 "mock", 설정이 없으면 "확인 불가". 호출하지 않는다."""
     if _mock_on():
