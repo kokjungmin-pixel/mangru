@@ -44,8 +44,9 @@ def test_holdings_zero_total_is_unavailable():
     assert rows == [] and "2026Q1" in unavailable[0]
 
 
-def test_no_13f_means_no_table_and_nothing_to_report():
-    assert compare_holdings([]) == ([], [])                        # 13F 를 쓰지 않는 운용사(Warburg)
+def test_no_quarters_at_all_is_unavailable_not_no_change():
+    # 주식형인데 13F 를 하나도 못 받았으면 빈 표를 '변화 없음'으로 넘기지 않는다 (13F 를 안 쓰는 운용사는 부르지 않음)
+    assert compare_holdings([]) == ([], ["13F 비교표: 확인 불가 (분기가 2개 미만)"])
 
 
 # ---------- 임원·소유주 ----------

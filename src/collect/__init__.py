@@ -57,7 +57,7 @@ def collect_live(manager_id: str) -> ManagerData:
     if m["has_13f"]:
         latest["13F"] = max((q["filed_date"] for q in quarters), default=None)
     has_new, us = _has_new_filing(m["last_check_date"], latest)
-    holding_changes, u1 = compare_holdings(quarters)
+    holding_changes, u1 = compare_holdings(quarters) if m["has_13f"] else ([], [])
     person_changes, u2 = compare_people(adv1_new, adv1_old, m["last_check_date"])
     us += u1 + u2
     data: ManagerData = {

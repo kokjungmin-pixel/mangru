@@ -17,10 +17,8 @@ def _qindex(period: str) -> int:
 
 def compare_holdings(quarters: list[dict]) -> tuple[list[dict], list[str]]:
     """최신 분기 vs 바로 앞 분기 → (HoldingChange 목록, unavailable). 비중 = 종목 금액 ÷ 그 분기 전체(ETF 포함).
-    비중 변화가 큰 순으로 정렬한다(화면 표 순서). 13F 를 쓰지 않으면 quarters=[] → 빈 표, 기록 없음."""
-    if not quarters:
-        return [], []
-    if len(quarters) < 2:
+    비중 변화가 큰 순으로 정렬한다(화면 표 순서). 13F 를 쓰지 않는 운용사에는 부르지 않는다(collect_live)."""
+    if len(quarters) < 2:   # 13F 를 하나도 못 받은 경우(0개)도 '변화 없음'이 아니라 확인 불가
         return [], ["13F 비교표: 확인 불가 (분기가 2개 미만)"]
     old, new = quarters[-2], quarters[-1]
     if _qindex(new["period"]) - _qindex(old["period"]) != 1:   # 빠진 분기를 건너뛴 비교는 '직전 분기 대비'가 아니다
