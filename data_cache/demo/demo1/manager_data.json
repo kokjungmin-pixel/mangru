@@ -61,7 +61,7 @@
       "ticker": "BAM",
       "issuer_cik": "0001937926",
       "sic": "6282",
-      "shares_outstanding": null,
+      "shares_outstanding": 392100000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -152,7 +152,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 23689000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -178,7 +178,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 946000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -291,7 +291,7 @@
       "ticker": "BAM",
       "issuer_cik": "0001937926",
       "sic": "6282",
-      "shares_outstanding": null,
+      "shares_outstanding": 392100000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -382,7 +382,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24124000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -408,7 +408,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 941000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -521,7 +521,7 @@
       "ticker": "BAM",
       "issuer_cik": "0001937926",
       "sic": "6282",
-      "shares_outstanding": null,
+      "shares_outstanding": 391700000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -612,7 +612,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 23929000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -638,7 +638,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 944000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -764,7 +764,7 @@
       "ticker": "BAM",
       "issuer_cik": "0001937926",
       "sic": "6282",
-      "shares_outstanding": null,
+      "shares_outstanding": 391700000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -868,7 +868,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 25087000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -894,7 +894,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 933000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -995,10 +995,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 1418356.0,
       "shares": 287699.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 65230559.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      }
@@ -1020,7 +1020,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 635000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1137,7 +1137,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24693000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1163,7 +1163,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 929000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1225,9 +1225,9 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 8795579.0,
       "shares": 1920432.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
       "shares_outstanding": null,
       "shares_outstanding_partial": false,
       "is_etf": false
@@ -1276,7 +1276,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 631000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1393,7 +1393,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24293000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1419,7 +1419,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 923000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1468,10 +1468,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 8166890.0,
       "shares": 2237504.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 66687085.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1519,7 +1519,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 632000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1636,7 +1636,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24657000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1662,7 +1662,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 925000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1711,10 +1711,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 6869137.0,
       "shares": 2237504.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 66687085.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1762,7 +1762,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 621000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1879,7 +1879,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24791000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1905,7 +1905,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 912000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -1954,10 +1954,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 7428513.0,
       "shares": 2237504.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 66687085.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2005,7 +2005,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 615000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2135,7 +2135,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 25216000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2161,7 +2161,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 908000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2210,9 +2210,9 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 11529334.0,
       "shares": 3719140.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
       "shares_outstanding": null,
       "shares_outstanding_partial": false,
       "is_etf": false
@@ -2261,7 +2261,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 611000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2391,7 +2391,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 25149000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2417,7 +2417,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 903000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2466,10 +2466,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 17703106.0,
       "shares": 3719140.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 68486338.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2517,7 +2517,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 613000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2647,7 +2647,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24975000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2673,7 +2673,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 905000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2722,10 +2722,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 17368384.0,
       "shares": 3719140.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 68486338.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2760,7 +2760,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 598000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2864,7 +2864,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 24269000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2890,7 +2890,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 891000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -2978,10 +2978,10 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 18409743.0,
       "shares": 3719140.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
-      "shares_outstanding": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
+      "shares_outstanding": 68486338.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -3016,7 +3016,7 @@
       "ticker": "ABNB",
       "issuer_cik": "0001559720",
       "sic": "7340",
-      "shares_outstanding": null,
+      "shares_outstanding": 592000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -3120,7 +3120,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 23718000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -3146,7 +3146,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 882000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -3234,9 +3234,9 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 21459438.0,
       "shares": 3719140.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
       "shares_outstanding": null,
       "shares_outstanding_partial": false,
       "is_etf": false
@@ -3363,7 +3363,7 @@
       "ticker": "GSHD",
       "issuer_cik": "0001726978",
       "sic": "6411",
-      "shares_outstanding": null,
+      "shares_outstanding": 23718000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -3389,7 +3389,7 @@
       "ticker": "MA",
       "issuer_cik": "0001141391",
       "sic": "7389",
-      "shares_outstanding": null,
+      "shares_outstanding": 875000000.0,
       "shares_outstanding_partial": false,
       "is_etf": false
      },
@@ -3490,9 +3490,9 @@
       "title_of_class": "ORDINARY SHARES",
       "value_usd": 31166393.0,
       "shares": 3719140.0,
-      "ticker": null,
-      "issuer_cik": null,
-      "sic": null,
+      "ticker": "SOPH",
+      "issuer_cik": "0001840706",
+      "sic": "7374",
       "shares_outstanding": null,
       "shares_outstanding_partial": false,
       "is_etf": false
@@ -3614,7 +3614,7 @@
    {
     "cusip": "H82027105",
     "issuer": "SOPHIA GENETICS SA",
-    "ticker": null,
+    "ticker": "SOPH",
     "kind": "held",
     "shares_before": 3719140.0,
     "shares_after": 3719140.0,
@@ -3998,6 +3998,6 @@
   "unavailable": [
    "ADV 2A 문구 비교: 확인 불가 (날짜 조건·Item 2 판정·문단 나누기 PM 결정 대기, verified.md 11/21·22)"
   ],
-  "fetched_at": "2026-11-21T19:00:47+00:00"
+  "fetched_at": "2026-11-23T04:38:05+00:00"
  }
 }
