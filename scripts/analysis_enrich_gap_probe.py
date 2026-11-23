@@ -82,7 +82,10 @@ def probe_multi_class(raw: dict) -> None:
                 continue
             units = resp.get("units") or {}
             facts = units.get("shares") or []
-            value, partial = sec.pick_shares_outstanding(facts, AS_OF)
+            if "WeightedAverage" in tag:      # 기간 값: 코드와 같은 규칙(가장 짧은 기간)으로 고른다
+                value, partial = sec.pick_weighted_average(facts, AS_OF), False
+            else:
+                value, partial = sec.pick_shares_outstanding(facts, AS_OF)
             latest = sorted({f.get("end") for f in facts if f.get("end")})[-3:]
             print(f"    {tag:46} → 단위 {list(units)} 값 {len(facts)}개, 최근 기준일 {latest}, "
                   f"선택값 {value} (partial={partial})")
