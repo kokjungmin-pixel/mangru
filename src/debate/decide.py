@@ -69,3 +69,15 @@ def no_debate_options(signals: list[Signal]) -> list[Option]:
         "conditional": [],
         "review_termination": [],
     })
+
+
+def decide_all(verdicts: list[ChangeVerdict], signals: list[Signal],
+               keep_args: list[Argument], terminate_args: list[Argument]) -> dict:
+    """심판 결과(6-2) → DebateResult 의 unexplained_count · recommendation · options (C장 6번 6-3).
+    심판 점수 확인 불가(양측 0점) 신호도 status 가 unexplained 라 그대로 미설명으로 센다."""
+    rec = recommend(verdicts, signals)
+    return {
+        "unexplained_count": sum(1 for v in verdicts if v["status"] == "unexplained"),
+        "recommendation": rec,
+        "options": build_options(rec, verdicts, keep_args, terminate_args),
+    }

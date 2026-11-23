@@ -175,3 +175,133 @@ def test_contract_sample_maintain_and_conditional_grounds():
     assert opts["maintain"] == want["maintain"]
     assert opts["conditional"] == want["conditional"]
     assert opts["review_termination"]["recommended"] is False
+
+
+# ======================================================================
+# C장 6번 6-3: 심판 결과 → 미설명 개수·권고·선택지 (decide_all)
+# ======================================================================
+import json                                         # noqa: E402
+import random                                       # noqa: E402
+import re                                           # noqa: E402
+
+from src.debate import judge as judge_mod           # noqa: E402
+from src.debate.decide import decide_all            # noqa: E402
+from src.debate.judge import blind_input, run_judge  # noqa: E402
+
+A11_PATH = config.ROOT / "tests" / "debate" / "fixtures" / "a11_analysis.json"
+KP, SD, PA = "demo1-key_person-1", "demo1-strategy_drift-1", "demo1-peer_anomaly-1"
+IDS = [KP, SD, PA]
+ZERO = {"numbers": 0, "grounds": 0, "rebuttal": 0, "limits": 0}
+GROUND_END = re.compile(r" \[[^\[\]]+\]$")
+
+
+@pytest.fixture
+def a11() -> dict:
+    return json.loads(A11_PATH.read_text(encoding="utf-8"))
+
+
+def debate_args(ids=IDS):
+    keep = [{"signal_id": s, "claim": f"K-claim-{s}", "evidence_idx": [0], "falsifier": f"K-fals-{s}"} for s in ids]
+    term = [{"signal_id": s, "claim": f"T-claim-{s}", "evidence_idx": [0], "falsifier": f"T-fals-{s}"} for s in ids]
+    return keep, term
+
+
+def scored_verdict(sid, keep_total, term_total) -> dict:
+    k, t = score(keep_total), score(term_total)
+    return {"signal_id": sid, "keep": k, "terminate": t, "status": status_of(k, t), "reason": "r"}
+
+
+def check_shape(out: dict, verdicts: list[dict]):
+    assert set(out) == {"unexplained_count", "recommendation", "options"}
+    assert out["unexplained_count"] == sum(v["status"] == "unexplained" for v in verdicts)
+    assert [o["name"] for o in out["options"]] == ["maintain", "conditional", "review_termination"]
+    assert [o["name"] for o in out["options"] if o["recommended"]] == [out["recommendation"]]
+    for o in out["options"]:
+        validate(o, Option)
+        assert all(GROUND_END.search(g) for g in o["grounds"]), o
+
+
+# ---------- 권고 단계별 ----------
+@pytest.mark.parametrize("totals,expected", [
+    ([(9, 4), (8, 5), (7, 6)], "maintain"),            # 미설명 0
+    ([(5, 8), (9, 4), (6, 6)], "conditional"),         # 미설명 2 (KP, PA)
+    ([(5, 8), (4, 9), (6, 6)], "review_termination"),  # 미설명 3, ADV 포함
+])
+def test_decide_all_recommendation_by_unexplained_count(a11, totals, expected):
+    verdicts = [scored_verdict(sid, k, t) for sid, (k, t) in zip(IDS, totals)]
+    keep, term = debate_args()
+    out = decide_all(verdicts, a11["signals"], keep, term)
+    check_shape(out, verdicts)
+    assert out["recommendation"] == expected
+
+
+def test_decide_all_three_unexplained_all_13f_is_conditional(a11):
+    for s in a11["signals"]:
+        s["source_form"] = "13F"
+    verdicts = [scored_verdict(sid, 5, 8) for sid in IDS]
+    keep, term = debate_args()
+    out = decide_all(verdicts, a11["signals"], keep, term)
+    assert out["unexplained_count"] == 3 and out["recommendation"] == "conditional"
+
+
+def test_decide_all_grounds_from_right_side(a11):
+    verdicts = [scored_verdict(KP, 5, 8), scored_verdict(SD, 9, 4), scored_verdict(PA, 6, 6)]
+    keep, term = debate_args()
+    out = decide_all(verdicts, a11["signals"], keep, term)
+    g = {o["name"]: o["grounds"] for o in out["options"]}
+    assert g["maintain"] == [f"K-claim-{SD} [{SD}]"]
+    assert g["conditional"] == [f"K-fals-{KP} [{KP}]", f"K-fals-{PA} [{PA}]"]
+    assert g["review_termination"] == [f"T-claim-{KP} [{KP}]", f"T-claim-{PA} [{PA}]"]
+
+
+# ---------- 결정 2: 심판 점수 확인 불가(0-0) 신호도 미설명으로 센다 ----------
+def test_zero_zero_verdict_counts_as_unexplained(a11):
+    verdicts = [scored_verdict(KP, 9, 4), scored_verdict(SD, 9, 4),
+                {"signal_id": PA, "keep": dict(ZERO), "terminate": dict(ZERO),
+                 "status": status_of(ZERO, ZERO), "reason": "심판 점수 확인 불가"}]
+    keep, term = debate_args()
+    out = decide_all(verdicts, a11["signals"], keep, term)
+    assert out["unexplained_count"] == 1 and out["recommendation"] == "conditional"
+
+
+def test_missing_argument_leaves_no_ground_for_that_signal(a11):
+    verdicts = [scored_verdict(KP, 5, 8), scored_verdict(SD, 5, 8), scored_verdict(PA, 9, 4)]
+    keep, term = debate_args()
+    term = [a for a in term if a["signal_id"] != KP]        # 검사에서 삭제된 해지 측 논거
+    out = decide_all(verdicts, a11["signals"], keep, term)
+    g = {o["name"]: o["grounds"] for o in out["options"]}
+    assert g["review_termination"] == [f"T-claim-{SD} [{SD}]"]
+    check_shape(out, verdicts)
+
+
+def test_decide_all_does_not_mutate_inputs(a11):
+    verdicts = [scored_verdict(KP, 5, 8), scored_verdict(SD, 9, 4), scored_verdict(PA, 6, 6)]
+    keep, term = debate_args()
+    before = json.dumps([verdicts, a11, keep, term], sort_keys=True, ensure_ascii=False)
+    decide_all(verdicts, a11["signals"], keep, term)
+    assert json.dumps([verdicts, a11, keep, term], sort_keys=True, ensure_ascii=False) == before
+
+
+# ---------- 6-2 출력에서 이어지는지 ----------
+def test_from_run_judge_output(a11, monkeypatch):
+    true = {KP: (score(5), score(8)), SD: (score(9), score(4)), PA: (score(6), score(6))}
+    seed = 0
+    sides = blind_input(a11, [], [], [], random.Random(seed))["sides"]
+    rows = []
+    for sid, (k, t) in true.items():
+        by_side = {"keep": k, "terminate": t}
+        rows.append({"signal_id": sid, "A": by_side[sides["A"]], "B": by_side[sides["B"]], "reason": "r"})
+    monkeypatch.setattr(judge_mod, "call_llm", lambda *a, **kw: {"scores": rows})
+    keep, term = debate_args()
+    judged = run_judge(a11, keep, term, [], random.Random(seed))
+    out = decide_all(judged["verdicts"], a11["signals"], keep, term)
+    check_shape(out, judged["verdicts"])
+    assert out["unexplained_count"] == 2 and out["recommendation"] == "conditional"
+
+
+def test_contract_sample_through_decide_all():
+    a, d = sample("analysis"), sample("debate")
+    out = decide_all(d["verdicts"], a["signals"], d["keep_args"], d["terminate_args"])
+    assert out["unexplained_count"] == d["unexplained_count"]
+    assert out["recommendation"] == d["recommendation"]
+    check_shape(out, d["verdicts"])
