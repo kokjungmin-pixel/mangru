@@ -72,27 +72,34 @@ def _evidence_line(i: int, ev: dict) -> str:
     return line
 
 
+def strategy_lines(analysis: AnalysisResult) -> tuple[list[str], list[str]]:
+    """밝힌 전략 부분과 warnings. 토론 양측과 심판이 같이 쓴다."""
+    lines = ["[운용사가 밝힌 전략 — 판단 기준]"]
+    if not analysis["stated_strategy"]:
+        return lines + [NO_STRATEGY], [NO_STRATEGY]
+    lines.append(analysis["stated_strategy"])
+    lines += [_evidence_line(i, ev) for i, ev in enumerate(analysis["stated_strategy_evidence"])]
+    return lines, []
+
+
+def signal_lines(s: Signal) -> list[str]:
+    """신호 하나: 제목(## id) · 요약 · 설명 · 숫자 표기 · 번호 매긴 근거."""
+    lines = [f"## {s['id']} ({KIND_LABEL[s['kind']]} · {LEVEL_LABEL[s['level']]} · {s['source_form']})",
+             f"요약: {s['summary']}",
+             f"설명: {s['explanation']}"]
+    nums = number_labels(s)
+    if nums:
+        lines.append("숫자 표기: " + ", ".join(nums))
+    lines.append("근거:")
+    return lines + [_evidence_line(i, ev) for i, ev in enumerate(s["evidence"])]
+
+
 def material(analysis: AnalysisResult) -> tuple[str, list[str]]:
     """양측에게 똑같이 주는 자료 문장과 warnings."""
-    warnings = []
-    lines = ["[운용사가 밝힌 전략 — 판단 기준]"]
-    if analysis["stated_strategy"]:
-        lines.append(analysis["stated_strategy"])
-        lines += [_evidence_line(i, ev) for i, ev in enumerate(analysis["stated_strategy_evidence"])]
-    else:
-        lines.append(NO_STRATEGY)
-        warnings.append(NO_STRATEGY)
-
+    lines, warnings = strategy_lines(analysis)
     lines += ["", "[신호 목록]"]
     for s in analysis["signals"]:
-        lines.append(f"## {s['id']} ({KIND_LABEL[s['kind']]} · {LEVEL_LABEL[s['level']]} · {s['source_form']})")
-        lines.append(f"요약: {s['summary']}")
-        lines.append(f"설명: {s['explanation']}")
-        nums = number_labels(s)
-        if nums:
-            lines.append("숫자 표기: " + ", ".join(nums))
-        lines.append("근거:")
-        lines += [_evidence_line(i, ev) for i, ev in enumerate(s["evidence"])]
+        lines += signal_lines(s)
 
     lines += ["", "[데이터 한계]", DATA_LIMITS,
               "", "[숫자 규칙] 숫자는 위에 주어진 표기를 그대로 옮겨 쓰고 새로 계산하거나 어림하지 마십시오."]
