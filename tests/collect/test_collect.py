@@ -130,3 +130,20 @@ def test_graph_warburg_early_exit_without_13f(fake):
     assert [e["step"] for e in evs] == ["plan", "collect", "done"]
     last = evs[-1]["state"]
     assert last["status"] == "early_exit" and last["data"]["manager_id"] == "demo3" and calls["13f"] == []
+
+
+def test_live_collect_fills_comparisons(fake):
+    data = C.collect_live("demo2")
+    assert [(c["kind"], c["name"]) for c in data["person_changes"]] == [("added", "new-105633"), ("removed", "old-105633")]
+    assert data["holding_changes"] == [] and "13F 비교표: 확인 불가 (분기가 2개 미만)" in data["unavailable"]
+    assert data["text_changes"] == [] and C.NOT_COMPARED in data["unavailable"]
+
+
+def test_holdings_table_unavailable_only_for_13f_managers(fake, monkeypatch):
+    calls, state = fake
+    state.update(adv1=("2026-03-31", "2026-03-31"), adv2a=("2026-03-31", "2026-03-31"))
+    warburg = C.collect_live("demo3")                                    # 13F 를 안 쓰는 운용사: 기록 없음
+    assert warburg["holding_changes"] == [] and not any("13F 비교표" in u for u in warburg["unavailable"])
+    monkeypatch.setattr("src.collect.form13f.collect_13f", lambda cik: ([], [], ["13F 공시 목록: 확인 불가"]))
+    brown = C.collect_live("demo2")                                      # 주식형인데 13F 를 못 받음: 확인 불가
+    assert brown["holding_changes"] == [] and "13F 비교표: 확인 불가 (분기가 2개 미만)" in brown["unavailable"]

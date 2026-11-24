@@ -35,8 +35,6 @@ def test_every_step_uses_the_selected_manager():
     assert "000000" not in _pdf_text(st)                              # 샘플의 가짜 CRD 주소가 PDF 에 없어야 함
 
 
-@pytest.mark.xfail(strict=True, reason="Backend run_debate() 가 입력과 관계없이 샘플(토론함, 미설명 2건)을 돌려줌 "
-                                       "(src/debate/__init__.py. decide.no_debate_options 는 이미 있음)")
 def test_no_signals_means_no_debate_and_consistent_counts(monkeypatch):
     def calm(data, plan):
         return {**sample("analysis"), "manager_id": data["manager_id"], "signals": [], "debate_required": False}

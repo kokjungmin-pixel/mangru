@@ -66,3 +66,8 @@
 - 무엇을 하는가: `collect()` 가 데모 모드에서는 `data_cache/demo/<id>/manager_data.json` 을, 실제 모드에서는 13F(주식형만)·ADV Part 1·ADV 2A 를 받아 `ManagerData` 로 조립한다. 화면은 결과를 `st.session_state` 에 두고 PDF 를 내려받게 한다.
 - 어떻게 하는가: `has_new_filing` 은 최신 제출일 하나라도 직전 점검일 뒤면 True, 받지 못한 공시가 있으면 조기 종료하지 않는다. 저장본은 `python -m src.collect demo1 demo2 demo3 --live` 로만 만든다. 화면 값은 `src/ui/result.py` 가 만들고 `app.py` 는 그리기만 한다.
 - 한계: 신·구본 비교(B4)는 아직 없어 `holding_changes`·`person_changes`·`text_changes` 가 비어 있다. 분석·토론·검증은 다른 파트의 mock 이라 Brown·Akre 리포트 본문·출처는 demo1 샘플이다(`tests/integration/test_frontend_handoff.py`).
+
+## 신·구본 비교 — compare_holdings, compare_people (2026-11-22)
+- 무엇을 하는가: 13F 최신 분기와 바로 앞 분기를 CUSIP으로 맞춘 비교표(신규·매도·유지, 주식 수·금액·비중 전후)와, ADV Part 1 Schedule A 의 임원·소유주 변경(추가·삭제·직함 변경·지분 코드 변경)을 만든다. 해석은 하지 않는다(Data 몫).
+- 어떻게 하는가: 비중은 분기 전체 금액(ETF 포함) 대비이고 비중 변화가 큰 순으로 정렬한다. 사람은 대문자·문장부호·호칭 제거 후 개인은 단어 순서를 무시하고, 법인은 따로 맞춘다. 직함은 '&'='AND'·띄어쓰기 차이를 같은 것으로 본다. 이전본이 없으면 취임 연월로 새 임원만 찾는다.
+- 한계: 빠진 분기를 건너뛴 비교, 명단을 못 읽은 쪽과의 비교, 같은 이름이 여러 번 나오는 사람은 하지 않고 `확인 불가`로 적는다. ADV 2A 문구 비교는 PM 결정 뒤에 만든다.
