@@ -4,6 +4,11 @@
       "signal_id": "demo1-key_person-1",
       "text": "후임이 확인되지 않은 것 자체가 위험입니다.",
       "concede": false
+    },
+    {
+      "signal_id": "demo1-strategy_drift-1",
+      "text": "시장 하락 때문이라는 근거도 공시에 없어 감소 원인은 여전히 설명되지 않습니다.",
+      "concede": false
     }
   ]
 }
