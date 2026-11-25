@@ -247,7 +247,7 @@ class Signal(TypedDict):
 class AnalysisResult(TypedDict):
     manager_id: str
     signals: list[Signal]                   # 관찰·경보만
-    debate_required: bool                   # 경보 1개 이상 또는 관찰 2개 이상
+    debate_required: bool                   # 경보 1개 이상 또는 관찰 2개 이상 (item2_mismatch+strategy_text_changed는 1개)
     stated_strategy: Optional[str]          # 운용사가 밝힌 전략 한 줄 요약 (의견). 토론의 판단 기준
     stated_strategy_evidence: list[Evidence]   # 그 근거가 되는 ADV 2A 원문 인용
     data_checks: list[str]                  # 데이터 검사 결과 (통과·실패·보정 내역)
@@ -526,6 +526,7 @@ def unknown_numbers(text: str, signals: list[dict]) -> list[str]:
 - 자기 3년 최대치 = 그 운용사의 **이번 분기를 뺀 직전 12개 분기 변화폭** 중 최댓값. 그래서 13F는 14개 분기를 모은다. 직전 변화가 `MIN_HISTORY_CHANGES`(4)개 미만이면 판정할 수 없으므로 관찰 신호를 내지 않고 `확인 불가` 에 적는다. 4~11개면 있는 만큼으로 판정하고 `data_checks` 에 개수를 적는다.
 - 데이터 검사(기획서 ⑤ "매핑률 95% 미만은 확인 불가"): **매핑률** = 발행사 CIK까지 찾은 종목의 금액 ÷ 전체 금액(ETF 제외). 95% 미만이면 업종·규모 지표는 `확인 불가`. 규모는 추가로 **발행주식 수까지 찾은 금액 비율이 90% 미만**이면 `확인 불가`(`기본값`, 해외 예탁증서·여러 종류 주식 발행사는 주식 수를 안전하게 못 구하는 경우가 있어 매핑률보다 낮게 둠). 집중도·회전율은 매핑 없이 계산되므로 항상 계산한다.
 - **토론 개시: 경보 1개 이상 또는 관찰 2개 이상** (`debate_required`)
+  - `item2_mismatch` 가 `strategy_text_changed` 와 함께 나오면(같은 Item 8 변경) 관찰 **1개**로 센다. 리포트에는 둘 다 표시 (11/25 PM·Data 합의)
 - 보정 목표(기획서 ⑥): 분기당 토론 대상이 전체 운용사의 10% 안팎
 
 ### 기획서에 등급이 없어 기본값으로 정한 신호
@@ -542,6 +543,8 @@ def unknown_numbers(text: str, signals: list[dict]) -> list[str]:
 
 - AUM·직원 수·사모펀드 수 신호는 ADV Part 1의 신·구본(보통 1년 간격) 비교라서 13F 분기 신호와 기간이 다르다. `summary` 에 두 제출일을 적는다.
 - ADV 2A 실질 변경 판정: 문단을 정규화(소문자, 공백 정리, 숫자·날짜 제거)한 뒤 직전본의 가장 비슷한 문단과의 유사도(`difflib.SequenceMatcher.ratio`)가 `TEXT_MATERIAL_SIMILARITY`(0.85) 미만이거나, 200자 이상 문단이 새로 생기거나 사라졌으면 `material=True`.
+- Item 2 판정(11/25 합의): `last_check_date` 이후 제출된 브로슈어의 Item 2만 본다. `item2_declares_no_change` 는 True(변경 없음 선언)/False(변경 있음)/None(판단 불가) 세 값이고, 판단 근거 원문을 인용한다. None이면 `item2_mismatch` 를 내지 않는다.
+- 빈 줄 없는 PDF는 문단을 휴리스틱으로 나누고, 결과를 `docs/verified.md` 에 기록한다.
 - 이전본이 없을 때 신규 임원 판정: 취임 연월이 직전 점검일 이후(직전 점검일이 없으면 최신 공시 제출일 기준 최근 6개월 = 반기 점검 주기).
 
 ### 기본값과 근거 (12/5 점검 때 실제 결과로 근거가 생기면 바꾼다)
