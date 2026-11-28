@@ -1,0 +1,7 @@
+{"computed_at": "2026-11-28", "window": null,
+ "note": "형식 확인용 자리표시 값(근거 없음). B5에서 전체 13F 분포로 계산해 바꾼다.",
+ "metrics": {
+   "concentration_change": {"mode": "placeholder", "p90": 0.05, "p95": 0.08, "quantiles": null, "n": null},
+   "turnover":             {"mode": "placeholder", "p90": 0.20, "p95": 0.30, "quantiles": null, "n": null}},
+ "levels": {
+   "top10_concentration":  {"mode": "placeholder", "p05": null, "p50": null, "p95": null, "quantiles": null, "n": null}}}
